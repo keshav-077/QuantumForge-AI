@@ -1,0 +1,39 @@
+services:
+  cryoforge-mcp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: cryoforge-mcp
+    expose:
+      - "8090"
+    environment:
+      CRYOFORGE_SEED: "${CRYOFORGE_SEED:-S01}"
+      CRYOFORGE_TRANSPORT: "sse"
+      CRYOFORGE_HOST: "0.0.0.0"
+      CRYOFORGE_MCP_PORT: "8090"
+      CRYOFORGE_RUN_ID: "${CRYOFORGE_RUN_ID:-harbor-opencode-run}"
+      CRYOFORGE_AGENT_NAME: "${CRYOFORGE_AGENT_NAME:-opencode}"
+      CRYOFORGE_AGENT_TYPE: "${CRYOFORGE_AGENT_TYPE:-frontier}"
+      CRYOFORGE_MODEL_ID: "${CRYOFORGE_MODEL_ID:-unknown}"
+      CRYOFORGE_LOG_DIR: "/var/log/cryoforge/trajectories"
+      CRYOFORGE_VERIFIER_TOKEN: "${CRYOFORGE_VERIFIER_TOKEN:-cryoforge-harbor-verifier-9f8e7d6c5b4a}"
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://127.0.0.1:8090/health"]
+      interval: 2s
+      timeout: 2s
+      retries: 15
+      start_period: 2s
+
+  main:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: agent-sandbox
+    working_dir: /workspace
+    environment:
+      CRYOFORGE_MCP_URL: "http://cryoforge-mcp:8090/sse"
+      CRYOFORGE_SEED: "${CRYOFORGE_SEED:-S01}"
+    depends_on:
+      cryoforge-mcp:
+        condition: service_healthy
+    command: ["sleep", "infinity"]

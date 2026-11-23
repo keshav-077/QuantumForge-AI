@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">AgentBreak mark</title>
+  <desc id="desc">Three planning lanes interrupted and recovered inside a dark rounded square.</desc>
+  <rect width="128" height="128" rx="28" fill="#18181b"/>
+  <path d="M34 88V69M64 88V38M94 88V56" fill="none" stroke="#fff" stroke-width="12" stroke-linecap="round"/>
+  <path d="M64 38v17l11 11" fill="none" stroke="#818cf8" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="75" cy="66" r="5" fill="#34d399"/>
+</svg>

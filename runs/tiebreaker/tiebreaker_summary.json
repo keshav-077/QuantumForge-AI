@@ -1,0 +1,600 @@
+{
+  "benchmark": "CryoForge RL — Small-Model Experience Improvement Tiebreaker",
+  "generated_at": "2026-11-14T14:07:22.504648+00:00",
+  "train_seeds_used": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05"
+  ],
+  "holdout_eval_seeds": [
+    "S06",
+    "S07",
+    "S08"
+  ],
+  "zero_holdout_leakage_verified": true,
+  "mcp_transport": "stdio",
+  "before_model": {
+    "provider": "gemini",
+    "model_id": "gemini-3.5-flash-lite",
+    "mode": "base_zero_shot",
+    "agent_type": "small_before"
+  },
+  "after_model": {
+    "provider": "gemini",
+    "model_id": "gemini-3.5-flash-lite",
+    "mode": "s01_s05_experience_distilled:experience_playbook.json",
+    "agent_type": "small_after",
+    "experience_playbook_sha256": "2fc02dfb04dbac9889f5674beb1ed400a15a11dc3ab31bcfd9b5e442a5407f07"
+  },
+  "before_mean_score": 0.14,
+  "after_mean_score": 0.34,
+  "mean_score_delta": 0.2,
+  "aggregate": {
+    "before_mean_score": 0.14,
+    "after_mean_score": 0.34,
+    "mean_score_delta": 0.2,
+    "relative_improvement_pct": 142.86,
+    "before_valid_orders_total": 3,
+    "after_valid_orders_total": 6,
+    "total_orders_evaluated": 12,
+    "before_full_batch_pass_seeds": 0,
+    "after_full_batch_pass_seeds": 0,
+    "before_mean_sim_calls": 3.0,
+    "after_mean_sim_calls": 3.0,
+    "improved_seed_count": 2,
+    "tiebreaker_passed": true
+  },
+  "per_seed": [
+    {
+      "seed": "S06",
+      "before": {
+        "run_id": "small_before_s06_gemini-3.5-flash-lite_20261114T140537Z",
+        "trajectory_path": "F:\\Junction Spanki2026\\runs\\trajectories\\small_before_s06_gemini-3.5-flash-lite_20261114T140537Z.json",
+        "agent_type": "small_before",
+        "model_id": "gemini-3.5-flash-lite",
+        "final_score": 0.34,
+        "valid_order_count": 2,
+        "total_order_count": 4,
+        "finalized": true,
+        "batch_gate_cap_applied": true,
+        "budget_exceeded": false,
+        "permit_quota_exceeded": false,
+        "total_budget_eur": 361000.0,
+        "total_spent_eur": 346851.56,
+        "sim_calls_used": 3,
+        "sim_budget_total": 3,
+        "step_count": 32,
+        "disruption_triggered": true,
+        "failure_modes": [
+          "ORD-3: BOIL_OFF_EXCEEDED: 10.7719%/day > max 9.0%/day",
+          "ORD-4: BOIL_OFF_EXCEEDED: 0.85%/day > max 0.62%/day",
+          "ORD-4: SITE_FOOTPRINT_EXCEEDED: bank width 4400 mm > site max 3400 mm"
+        ],
+        "primary_failure_categories": [
+          "BOIL_OFF",
+          "SITE_CLEARANCE",
+          "INCOMPLETE_BATCH"
+        ]
+      },
+      "after": {
+        "run_id": "small_after_s06_gemini-3.5-flash-lite_20261114T140537Z",
+        "trajectory_path": "F:\\Junction Spanki2026\\runs\\trajectories\\small_after_s06_gemini-3.5-flash-lite_20261114T140537Z.json",
+        "agent_type": "small_after",
+        "model_id": "gemini-3.5-flash-lite",
+        "final_score": 0.34,
+        "valid_order_count": 2,
+        "total_order_count": 4,
+        "finalized": true,
+        "batch_gate_cap_applied": true,
+        "budget_exceeded": false,
+        "permit_quota_exceeded": false,
+        "total_budget_eur": 361000.0,
+        "total_spent_eur": 356079.2,
+        "sim_calls_used": 3,
+        "sim_budget_total": 3,
+        "step_count": 27,
+        "disruption_triggered": true,
+        "failure_modes": [
+          "ORD-3: HOOP_STRESS_EXCEEDED: 249.18 MPa > allowable 188.0 MPa",
+          "ORD-3: HAZARD_FITTINGS: LHe forbids CN fittings",
+          "ORD-3: BOIL_OFF_EXCEEDED: 13.2343%/day > max 9.0%/day",
+          "ORD-4: HOOP_STRESS_EXCEEDED: 365.59 MPa > allowable 188.0 MPa",
+          "ORD-4: STD_GAUGE_EXCEEDED: shipping (2600x2950 mm) exceeds R-CAMPUS standard envelope (2500x3800 mm) without escort permit",
+          "ORD-4: SLA_MISSED: delivery_week=12 > customer sla_week=11"
+        ],
+        "primary_failure_categories": [
+          "HOOP_STRESS",
+          "HAZARD_COMPATIBILITY",
+          "BOIL_OFF",
+          "TRANSPORT_CLEARANCE",
+          "SLA_MISSED",
+          "INCOMPLETE_BATCH"
+        ]
+      },
+      "score_delta": 0.0,
+      "valid_orders_delta": 0,
+      "resolved_failure_categories": [
+        "SITE_CLEARANCE"
+      ]
+    },
+    {
+      "seed": "S07",
+      "before": {
+        "run_id": "small_before_s07_gemini-3.5-flash-lite_20261114T140537Z",
+        "trajectory_path": "F:\\Junction Spanki2026\\runs\\trajectories\\small_before_s07_gemini-3.5-flash-lite_20261114T140537Z.json",
+        "agent_type": "small_before",
+        "model_id": "gemini-3.5-flash-lite",
+        "final_score": 0.08,
+        "valid_order_count": 1,
+        "total_order_count": 4,
+        "finalized": true,
+        "batch_gate_cap_applied": true,
+        "budget_exceeded": false,
+        "permit_quota_exceeded": false,
+        "total_budget_eur": 405000.0,
+        "total_spent_eur": 365406.44,
+        "sim_calls_used": 3,
+        "sim_budget_total": 3,
+        "step_count": 23,
+        "disruption_triggered": true,
+        "failure_modes": [
+          "ORD-2: HOOP_STRESS_EXCEEDED: 242.19 MPa > allowable 204.35 MPa",
+          "ORD-2: BOIL_OFF_EXCEEDED: 0.304%/day > max 0.26%/day",
+          "ORD-3: HOOP_STRESS_EXCEEDED: 252.57 MPa > allowable 188.0 MPa",
+          "ORD-3: STD_GAUGE_EXCEEDED: shipping (2600x2950 mm) exceeds R-COAST standard envelope (2500x3800 mm) without escort permit",
+          "ORD-4: BOIL_OFF_EXCEEDED: 0.5747%/day > max 0.34%/day",
+          "ORD-4: SITE_HEIGHT_EXCEEDED: installed 5880 mm > site max 5600 mm"
+        ],
+        "primary_failure_categories": [
+          "HOOP_STRESS",
+          "BOIL_OFF",
+          "TRANSPORT_CLEARANCE",
+          "SITE_CLEARANCE",
+          "INCOMPLETE_BATCH"
+        ]
+      },
+      "after": {
+        "run_id": "small_after_s07_gemini-3.5-flash-lite_20261114T140537Z",
+        "trajectory_path": "F:\\Junction Spanki2026\\runs\\trajectories\\small_after_s07_gemini-3.5-flash-lite_20261114T140537Z.json",
+        "agent_type": "small_after",
+        "model_id": "gemini-3.5-flash-lite",
+        "final_score": 0.34,
+        "valid_order_count": 2,
+        "total_order_count": 4,
+        "finalized": true,
+        "batch_gate_cap_applied": true,
+        "budget_exceeded": false,
+        "permit_quota_exceeded": false,
+        "total_budget_eur": 405000.0,
+        "total_spent_eur": 382711.06,
+        "sim_calls_used": 3,
+        "sim_budget_total": 3,
+        "step_count": 25,
+        "disruption_triggered": true,
+        "failure_modes": [
+          "ORD-3: BOIL_OFF_EXCEEDED: 0.0927%/day > max 0.09%/day",
+          "ORD-3: SITE_FOOTPRINT_EXCEEDED: bank width 4400 mm > site max 3400 mm",
+          "ORD-4: STD_GAUGE_EXCEEDED: shipping (2600x2950 mm) exceeds R-COAST standard envelope (2500x3800 mm) without escort permit"
+        ],
+        "primary_failure_categories": [
+          "BOIL_OFF",
+          "SITE_CLEARANCE",
+          "TRANSPORT_CLEARANCE",
+          "INCOMPLETE_BATCH"
+        ]
+      },
+      "score_delta": 0.26,
+      "valid_orders_delta": 1,
+      "resolved_failure_categories": [
+        "HOOP_STRESS"
+      ]
+    },
+    {
+      "seed": "S08",
+      "before": {
+        "run_id": "small_before_s08_gemini-3.5-flash-lite_20261114T140614Z",
+        "trajectory_path": "F:\\Junction Spanki2026\\runs\\trajectories\\small_before_s08_gemini-3.5-flash-lite_20261114T140614Z.json",
+        "agent_type": "small_before",
+        "model_id": "gemini-3.5-flash-lite",
+        "final_score": 0.0,
+        "valid_order_count": 0,
+        "total_order_count": 4,
+        "finalized": true,
+        "batch_gate_cap_applied": false,
+        "budget_exceeded": false,
+        "permit_quota_exceeded": false,
+        "total_budget_eur": 385500.0,
+        "total_spent_eur": 362659.08,
+        "sim_calls_used": 3,
+        "sim_budget_total": 3,
+        "step_count": 26,
+        "disruption_triggered": true,
+        "failure_modes": [
+          "ORD-1: SHOCK_UNADAPTED — pre-shock valid design failed after DIS-S08 (ORD-2 +0.8 MPa Uprate, R-GORGE 2,700mm Cap, BAY-B 5,100kg Crane Cap & EU_STD +2w)",
+          "ORD-1: SLA_MISSED: delivery_week=9 > customer sla_week=7",
+          "ORD-2: HOOP_STRESS_EXCEEDED: 190.28 MPa > allowable 188.0 MPa",
+          "ORD-2: BOIL_OFF_EXCEEDED: 0.148%/day > max 0.11%/day",
+          "ORD-2: SITE_FOOTPRINT_EXCEEDED: bank width 5600 mm > site max 4600 mm",
+          "ORD-3: HOOP_STRESS_EXCEEDED: 361.0 MPa > allowable 188.0 MPa",
+          "ORD-3: STD_GAUGE_EXCEEDED: shipping (2600x3000 mm) exceeds R-MAIN standard envelope (2500x3800 mm) without escort permit",
+          "ORD-4: HOOP_STRESS_EXCEEDED: 260.72 MPa > allowable 188.0 MPa",
+          "ORD-4: BOIL_OFF_EXCEEDED: 8.4846%/day > max 7.6%/day"
+        ],
+        "primary_failure_categories": [
+          "SLA_MISSED",
+          "SHOCK_UNADAPTED",
+          "HOOP_STRESS",
+          "BOIL_OFF",
+          "SITE_CLEARANCE",
+          "TRANSPORT_CLEARANCE",
+          "INCOMPLETE_BATCH"
+        ]
+      },
+      "after": {
+        "run_id": "small_after_s08_gemini-3.5-flash-lite_20261114T140624Z",
+        "trajectory_path": "F:\\Junction Spanki2026\\runs\\trajectories\\small_after_s08_gemini-3.5-flash-lite_20261114T140624Z.json",
+        "agent_type": "small_after",
+        "model_id": "gemini-3.5-flash-lite",
+        "final_score": 0.34,
+        "valid_order_count": 2,
+        "total_order_count": 4,
+        "finalized": true,
+        "batch_gate_cap_applied": true,
+        "budget_exceeded": false,
+        "permit_quota_exceeded": false,
+        "total_budget_eur": 385500.0,
+        "total_spent_eur": 377408.96,
+        "sim_calls_used": 3,
+        "sim_budget_total": 3,
+        "step_count": 25,
+        "disruption_triggered": true,
+        "failure_modes": [
+          "ORD-3: HOOP_STRESS_EXCEEDED: 241.0 MPa > allowable 188.0 MPa",
+          "ORD-4: BOIL_OFF_EXCEEDED: 8.4846%/day > max 7.6%/day"
+        ],
+        "primary_failure_categories": [
+          "HOOP_STRESS",
+          "BOIL_OFF",
+          "INCOMPLETE_BATCH"
+        ]
+      },
+      "score_delta": 0.34,
+      "valid_orders_delta": 2,
+      "resolved_failure_categories": [
+        "SHOCK_UNADAPTED",
+        "SITE_CLEARANCE",
+        "SLA_MISSED",
+        "TRANSPORT_CLEARANCE"
+      ]
+    }
+  ],
+  "per_seed_map": {
+    "S06": {
+      "seed": "S06",
+      "before": {
+        "run_id": "small_before_s06_gemini-3.5-flash-lite_20261114T140537Z",
+        "trajectory_path": "F:\\Junction Spanki2026\\runs\\trajectories\\small_before_s06_gemini-3.5-flash-lite_20261114T140537Z.json",
+        "agent_type": "small_before",
+        "model_id": "gemini-3.5-flash-lite",
+        "final_score": 0.34,
+        "valid_order_count": 2,
+        "total_order_count": 4,
+        "finalized": true,
+        "batch_gate_cap_applied": true,
+        "budget_exceeded": false,
+        "permit_quota_exceeded": false,
+        "total_budget_eur": 361000.0,
+        "total_spent_eur": 346851.56,
+        "sim_calls_used": 3,
+        "sim_budget_total": 3,
+        "step_count": 32,
+        "disruption_triggered": true,
+        "failure_modes": [
+          "ORD-3: BOIL_OFF_EXCEEDED: 10.7719%/day > max 9.0%/day",
+          "ORD-4: BOIL_OFF_EXCEEDED: 0.85%/day > max 0.62%/day",
+          "ORD-4: SITE_FOOTPRINT_EXCEEDED: bank width 4400 mm > site max 3400 mm"
+        ],
+        "primary_failure_categories": [
+          "BOIL_OFF",
+          "SITE_CLEARANCE",
+          "INCOMPLETE_BATCH"
+        ]
+      },
+      "after": {
+        "run_id": "small_after_s06_gemini-3.5-flash-lite_20261114T140537Z",
+        "trajectory_path": "F:\\Junction Spanki2026\\runs\\trajectories\\small_after_s06_gemini-3.5-flash-lite_20261114T140537Z.json",
+        "agent_type": "small_after",
+        "model_id": "gemini-3.5-flash-lite",
+        "final_score": 0.34,
+        "valid_order_count": 2,
+        "total_order_count": 4,
+        "finalized": true,
+        "batch_gate_cap_applied": true,
+        "budget_exceeded": false,
+        "permit_quota_exceeded": false,
+        "total_budget_eur": 361000.0,
+        "total_spent_eur": 356079.2,
+        "sim_calls_used": 3,
+        "sim_budget_total": 3,
+        "step_count": 27,
+        "disruption_triggered": true,
+        "failure_modes": [
+          "ORD-3: HOOP_STRESS_EXCEEDED: 249.18 MPa > allowable 188.0 MPa",
+          "ORD-3: HAZARD_FITTINGS: LHe forbids CN fittings",
+          "ORD-3: BOIL_OFF_EXCEEDED: 13.2343%/day > max 9.0%/day",
+          "ORD-4: HOOP_STRESS_EXCEEDED: 365.59 MPa > allowable 188.0 MPa",
+          "ORD-4: STD_GAUGE_EXCEEDED: shipping (2600x2950 mm) exceeds R-CAMPUS standard envelope (2500x3800 mm) without escort permit",
+          "ORD-4: SLA_MISSED: delivery_week=12 > customer sla_week=11"
+        ],
+        "primary_failure_categories": [
+          "HOOP_STRESS",
+          "HAZARD_COMPATIBILITY",
+          "BOIL_OFF",
+          "TRANSPORT_CLEARANCE",
+          "SLA_MISSED",
+          "INCOMPLETE_BATCH"
+        ]
+      },
+      "score_delta": 0.0,
+      "valid_orders_delta": 0,
+      "resolved_failure_categories": [
+        "SITE_CLEARANCE"
+      ]
+    },
+    "S07": {
+      "seed": "S07",
+      "before": {
+        "run_id": "small_before_s07_gemini-3.5-flash-lite_20261114T140537Z",
+        "trajectory_path": "F:\\Junction Spanki2026\\runs\\trajectories\\small_before_s07_gemini-3.5-flash-lite_20261114T140537Z.json",
+        "agent_type": "small_before",
+        "model_id": "gemini-3.5-flash-lite",
+        "final_score": 0.08,
+        "valid_order_count": 1,
+        "total_order_count": 4,
+        "finalized": true,
+        "batch_gate_cap_applied": true,
+        "budget_exceeded": false,
+        "permit_quota_exceeded": false,
+        "total_budget_eur": 405000.0,
+        "total_spent_eur": 365406.44,
+        "sim_calls_used": 3,
+        "sim_budget_total": 3,
+        "step_count": 23,
+        "disruption_triggered": true,
+        "failure_modes": [
+          "ORD-2: HOOP_STRESS_EXCEEDED: 242.19 MPa > allowable 204.35 MPa",
+          "ORD-2: BOIL_OFF_EXCEEDED: 0.304%/day > max 0.26%/day",
+          "ORD-3: HOOP_STRESS_EXCEEDED: 252.57 MPa > allowable 188.0 MPa",
+          "ORD-3: STD_GAUGE_EXCEEDED: shipping (2600x2950 mm) exceeds R-COAST standard envelope (2500x3800 mm) without escort permit",
+          "ORD-4: BOIL_OFF_EXCEEDED: 0.5747%/day > max 0.34%/day",
+          "ORD-4: SITE_HEIGHT_EXCEEDED: installed 5880 mm > site max 5600 mm"
+        ],
+        "primary_failure_categories": [
+          "HOOP_STRESS",
+          "BOIL_OFF",
+          "TRANSPORT_CLEARANCE",
+          "SITE_CLEARANCE",
+          "INCOMPLETE_BATCH"
+        ]
+      },
+      "after": {
+        "run_id": "small_after_s07_gemini-3.5-flash-lite_20261114T140537Z",
+        "trajectory_path": "F:\\Junction Spanki2026\\runs\\trajectories\\small_after_s07_gemini-3.5-flash-lite_20261114T140537Z.json",
+        "agent_type": "small_after",
+        "model_id": "gemini-3.5-flash-lite",
+        "final_score": 0.34,
+        "valid_order_count": 2,
+        "total_order_count": 4,
+        "finalized": true,
+        "batch_gate_cap_applied": true,
+        "budget_exceeded": false,
+        "permit_quota_exceeded": false,
+        "total_budget_eur": 405000.0,
+        "total_spent_eur": 382711.06,
+        "sim_calls_used": 3,
+        "sim_budget_total": 3,
+        "step_count": 25,
+        "disruption_triggered": true,
+        "failure_modes": [
+          "ORD-3: BOIL_OFF_EXCEEDED: 0.0927%/day > max 0.09%/day",
+          "ORD-3: SITE_FOOTPRINT_EXCEEDED: bank width 4400 mm > site max 3400 mm",
+          "ORD-4: STD_GAUGE_EXCEEDED: shipping (2600x2950 mm) exceeds R-COAST standard envelope (2500x3800 mm) without escort permit"
+        ],
+        "primary_failure_categories": [
+          "BOIL_OFF",
+          "SITE_CLEARANCE",
+          "TRANSPORT_CLEARANCE",
+          "INCOMPLETE_BATCH"
+        ]
+      },
+      "score_delta": 0.26,
+      "valid_orders_delta": 1,
+      "resolved_failure_categories": [
+        "HOOP_STRESS"
+      ]
+    },
+    "S08": {
+      "seed": "S08",
+      "before": {
+        "run_id": "small_before_s08_gemini-3.5-flash-lite_20261114T140614Z",
+        "trajectory_path": "F:\\Junction Spanki2026\\runs\\trajectories\\small_before_s08_gemini-3.5-flash-lite_20261114T140614Z.json",
+        "agent_type": "small_before",
+        "model_id": "gemini-3.5-flash-lite",
+        "final_score": 0.0,
+        "valid_order_count": 0,
+        "total_order_count": 4,
+        "finalized": true,
+        "batch_gate_cap_applied": false,
+        "budget_exceeded": false,
+        "permit_quota_exceeded": false,
+        "total_budget_eur": 385500.0,
+        "total_spent_eur": 362659.08,
+        "sim_calls_used": 3,
+        "sim_budget_total": 3,
+        "step_count": 26,
+        "disruption_triggered": true,
+        "failure_modes": [
+          "ORD-1: SHOCK_UNADAPTED — pre-shock valid design failed after DIS-S08 (ORD-2 +0.8 MPa Uprate, R-GORGE 2,700mm Cap, BAY-B 5,100kg Crane Cap & EU_STD +2w)",
+          "ORD-1: SLA_MISSED: delivery_week=9 > customer sla_week=7",
+          "ORD-2: HOOP_STRESS_EXCEEDED: 190.28 MPa > allowable 188.0 MPa",
+          "ORD-2: BOIL_OFF_EXCEEDED: 0.148%/day > max 0.11%/day",
+          "ORD-2: SITE_FOOTPRINT_EXCEEDED: bank width 5600 mm > site max 4600 mm",
+          "ORD-3: HOOP_STRESS_EXCEEDED: 361.0 MPa > allowable 188.0 MPa",
+          "ORD-3: STD_GAUGE_EXCEEDED: shipping (2600x3000 mm) exceeds R-MAIN standard envelope (2500x3800 mm) without escort permit",
+          "ORD-4: HOOP_STRESS_EXCEEDED: 260.72 MPa > allowable 188.0 MPa",
+          "ORD-4: BOIL_OFF_EXCEEDED: 8.4846%/day > max 7.6%/day"
+        ],
+        "primary_failure_categories": [
+          "SLA_MISSED",
+          "SHOCK_UNADAPTED",
+          "HOOP_STRESS",
+          "BOIL_OFF",
+          "SITE_CLEARANCE",
+          "TRANSPORT_CLEARANCE",
+          "INCOMPLETE_BATCH"
+        ]
+      },
+      "after": {
+        "run_id": "small_after_s08_gemini-3.5-flash-lite_20261114T140624Z",
+        "trajectory_path": "F:\\Junction Spanki2026\\runs\\trajectories\\small_after_s08_gemini-3.5-flash-lite_20261114T140624Z.json",
+        "agent_type": "small_after",
+        "model_id": "gemini-3.5-flash-lite",
+        "final_score": 0.34,
+        "valid_order_count": 2,
+        "total_order_count": 4,
+        "finalized": true,
+        "batch_gate_cap_applied": true,
+        "budget_exceeded": false,
+        "permit_quota_exceeded": false,
+        "total_budget_eur": 385500.0,
+        "total_spent_eur": 377408.96,
+        "sim_calls_used": 3,
+        "sim_budget_total": 3,
+        "step_count": 25,
+        "disruption_triggered": true,
+        "failure_modes": [
+          "ORD-3: HOOP_STRESS_EXCEEDED: 241.0 MPa > allowable 188.0 MPa",
+          "ORD-4: BOIL_OFF_EXCEEDED: 8.4846%/day > max 7.6%/day"
+        ],
+        "primary_failure_categories": [
+          "HOOP_STRESS",
+          "BOIL_OFF",
+          "INCOMPLETE_BATCH"
+        ]
+      },
+      "score_delta": 0.34,
+      "valid_orders_delta": 2,
+      "resolved_failure_categories": [
+        "SHOCK_UNADAPTED",
+        "SITE_CLEARANCE",
+        "SLA_MISSED",
+        "TRANSPORT_CLEARANCE"
+      ]
+    }
+  },
+  "failure_reduction_breakdown": {
+    "before_failure_category_counts": {
+      "BOIL_OFF": 3,
+      "SITE_CLEARANCE": 3,
+      "INCOMPLETE_BATCH": 3,
+      "HOOP_STRESS": 2,
+      "TRANSPORT_CLEARANCE": 2,
+      "SLA_MISSED": 1,
+      "SHOCK_UNADAPTED": 1
+    },
+    "after_failure_category_counts": {
+      "HOOP_STRESS": 2,
+      "HAZARD_COMPATIBILITY": 1,
+      "BOIL_OFF": 3,
+      "TRANSPORT_CLEARANCE": 2,
+      "SLA_MISSED": 1,
+      "INCOMPLETE_BATCH": 3,
+      "SITE_CLEARANCE": 1
+    },
+    "category_deltas": {
+      "BOIL_OFF": {
+        "before": 3,
+        "after": 3,
+        "reduction": 0,
+        "reduction_pct": 0.0
+      },
+      "HAZARD_COMPATIBILITY": {
+        "before": 0,
+        "after": 1,
+        "reduction": -1,
+        "reduction_pct": 0.0
+      },
+      "HOOP_STRESS": {
+        "before": 2,
+        "after": 2,
+        "reduction": 0,
+        "reduction_pct": 0.0
+      },
+      "INCOMPLETE_BATCH": {
+        "before": 3,
+        "after": 3,
+        "reduction": 0,
+        "reduction_pct": 0.0
+      },
+      "SHOCK_UNADAPTED": {
+        "before": 1,
+        "after": 0,
+        "reduction": 1,
+        "reduction_pct": 100.0
+      },
+      "SITE_CLEARANCE": {
+        "before": 3,
+        "after": 1,
+        "reduction": 2,
+        "reduction_pct": 66.7
+      },
+      "SLA_MISSED": {
+        "before": 1,
+        "after": 1,
+        "reduction": 0,
+        "reduction_pct": 0.0
+      },
+      "TRANSPORT_CLEARANCE": {
+        "before": 2,
+        "after": 2,
+        "reduction": 0,
+        "reduction_pct": 0.0
+      }
+    },
+    "before_failure_mode_counts": {
+      "ORD-3: BOIL_OFF_EXCEEDED: 10.7719%/day > max 9.0%/day": 1,
+      "ORD-4: BOIL_OFF_EXCEEDED: 0.85%/day > max 0.62%/day": 1,
+      "ORD-4: SITE_FOOTPRINT_EXCEEDED: bank width 4400 mm > site max 3400 mm": 1,
+      "ORD-2: HOOP_STRESS_EXCEEDED: 242.19 MPa > allowable 204.35 MPa": 1,
+      "ORD-2: BOIL_OFF_EXCEEDED: 0.304%/day > max 0.26%/day": 1,
+      "ORD-3: HOOP_STRESS_EXCEEDED: 252.57 MPa > allowable 188.0 MPa": 1,
+      "ORD-3: STD_GAUGE_EXCEEDED: shipping (2600x2950 mm) exceeds R-COAST standard envelope (2500x3800 mm) without escort permit": 1,
+      "ORD-4: BOIL_OFF_EXCEEDED: 0.5747%/day > max 0.34%/day": 1,
+      "ORD-4: SITE_HEIGHT_EXCEEDED: installed 5880 mm > site max 5600 mm": 1,
+      "ORD-1: SHOCK_UNADAPTED — pre-shock valid design failed after DIS-S08 (ORD-2 +0.8 MPa Uprate, R-GORGE 2,700mm Cap, BAY-B 5,100kg Crane Cap & EU_STD +2w)": 1,
+      "ORD-1: SLA_MISSED: delivery_week=9 > customer sla_week=7": 1,
+      "ORD-2: HOOP_STRESS_EXCEEDED: 190.28 MPa > allowable 188.0 MPa": 1,
+      "ORD-2: BOIL_OFF_EXCEEDED: 0.148%/day > max 0.11%/day": 1,
+      "ORD-2: SITE_FOOTPRINT_EXCEEDED: bank width 5600 mm > site max 4600 mm": 1,
+      "ORD-3: HOOP_STRESS_EXCEEDED: 361.0 MPa > allowable 188.0 MPa": 1,
+      "ORD-3: STD_GAUGE_EXCEEDED: shipping (2600x3000 mm) exceeds R-MAIN standard envelope (2500x3800 mm) without escort permit": 1,
+      "ORD-4: HOOP_STRESS_EXCEEDED: 260.72 MPa > allowable 188.0 MPa": 1,
+      "ORD-4: BOIL_OFF_EXCEEDED: 8.4846%/day > max 7.6%/day": 1
+    },
+    "after_failure_mode_counts": {
+      "ORD-3: HOOP_STRESS_EXCEEDED: 249.18 MPa > allowable 188.0 MPa": 1,
+      "ORD-3: HAZARD_FITTINGS: LHe forbids CN fittings": 1,
+      "ORD-3: BOIL_OFF_EXCEEDED: 13.2343%/day > max 9.0%/day": 1,
+      "ORD-4: HOOP_STRESS_EXCEEDED: 365.59 MPa > allowable 188.0 MPa": 1,
+      "ORD-4: STD_GAUGE_EXCEEDED: shipping (2600x2950 mm) exceeds R-CAMPUS standard envelope (2500x3800 mm) without escort permit": 1,
+      "ORD-4: SLA_MISSED: delivery_week=12 > customer sla_week=11": 1,
+      "ORD-3: BOIL_OFF_EXCEEDED: 0.0927%/day > max 0.09%/day": 1,
+      "ORD-3: SITE_FOOTPRINT_EXCEEDED: bank width 4400 mm > site max 3400 mm": 1,
+      "ORD-4: STD_GAUGE_EXCEEDED: shipping (2600x2950 mm) exceeds R-COAST standard envelope (2500x3800 mm) without escort permit": 1,
+      "ORD-3: HOOP_STRESS_EXCEEDED: 241.0 MPa > allowable 188.0 MPa": 1,
+      "ORD-4: BOIL_OFF_EXCEEDED: 8.4846%/day > max 7.6%/day": 1
+    }
+  }
+}

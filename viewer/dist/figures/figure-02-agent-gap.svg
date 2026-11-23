@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Reference and frontier agent score gap</title>
+  <desc id="desc">A visual comparison showing a 0.95 reference score, a 0.32 frontier score, and a 0.63 gap.</desc>
+  <rect width="1600" height="900" fill="#18181b"/>
+  <g font-family="Inter,Arial,sans-serif">
+    <text x="100" y="105" fill="#a5b4fc" font-size="18" font-weight="700" letter-spacing="3">FIGURE 02 · PERFORMANCE GAP</text>
+    <text x="100" y="165" fill="#fff" font-size="44" font-weight="700" letter-spacing="-1.5">The benchmark separates valid recovery from plausible output</text>
+    <text x="100" y="205" fill="#a1a1aa" font-size="20">Mean reward across five disruption scenarios and three runs each.</text>
+    <g transform="translate(100 300)">
+      <text x="0" y="25" fill="#d4d4d8" font-size="16" font-weight="600">REFERENCE SOLVER</text>
+      <rect y="55" width="1100" height="98" rx="18" fill="#27272a"/>
+      <rect y="55" width="1045" height="98" rx="18" fill="#4f46e5"/>
+      <text x="32" y="117" fill="#fff" font-size="26" font-weight="700">Constraint-aware recovery</text>
+      <text x="1140" y="124" fill="#fff" font-size="64" font-weight="700" letter-spacing="-3">0.95</text>
+      <text x="0" y="238" fill="#d4d4d8" font-size="16" font-weight="600">FRONTIER AGENT</text>
+      <rect y="268" width="1100" height="98" rx="18" fill="#27272a"/>
+      <rect y="268" width="352" height="98" rx="18" fill="#71717a"/>
+      <text x="32" y="330" fill="#fff" font-size="26" font-weight="700">Partial recovery</text>
+      <text x="1140" y="337" fill="#fff" font-size="64" font-weight="700" letter-spacing="-3">0.32</text>
+      <g transform="translate(0 442)">
+        <rect width="1360" height="120" rx="24" fill="#20202a" stroke="#3f3f46"/>
+        <text x="34" y="45" fill="#a1a1aa" font-size="14" font-weight="700" letter-spacing="2">OBSERVED SEPARATION</text>
+        <text x="34" y="91" fill="#a5b4fc" font-size="42" font-weight="700">+0.63 reward gap</text>
+        <g transform="translate(932 30)">
+          <rect width="394" height="60" rx="30" fill="#052e26" stroke="#065f46"/>
+          <circle cx="34" cy="30" r="8" fill="#34d399"/>
+          <text x="58" y="37" fill="#a7f3d0" font-size="17" font-weight="700">Meaningful difficulty confirmed</text>
+        </g>
+      </g>
+    </g>
+    <g transform="translate(1455 315)">
+      <text x="0" y="0" fill="#71717a" font-size="12">1.00</text>
+      <path d="M-35 10v350" stroke="#3f3f46" stroke-width="2"/>
+      <text x="0" y="356" fill="#71717a" font-size="12">0.00</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 420" role="img" aria-labelledby="title desc">
+  <title id="title">AgentBreak disruption recovery map</title>
+  <desc id="desc">A verified route adapts around a mid-episode disruption while an invalid route ends at the constraint boundary.</desc>
+  <g fill="none">
+    <circle cx="260" cy="210" r="166" stroke="#fff" stroke-opacity=".07"/>
+    <circle cx="260" cy="210" r="125" stroke="#fff" stroke-opacity=".06"/>
+    <path d="M72 112H448M72 210H448M72 308H448" stroke="#fff" stroke-opacity=".08" stroke-dasharray="4 10"/>
+    <path d="M116 112H202C227 112 237 130 237 151V257C237 286 253 308 286 308H409" stroke="#818cf8" stroke-width="9" stroke-linecap="round"/>
+    <path d="M116 210H286C312 210 326 192 326 169V132" stroke="#a1a1aa" stroke-opacity=".42" stroke-width="9" stroke-linecap="round"/>
+    <path d="M326 132v-20" stroke="#fb7185" stroke-width="9" stroke-linecap="round"/>
+    <path d="M344 210h65" stroke="#34d399" stroke-width="9" stroke-linecap="round"/>
+  </g>
+  <g fill="#18181b" stroke-width="4">
+    <circle cx="116" cy="112" r="13" stroke="#818cf8"/>
+    <circle cx="116" cy="210" r="13" stroke="#a1a1aa"/>
+    <circle cx="237" cy="210" r="13" stroke="#818cf8"/>
+    <circle cx="326" cy="132" r="13" stroke="#fb7185"/>
+    <circle cx="409" cy="308" r="13" stroke="#34d399"/>
+    <circle cx="409" cy="210" r="13" stroke="#34d399"/>
+  </g>
+  <g font-family="Inter,Arial,sans-serif">
+    <g transform="translate(185 174)">
+      <rect width="104" height="28" rx="14" fill="#27272a" stroke="#3f3f46"/>
+      <circle cx="16" cy="14" r="4" fill="#fb7185"/>
+      <text x="27" y="18" fill="#d4d4d8" font-size="10" font-weight="600">DISRUPTION</text>
+    </g>
+    <g transform="translate(315 278)">
+      <rect width="124" height="29" rx="14.5" fill="#052e26" stroke="#065f46"/>
+      <path d="m13 15 4 4 7-9" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="31" y="19" fill="#a7f3d0" font-size="10" font-weight="700">VERIFIED PLAN</text>
+    </g>
+  </g>
+</svg>

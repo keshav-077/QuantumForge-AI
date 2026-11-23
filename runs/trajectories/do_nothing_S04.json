@@ -1,0 +1,243 @@
+{
+  "run_id": "do_nothing_S04",
+  "seed": "S04",
+  "agent_name": "Do-Nothing Baseline",
+  "agent_type": "do_nothing",
+  "model_id": "baseline-do-nothing",
+  "started_at": "2026-11-14T14:19:16.985398+00:00",
+  "completed_at": "2026-11-14T14:19:17.089600+00:00",
+  "steps": [
+    {
+      "step_index": 1,
+      "timestamp_iso": "2026-11-14T14:19:17.084187+00:00",
+      "tool_name": "get_episode_brief",
+      "arguments": {},
+      "observation": {
+        "ok": true,
+        "seed": "S04",
+        "title": "Trans-Alpine Propulsion Test",
+        "description": "Commission all 4 client cryogenic vessel orders across the active transport corridors within plant budget, fabrication bay capacity, and delivery SLAs.",
+        "horizon_weeks": 11,
+        "current_factory_week": 1,
+        "effective_budget_eur": 347500.0,
+        "total_spent_eur": 0.0,
+        "budget_remaining_eur": 347500.0,
+        "escort_permits_total": 1,
+        "escort_permits_used": 0,
+        "bays": [
+          "BAY-A",
+          "BAY-B"
+        ],
+        "sim_calls_remaining": 3,
+        "sim_budget_total": 3,
+        "steps_used": 1,
+        "max_steps": 42,
+        "standard_volumes_m3": [
+          1.0,
+          2.0,
+          3.0,
+          5.0,
+          8.0,
+          10.0,
+          15.0,
+          20.0,
+          25.0,
+          30.0
+        ],
+        "unit_counts_allowed": [
+          1,
+          2,
+          3
+        ],
+        "orders": [
+          {
+            "order_id": "ORD-1",
+            "client_name": "Tyrol Alloys",
+            "medium": "LAR",
+            "execution": "STATIONARY",
+            "required_product_mass_kg": 9800.0,
+            "min_pressure_mpa": 1.5,
+            "max_boil_off_pct_day": 0.36,
+            "sla_week": 6,
+            "route_id": "R-VALLEY",
+            "max_site_height_mm": 5500,
+            "max_site_footprint_mm": 3200,
+            "priority_weight": 0.25,
+            "notes": "Vacuum-metallurgy liquid argon storage receiver."
+          },
+          {
+            "order_id": "ORD-2",
+            "client_name": "Helvetia CryoGrid",
+            "medium": "LIN",
+            "execution": "STATIONARY",
+            "required_product_mass_kg": 11200.0,
+            "min_pressure_mpa": 1.6,
+            "max_boil_off_pct_day": 0.24,
+            "sla_week": 9,
+            "route_id": "R-ALPINE",
+            "max_site_height_mm": 5600,
+            "max_site_footprint_mm": 4800,
+            "priority_weight": 0.25,
+            "notes": "Superconducting cable cooling nitrogen station."
+          },
+          {
+            "order_id": "ORD-3",
+            "client_name": "AetherSpace Test Stand B",
+            "medium": "LOX",
+            "execution": "STATIONARY",
+            "required_product_mass_kg": 15200.0,
+            "min_pressure_mpa": 1.8,
+            "max_boil_off_pct_day": 0.11,
+            "sla_week": 10,
+            "route_id": "R-VALLEY",
+            "max_site_height_mm": 5600,
+            "max_site_footprint_mm": 3400,
+            "priority_weight": 0.25,
+            "notes": "Propulsion test stand liquid oxygen run receiver."
+          },
+          {
+            "order_id": "ORD-4",
+            "client_name": "AetherSpace LH2 Stand A",
+            "medium": "LH2",
+            "execution": "STATIONARY",
+            "required_product_mass_kg": 1250.0,
+            "min_pressure_mpa": 1.8,
+            "max_boil_off_pct_day": 0.62,
+            "sla_week": 11,
+            "route_id": "R-VALLEY",
+            "max_site_height_mm": 6000,
+            "max_site_footprint_mm": 3400,
+            "priority_weight": 0.25,
+            "notes": "Upper-stage test stand liquid hydrogen storage vessel."
+          }
+        ],
+        "routes": [
+          {
+            "route_id": "R-VALLEY",
+            "name": "Inn Valley Heavy Link",
+            "transit_weeks": 1,
+            "std_max_width_mm": 2500,
+            "std_max_height_mm": 3800,
+            "permit_max_width_mm": 3100,
+            "permit_max_height_mm": 4350,
+            "escort_permit_allowed": true,
+            "max_unit_transport_mass_kg": 16500.0,
+            "base_freight_eur_per_unit": 2500.0,
+            "permit_fee_eur": 4000.0,
+            "notes": "Valley arterial corridor serving aerospace propulsion campus."
+          },
+          {
+            "route_id": "R-ALPINE",
+            "name": "Brenner Alpine Tunnel Route",
+            "transit_weeks": 2,
+            "std_max_width_mm": 2500,
+            "std_max_height_mm": 3800,
+            "permit_max_width_mm": 3100,
+            "permit_max_height_mm": 4350,
+            "escort_permit_allowed": true,
+            "max_unit_transport_mass_kg": 15000.0,
+            "base_freight_eur_per_unit": 3200.0,
+            "permit_fee_eur": 4600.0,
+            "notes": "Trans-alpine mountain highway serving substation sites."
+          }
+        ],
+        "disruption_triggered": false,
+        "disruption_alert": null
+      },
+      "disruption_triggered_this_step": false
+    }
+  ],
+  "verification": {
+    "seed": "S04",
+    "finalized": false,
+    "final_score": 0.0,
+    "valid_order_count": 0,
+    "total_order_count": 4,
+    "batch_gate_cap_applied": false,
+    "budget_exceeded": false,
+    "permit_quota_exceeded": false,
+    "total_budget_eur": 347500.0,
+    "total_spent_eur": 0.0,
+    "budget_efficiency_bonus": 0.0,
+    "schedule_margin_bonus": 0.0,
+    "sim_efficiency_bonus": 0.0,
+    "sim_calls_used": 0,
+    "sim_budget_total": 3,
+    "step_count": 1,
+    "disruption_triggered": false,
+    "order_results": [
+      {
+        "order_id": "ORD-1",
+        "booked": false,
+        "route_assigned": false,
+        "passed_all_hard_checks": false,
+        "order_raw_score": 0.0,
+        "weighted_contribution": 0.0,
+        "delivery_week": null,
+        "sla_week": 6,
+        "total_order_cost_eur": 0.0,
+        "physics": null,
+        "violations": [
+          "ORD-1: ORDER_UNBOOKED — order was never reserved on a fabrication bay."
+        ]
+      },
+      {
+        "order_id": "ORD-2",
+        "booked": false,
+        "route_assigned": false,
+        "passed_all_hard_checks": false,
+        "order_raw_score": 0.0,
+        "weighted_contribution": 0.0,
+        "delivery_week": null,
+        "sla_week": 9,
+        "total_order_cost_eur": 0.0,
+        "physics": null,
+        "violations": [
+          "ORD-2: ORDER_UNBOOKED — order was never reserved on a fabrication bay."
+        ]
+      },
+      {
+        "order_id": "ORD-3",
+        "booked": false,
+        "route_assigned": false,
+        "passed_all_hard_checks": false,
+        "order_raw_score": 0.0,
+        "weighted_contribution": 0.0,
+        "delivery_week": null,
+        "sla_week": 10,
+        "total_order_cost_eur": 0.0,
+        "physics": null,
+        "violations": [
+          "ORD-3: ORDER_UNBOOKED — order was never reserved on a fabrication bay."
+        ]
+      },
+      {
+        "order_id": "ORD-4",
+        "booked": false,
+        "route_assigned": false,
+        "passed_all_hard_checks": false,
+        "order_raw_score": 0.0,
+        "weighted_contribution": 0.0,
+        "delivery_week": null,
+        "sla_week": 11,
+        "total_order_cost_eur": 0.0,
+        "physics": null,
+        "violations": [
+          "ORD-4: ORDER_UNBOOKED — order was never reserved on a fabrication bay."
+        ]
+      }
+    ],
+    "failure_modes": [
+      "UNFINALIZED_EPISODE: finalize_commissioning() was never called; final_score forced to 0.0.",
+      "ORD-1: ORDER_UNBOOKED — order was never reserved on a fabrication bay.",
+      "ORD-2: ORDER_UNBOOKED — order was never reserved on a fabrication bay.",
+      "ORD-3: ORDER_UNBOOKED — order was never reserved on a fabrication bay.",
+      "ORD-4: ORDER_UNBOOKED — order was never reserved on a fabrication bay."
+    ],
+    "primary_failure_categories": [
+      "UNFINALIZED",
+      "INCOMPLETE_BATCH"
+    ]
+  },
+  "state_hmac": "5844ced3d6bffd4cec24aaab6f92d968dc5807c3e3b46ba13df34820905bbae2"
+}

@@ -1,0 +1,243 @@
+{
+  "run_id": "do_nothing_S03",
+  "seed": "S03",
+  "agent_name": "Do-Nothing Baseline",
+  "agent_type": "do_nothing",
+  "model_id": "baseline-do-nothing",
+  "started_at": "2026-11-14T14:19:12.470410+00:00",
+  "completed_at": "2026-11-14T14:19:12.584522+00:00",
+  "steps": [
+    {
+      "step_index": 1,
+      "timestamp_iso": "2026-11-14T14:19:12.579948+00:00",
+      "tool_name": "get_episode_brief",
+      "arguments": {},
+      "observation": {
+        "ok": true,
+        "seed": "S03",
+        "title": "Semiconductor Fab Cryo Batch",
+        "description": "Commission all 4 client cryogenic vessel orders across the active transport corridors within plant budget, fabrication bay capacity, and delivery SLAs.",
+        "horizon_weeks": 12,
+        "current_factory_week": 1,
+        "effective_budget_eur": 353500.0,
+        "total_spent_eur": 0.0,
+        "budget_remaining_eur": 353500.0,
+        "escort_permits_total": 2,
+        "escort_permits_used": 0,
+        "bays": [
+          "BAY-A",
+          "BAY-B"
+        ],
+        "sim_calls_remaining": 3,
+        "sim_budget_total": 3,
+        "steps_used": 1,
+        "max_steps": 42,
+        "standard_volumes_m3": [
+          1.0,
+          2.0,
+          3.0,
+          5.0,
+          8.0,
+          10.0,
+          15.0,
+          20.0,
+          25.0,
+          30.0
+        ],
+        "unit_counts_allowed": [
+          1,
+          2,
+          3
+        ],
+        "orders": [
+          {
+            "order_id": "ORD-1",
+            "client_name": "ElbeLitho Cleanroom",
+            "medium": "LCO2",
+            "execution": "STATIONARY",
+            "required_product_mass_kg": 9200.0,
+            "min_pressure_mpa": 1.8,
+            "max_boil_off_pct_day": 0.2,
+            "sla_week": 7,
+            "route_id": "R-EAST",
+            "max_site_height_mm": 6200,
+            "max_site_footprint_mm": 3200,
+            "priority_weight": 0.25,
+            "notes": "Cleanroom process chiller LCO2 storage tank."
+          },
+          {
+            "order_id": "ORD-2",
+            "client_name": "SaxonyWafer Fab 4",
+            "medium": "LIN",
+            "execution": "STATIONARY",
+            "required_product_mass_kg": 14800.0,
+            "min_pressure_mpa": 1.5,
+            "max_boil_off_pct_day": 0.35,
+            "sla_week": 11,
+            "route_id": "R-EAST",
+            "max_site_height_mm": 6500,
+            "max_site_footprint_mm": 5000,
+            "priority_weight": 0.25,
+            "notes": "Wafer-fab nitrogen purge utility storage installation."
+          },
+          {
+            "order_id": "ORD-3",
+            "client_name": "PlasmaEtch Gases",
+            "medium": "LAR",
+            "execution": "TRANSPORTABLE",
+            "required_product_mass_kg": 10000.0,
+            "min_pressure_mpa": 1.8,
+            "max_boil_off_pct_day": 0.42,
+            "sla_week": 8,
+            "route_id": "R-METRO",
+            "max_site_height_mm": 3200,
+            "max_site_footprint_mm": 3000,
+            "priority_weight": 0.25,
+            "notes": "Mobile liquid argon delivery skid for plasma etch bay."
+          },
+          {
+            "order_id": "ORD-4",
+            "client_name": "OxideGate EpiWorks",
+            "medium": "LOX",
+            "execution": "STATIONARY",
+            "required_product_mass_kg": 25500.0,
+            "min_pressure_mpa": 2.2,
+            "max_boil_off_pct_day": 0.1,
+            "sla_week": 12,
+            "route_id": "R-EAST",
+            "max_site_height_mm": 7000,
+            "max_site_footprint_mm": 3200,
+            "priority_weight": 0.25,
+            "notes": "Thermal oxidation liquid oxygen yard storage vessel."
+          }
+        ],
+        "routes": [
+          {
+            "route_id": "R-EAST",
+            "name": "Silicon Saxony Expressway",
+            "transit_weeks": 1,
+            "std_max_width_mm": 2500,
+            "std_max_height_mm": 3800,
+            "permit_max_width_mm": 3100,
+            "permit_max_height_mm": 4350,
+            "escort_permit_allowed": true,
+            "max_unit_transport_mass_kg": 16500.0,
+            "base_freight_eur_per_unit": 2600.0,
+            "permit_fee_eur": 4000.0,
+            "notes": "Expressway serving semiconductor manufacturing park."
+          },
+          {
+            "route_id": "R-METRO",
+            "name": "Dresden Fab Ring Road",
+            "transit_weeks": 1,
+            "std_max_width_mm": 2500,
+            "std_max_height_mm": 3800,
+            "permit_max_width_mm": 3100,
+            "permit_max_height_mm": 4350,
+            "escort_permit_allowed": true,
+            "max_unit_transport_mass_kg": 14500.0,
+            "base_freight_eur_per_unit": 2300.0,
+            "permit_fee_eur": 3900.0,
+            "notes": "Metropolitan ring corridor serving cleanroom gas yards."
+          }
+        ],
+        "disruption_triggered": false,
+        "disruption_alert": null
+      },
+      "disruption_triggered_this_step": false
+    }
+  ],
+  "verification": {
+    "seed": "S03",
+    "finalized": false,
+    "final_score": 0.0,
+    "valid_order_count": 0,
+    "total_order_count": 4,
+    "batch_gate_cap_applied": false,
+    "budget_exceeded": false,
+    "permit_quota_exceeded": false,
+    "total_budget_eur": 353500.0,
+    "total_spent_eur": 0.0,
+    "budget_efficiency_bonus": 0.0,
+    "schedule_margin_bonus": 0.0,
+    "sim_efficiency_bonus": 0.0,
+    "sim_calls_used": 0,
+    "sim_budget_total": 3,
+    "step_count": 1,
+    "disruption_triggered": false,
+    "order_results": [
+      {
+        "order_id": "ORD-1",
+        "booked": false,
+        "route_assigned": false,
+        "passed_all_hard_checks": false,
+        "order_raw_score": 0.0,
+        "weighted_contribution": 0.0,
+        "delivery_week": null,
+        "sla_week": 7,
+        "total_order_cost_eur": 0.0,
+        "physics": null,
+        "violations": [
+          "ORD-1: ORDER_UNBOOKED — order was never reserved on a fabrication bay."
+        ]
+      },
+      {
+        "order_id": "ORD-2",
+        "booked": false,
+        "route_assigned": false,
+        "passed_all_hard_checks": false,
+        "order_raw_score": 0.0,
+        "weighted_contribution": 0.0,
+        "delivery_week": null,
+        "sla_week": 11,
+        "total_order_cost_eur": 0.0,
+        "physics": null,
+        "violations": [
+          "ORD-2: ORDER_UNBOOKED — order was never reserved on a fabrication bay."
+        ]
+      },
+      {
+        "order_id": "ORD-3",
+        "booked": false,
+        "route_assigned": false,
+        "passed_all_hard_checks": false,
+        "order_raw_score": 0.0,
+        "weighted_contribution": 0.0,
+        "delivery_week": null,
+        "sla_week": 8,
+        "total_order_cost_eur": 0.0,
+        "physics": null,
+        "violations": [
+          "ORD-3: ORDER_UNBOOKED — order was never reserved on a fabrication bay."
+        ]
+      },
+      {
+        "order_id": "ORD-4",
+        "booked": false,
+        "route_assigned": false,
+        "passed_all_hard_checks": false,
+        "order_raw_score": 0.0,
+        "weighted_contribution": 0.0,
+        "delivery_week": null,
+        "sla_week": 12,
+        "total_order_cost_eur": 0.0,
+        "physics": null,
+        "violations": [
+          "ORD-4: ORDER_UNBOOKED — order was never reserved on a fabrication bay."
+        ]
+      }
+    ],
+    "failure_modes": [
+      "UNFINALIZED_EPISODE: finalize_commissioning() was never called; final_score forced to 0.0.",
+      "ORD-1: ORDER_UNBOOKED — order was never reserved on a fabrication bay.",
+      "ORD-2: ORDER_UNBOOKED — order was never reserved on a fabrication bay.",
+      "ORD-3: ORDER_UNBOOKED — order was never reserved on a fabrication bay.",
+      "ORD-4: ORDER_UNBOOKED — order was never reserved on a fabrication bay."
+    ],
+    "primary_failure_categories": [
+      "UNFINALIZED",
+      "INCOMPLETE_BATCH"
+    ]
+  },
+  "state_hmac": "ec2a1f433c7e3bd24fbe24e44fd3caa886ace1cb59ead2a798652c67d3e5a82d"
+}

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Reward integrity attack matrix</title>
+  <desc id="desc">Eight common reward-hacking attacks are blocked with observed scores between zero and 0.08.</desc>
+  <rect width="1600" height="900" fill="#f7f7f8"/>
+  <g font-family="Inter,Arial,sans-serif">
+    <text x="100" y="105" fill="#4f46e5" font-size="18" font-weight="700" letter-spacing="3">FIGURE 04 · REWARD INTEGRITY</text>
+    <text x="100" y="165" fill="#18181b" font-size="44" font-weight="700" letter-spacing="-1.5">Shortcuts stay near zero</text>
+    <text x="100" y="205" fill="#71717a" font-size="20">Eight adversarial strategies fail against server-authoritative scoring.</text>
+    <g transform="translate(100 280)">
+      <rect width="360" height="480" rx="30" fill="#18181b"/>
+      <circle cx="180" cy="142" r="76" fill="#052e26" stroke="#065f46" stroke-width="3"/>
+      <path d="M180 88c32 13 49 15 49 15v42c0 38-49 60-49 60s-49-22-49-60v-42s17-2 49-15Z" fill="none" stroke="#34d399" stroke-width="7" stroke-linejoin="round"/>
+      <path d="m155 145 17 17 35-39" fill="none" stroke="#34d399" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="180" y="277" fill="#fff" font-size="72" font-weight="700" text-anchor="middle" letter-spacing="-4">8/8</text>
+      <text x="180" y="316" fill="#a7f3d0" font-size="17" font-weight="700" text-anchor="middle" letter-spacing="2">ATTACKS BLOCKED</text>
+      <path d="M44 355h272" stroke="#3f3f46"/>
+      <text x="44" y="398" fill="#a1a1aa" font-size="14">Observed exploit range</text>
+      <text x="44" y="447" fill="#fff" font-size="38" font-weight="700">0.00–0.08</text>
+    </g>
+    <g transform="translate(510 280)">
+      <rect width="990" height="480" rx="30" fill="#fff" stroke="#e4e4e7" stroke-width="2"/>
+      <g transform="translate(34 35)" font-size="14">
+        <text x="0" y="0" fill="#a1a1aa" font-weight="700" letter-spacing="2">ATTACK</text>
+        <text x="680" y="0" fill="#a1a1aa" font-weight="700" letter-spacing="2">DEFENSE</text>
+        <text x="906" y="0" fill="#a1a1aa" font-weight="700" letter-spacing="2" text-anchor="end">SCORE</text>
+        <g transform="translate(0 38)">
+          <g><rect width="922" height="43" rx="9" fill="#fafafa"/><text x="16" y="27" fill="#18181b" font-weight="600">Immediate finalize</text><text x="680" y="27" fill="#4f46e5">Completeness gate</text><text x="906" y="27" fill="#059669" font-weight="700" text-anchor="end">0.00</text></g>
+          <g transform="translate(0 49)"><text x="16" y="27" fill="#18181b" font-weight="600">Cherry-pick one task</text><text x="680" y="27" fill="#4f46e5">All-job requirement</text><text x="906" y="27" fill="#059669" font-weight="700" text-anchor="end">0.08</text></g>
+          <g transform="translate(0 98)"><rect width="922" height="43" rx="9" fill="#fafafa"/><text x="16" y="27" fill="#18181b" font-weight="600">Schema injection</text><text x="680" y="27" fill="#4f46e5">Strict validation</text><text x="906" y="27" fill="#059669" font-weight="700" text-anchor="end">0.00</text></g>
+          <g transform="translate(0 147)"><text x="16" y="27" fill="#18181b" font-weight="600">Tool farming</text><text x="680" y="27" fill="#4f46e5">No call-count reward</text><text x="906" y="27" fill="#059669" font-weight="700" text-anchor="end">0.04</text></g>
+          <g transform="translate(0 196)"><rect width="922" height="43" rx="9" fill="#fafafa"/><text x="16" y="27" fill="#18181b" font-weight="600">Simulation overflow</text><text x="680" y="27" fill="#4f46e5">Hard tool budget</text><text x="906" y="27" fill="#059669" font-weight="700" text-anchor="end">0.00</text></g>
+          <g transform="translate(0 245)"><text x="16" y="27" fill="#18181b" font-weight="600">Double-spend capacity</text><text x="680" y="27" fill="#4f46e5">Resource ledger</text><text x="906" y="27" fill="#059669" font-weight="700" text-anchor="end">0.00</text></g>
+          <g transform="translate(0 294)"><rect width="922" height="43" rx="9" fill="#fafafa"/><text x="16" y="27" fill="#18181b" font-weight="600">Post-finalize mutation</text><text x="680" y="27" fill="#4f46e5">Immutable final state</text><text x="906" y="27" fill="#059669" font-weight="700" text-anchor="end">0.00</text></g>
+          <g transform="translate(0 343)"><text x="16" y="27" fill="#18181b" font-weight="600">Ignore disruption</text><text x="680" y="27" fill="#4f46e5">Live-state verification</text><text x="906" y="27" fill="#059669" font-weight="700" text-anchor="end">0.03</text></g>
+        </g>
+      </g>
+    </g>
+    <g transform="translate(100 808)">
+      <text x="0" y="0" fill="#71717a" font-size="15">Reward is recomputed from immutable server state; unsupported claims cannot create credit.</text>
+      <rect x="1130" y="-26" width="270" height="42" rx="21" fill="#ecfdf5"/>
+      <circle cx="1154" cy="-5" r="6" fill="#059669"/>
+      <text x="1172" y="1" fill="#047857" font-size="14" font-weight="700">SERVER-AUTHORITATIVE</text>
+    </g>
+  </g>
+</svg>

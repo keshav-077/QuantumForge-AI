@@ -1,0 +1,1 @@
+[cryoforge-verifier] seed=S01 finalized=True reward=0.9445

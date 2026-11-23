@@ -1,0 +1,2385 @@
+{
+  "run_id": "small_after_s06_gemini-3.5-flash-lite_20261114T140537Z",
+  "seed": "S06",
+  "agent_name": "tiebreaker_after_gemini-3.5-flash-lite",
+  "agent_type": "small_after",
+  "model_id": "gemini-3.5-flash-lite",
+  "started_at": "2026-11-14T14:05:38.993822+00:00",
+  "completed_at": "2026-11-14T14:06:23.947765+00:00",
+  "steps": [
+    {
+      "step_index": 1,
+      "timestamp_iso": "2026-11-14T14:05:42.954199+00:00",
+      "tool_name": "get_episode_brief",
+      "arguments": {},
+      "observation": {
+        "ok": true,
+        "seed": "S06",
+        "title": "Quantum & Fusion Extreme Cryo",
+        "description": "Commission all 4 client cryogenic vessel orders across the active transport corridors within plant budget, fabrication bay capacity, and delivery SLAs.",
+        "horizon_weeks": 12,
+        "current_factory_week": 1,
+        "effective_budget_eur": 371000.0,
+        "total_spent_eur": 0.0,
+        "budget_remaining_eur": 371000.0,
+        "escort_permits_total": 1,
+        "escort_permits_used": 0,
+        "bays": [
+          "BAY-A",
+          "BAY-B"
+        ],
+        "sim_calls_remaining": 3,
+        "sim_budget_total": 3,
+        "steps_used": 1,
+        "max_steps": 42,
+        "standard_volumes_m3": [
+          1.0,
+          2.0,
+          3.0,
+          5.0,
+          8.0,
+          10.0,
+          15.0,
+          20.0,
+          25.0,
+          30.0
+        ],
+        "unit_counts_allowed": [
+          1,
+          2,
+          3
+        ],
+        "orders": [
+          {
+            "order_id": "ORD-1",
+            "client_name": "Nordic Synchrotron",
+            "medium": "LIN",
+            "execution": "STATIONARY",
+            "required_product_mass_kg": 7300.0,
+            "min_pressure_mpa": 1.4,
+            "max_boil_off_pct_day": 0.46,
+            "sla_week": 7,
+            "route_id": "R-CAMPUS",
+            "max_site_height_mm": 6200,
+            "max_site_footprint_mm": 3200,
+            "priority_weight": 0.25,
+            "notes": "Beamline thermal-shield liquid nitrogen supply tank."
+          },
+          {
+            "order_id": "ORD-2",
+            "client_name": "Fjord Neutrino Array",
+            "medium": "LAR",
+            "execution": "TRANSPORTABLE",
+            "required_product_mass_kg": 18000.0,
+            "min_pressure_mpa": 1.7,
+            "max_boil_off_pct_day": 0.2,
+            "sla_week": 12,
+            "route_id": "R-FJORD",
+            "max_site_height_mm": 3600,
+            "max_site_footprint_mm": 5000,
+            "priority_weight": 0.25,
+            "notes": "Mobile high-purity liquid argon detector fill skid."
+          },
+          {
+            "order_id": "ORD-3",
+            "client_name": "QubitLab Superconducting Hub",
+            "medium": "LHe",
+            "execution": "STATIONARY",
+            "required_product_mass_kg": 1100.0,
+            "min_pressure_mpa": 1.2,
+            "max_boil_off_pct_day": 9.0,
+            "sla_week": 11,
+            "route_id": "R-CAMPUS",
+            "max_site_height_mm": 5500,
+            "max_site_footprint_mm": 3200,
+            "priority_weight": 0.25,
+            "notes": "Dilution-refrigerator central liquid helium storage Dewar."
+          },
+          {
+            "order_id": "ORD-4",
+            "client_name": "Stellarator Fueling Testbed",
+            "medium": "LH2",
+            "execution": "STATIONARY",
+            "required_product_mass_kg": 1300.0,
+            "min_pressure_mpa": 2.0,
+            "max_boil_off_pct_day": 0.62,
+            "sla_week": 11,
+            "route_id": "R-CAMPUS",
+            "max_site_height_mm": 6000,
+            "max_site_footprint_mm": 3400,
+            "priority_weight": 0.25,
+            "notes": "Pellet-injector liquid hydrogen testbed storage tank."
+          }
+        ],
+        "routes": [
+          {
+            "route_id": "R-CAMPUS",
+            "name": "Science Campus Ring",
+            "transit_weeks": 1,
+            "std_max_width_mm": 2500,
+            "std_max_height_mm": 3800,
+            "permit_max_width_mm": 3100,
+            "permit_max_height_mm": 4350,
+            "escort_permit_allowed": true,
+            "max_unit_transport_mass_kg": 16500.0,
+            "base_freight_eur_per_unit": 2400.0,
+            "permit_fee_eur": 3900.0,
+            "notes": "Direct ring road to quantum and fusion laboratories."
+          },
+          {
+            "route_id": "R-FJORD",
+            "name": "Coastal Research Viaduct",
+            "transit_weeks": 2,
+            "std_max_width_mm": 2650,
+            "std_max_height_mm": 3800,
+            "permit_max_width_mm": 3100,
+            "permit_max_height_mm": 4350,
+            "escort_permit_allowed": true,
+            "max_unit_transport_mass_kg": 13000.0,
+            "base_freight_eur_per_unit": 3100.0,
+            "permit_fee_eur": 4400.0,
+            "notes": "Coastal highway viaduct serving marine research laboratories."
+          }
+        ],
+        "disruption_triggered": false,
+        "disruption_alert": null
+      },
+      "disruption_triggered_this_step": false
+    },
+    {
+      "step_index": 2,
+      "timestamp_iso": "2026-11-14T14:05:45.097321+00:00",
+      "tool_name": "query_handbook",
+      "arguments": {
+        "section": "all"
+      },
+      "observation": {
+        "ok": true,
+        "section": "all",
+        "available_sections": [
+          "overview",
+          "physics",
+          "materials_and_insulation",
+          "transport_and_routes",
+          "manufacturing_and_bays",
+          "disruptions_and_revisions",
+          "scoring"
+        ],
+        "sections": {
+          "overview": {
+            "section": "overview",
+            "title": "CryoForge Commissioning Environment Overview & Catalogue Bounds",
+            "mission": "Configure, schedule, ship, and commission all 4 cryogenic vessel customer orders (ORD-1..ORD-4) across parallel fabrication bays (BAY-A, BAY-B) within the factory budget, escort-permit quota, route mass/gauge envelopes, and customer SLA deadlines, while adapting to a mid-episode supply/infrastructure shock.",
+            "episode_limits": {
+              "max_episode_steps": 42,
+              "sim_budget_default": 3,
+              "bays_available": [
+                "BAY-A",
+                "BAY-B"
+              ],
+              "reset_available": false,
+              "finalization_required": true
+            },
+            "catalogue_bounds": {
+              "unit_counts_allowed": [
+                1,
+                2,
+                3
+              ],
+              "standard_volumes_m3": [
+                1.0,
+                2.0,
+                3.0,
+                5.0,
+                8.0,
+                10.0,
+                15.0,
+                20.0,
+                25.0,
+                30.0
+              ],
+              "min_design_pressure_mpa": 0.25,
+              "max_design_pressure_mpa": 4.5,
+              "min_wall_thickness_mm": 4.0,
+              "max_wall_thickness_mm": 24.0
+            },
+            "anti_oracle_invariant": "reserve_bay_and_order and revise_order validate only discrete catalogue bounds, bay existence, bay schedule/blackout non-overlap, and active crane tare limits. They NEVER reveal hoop_stress_mpa, boil_off_pct_day, stress_pass, or boil_off_pass. Use run_physics_sim (limited to sim_budget_default calls) and/or compute exact equations from the physics section before finalizing.",
+            "workflow_checklist": [
+              "1. Call get_episode_brief (and query_handbook) to inspect orders, routes, budget, permits, and equations.",
+              "2. Design each order (unit_count, unit_volume_m3, design_pressure_mpa, wall_thickness_mm, insulation, fittings).",
+              "3. Reserve bay slots via reserve_bay_and_order and assign delivery corridors via assign_transport.",
+              "4. When the mid-episode disruption triggers, inspect disruption_alert and get_factory_state, revise impacted bookings via revise_order, and book remaining orders under post-shock constraints.",
+              "5. Call finalize_commissioning before step 42; unfinalized episodes score 0.0."
+            ]
+          },
+          "physics": {
+            "section": "physics",
+            "title": "Exact Cryogenic Vessel Geometry, Mass, Hoop Stress & Boil-Off Equations",
+            "constants": {
+              "fill_fraction": 0.95,
+              "ambient_temp_k": 293.15,
+              "base_allowable_stress_mpa": 235.0,
+              "inner_shell_steel_density_kg_m3": 7900.0,
+              "inner_shell_head_stiffener_factor": 1.12,
+              "outer_jacket_thickness_m": 0.0055,
+              "outer_jacket_steel_density_kg_m3": 7850.0,
+              "nozzle_piping_fixed_tare_kg": 420.0,
+              "stationary_shipping_saddles_kg": 480.0,
+              "transportable_skid_tare_fraction": 0.18,
+              "transportable_skid_fixed_kg": 650.0,
+              "modular_bank_inter_unit_spacing_mm": 400,
+              "seconds_per_day": 86400.0
+            },
+            "nominal_outer_diameter_mm_lookup": [
+              {
+                "unit_volume_m3_condition": "unit_volume_m3 <= 2.0",
+                "outer_diameter_mm": 1400
+              },
+              {
+                "unit_volume_m3_condition": "2.0 < unit_volume_m3 <= 5.0",
+                "outer_diameter_mm": 1600
+              },
+              {
+                "unit_volume_m3_condition": "5.0 < unit_volume_m3 <= 10.0",
+                "outer_diameter_mm": 2000
+              },
+              {
+                "unit_volume_m3_condition": "10.0 < unit_volume_m3 <= 15.0",
+                "outer_diameter_mm": 2400
+              },
+              {
+                "unit_volume_m3_condition": "15.0 < unit_volume_m3 <= 25.0",
+                "outer_diameter_mm": 2600
+              },
+              {
+                "unit_volume_m3_condition": "unit_volume_m3 > 25.0 (30.0)",
+                "outer_diameter_mm": 3000
+              }
+            ],
+            "equations": {
+              "compute_dimensions": {
+                "inner_diameter_mm": "int(round(outer_diameter_mm - 2.0 * annulus_mm))",
+                "d_inner_m": "inner_diameter_mm / 1000.0",
+                "raw_axis_mm": "(unit_volume_m3 / (pi * (d_inner_m / 2.0)**2)) * 1000.0",
+                "shell_axis_mm": "int(ceil(raw_axis_mm / 10.0) * 10)",
+                "STATIONARY": {
+                  "installed_height_mm": "shell_axis_mm + 900",
+                  "installed_width_mm": "outer_diameter_mm",
+                  "installed_length_mm": "outer_diameter_mm",
+                  "shipping_height_mm": "outer_diameter_mm + 350",
+                  "shipping_width_mm": "outer_diameter_mm",
+                  "shipping_length_mm": "shell_axis_mm + 900"
+                },
+                "TRANSPORTABLE": {
+                  "installed_height_mm": "outer_diameter_mm + 600",
+                  "installed_width_mm": "outer_diameter_mm + 200",
+                  "installed_length_mm": "shell_axis_mm + 1200",
+                  "shipping_height_mm": "installed_height_mm",
+                  "shipping_width_mm": "installed_width_mm",
+                  "shipping_length_mm": "installed_length_mm"
+                }
+              },
+              "site_clearance": {
+                "bank_footprint_mm": "unit_count * installed_width_mm + (unit_count - 1) * 400",
+                "pass_condition": "installed_height_mm <= order.max_site_height_mm AND bank_footprint_mm <= order.max_site_footprint_mm"
+              },
+              "usable_unit_mass_kg": {
+                "usable_unit_mass_kg": "round(unit_volume_m3 * density_kg_m3 * FILL_FRACTION, 2)",
+                "usable_total_mass_kg": "round(unit_count * usable_unit_mass_kg, 2)",
+                "pass_condition": "usable_total_mass_kg >= order.required_product_mass_kg"
+              },
+              "pressure_and_hoop_stress_mpa": {
+                "pressure_pass": "design_pressure_mpa >= order.min_pressure_mpa",
+                "hoop_stress_mpa": "round((design_pressure_mpa * (inner_diameter_mm + wall_thickness_mm)) / (2.0 * weld_efficiency * wall_thickness_mm), 2)",
+                "allowable_stress_mpa": "round(BASE_ALLOWABLE_STRESS_MPA / safety_factor, 2)",
+                "stress_pass": "hoop_stress_mpa <= allowable_stress_mpa"
+              },
+              "compute_masses_and_area": {
+                "r_m": "(inner_diameter_mm / 1000.0) / 2.0",
+                "l_m": "shell_axis_mm / 1000.0",
+                "area_m2": "2.0 * pi * r_m * l_m + 4.0 * pi * (r_m**2) * 0.65",
+                "inner_shell_vol_m3": "area_m2 * (wall_thickness_mm / 1000.0) * 1.12",
+                "inner_shell_mass_kg": "inner_shell_vol_m3 * 7900.0",
+                "outer_jacket_mass_kg": "area_m2 * 0.0055 * 7850.0 * casing_mass_factor",
+                "unit_tare_mass_kg": "round(inner_shell_mass_kg + outer_jacket_mass_kg + 420.0, 1)",
+                "skid_or_cradle_kg": "round(0.18 * unit_tare_mass_kg + 650.0, 1) if execution == 'TRANSPORTABLE' else 480.0",
+                "unit_transport_mass_kg": "round(unit_tare_mass_kg + skid_or_cradle_kg, 1)"
+              },
+              "boil_off_pct_day": {
+                "k_eff": "k_eff_w_mk * (pvi_k_multiplier if insulation == 'PVI' else 1.0)",
+                "t_ins_m": "annulus_mm / 1000.0",
+                "delta_t": "AMBIENT_TEMP_K - boil_temp_k",
+                "q_cond_w": "k_eff * area_m2 * delta_t / t_ins_m",
+                "q_valve_w": "valve_heat_leak_w * (1.25 if execution == 'TRANSPORTABLE' else 1.00)",
+                "q_day_j": "(q_cond_w + q_valve_w) * 86400.0",
+                "evap_kg_day": "q_day_j / (latent_heat_kj_kg * 1000.0)",
+                "boil_off_pct_day": "round((evap_kg_day / usable_unit_mass_kg) * 100.0, 4)",
+                "boil_off_pass": "boil_off_pct_day <= order.max_boil_off_pct_day"
+              }
+            }
+          },
+          "materials_and_insulation": {
+            "section": "materials_and_insulation",
+            "title": "Cryogenic Media, Vacuum Insulation Systems, Fittings & Hazard Rules",
+            "medium_props": {
+              "LIN": {
+                "label": "Liquid Nitrogen (LIN)",
+                "density_kg_m3": 808.0,
+                "boil_temp_k": 77.36,
+                "latent_heat_kj_kg": 199.0,
+                "safety_factor": 1.0,
+                "allowable_stress_mpa": 235.0,
+                "requires_evi": false,
+                "forbidden_fittings": [],
+                "lox_high_pressure_rule": false
+              },
+              "LOX": {
+                "label": "Liquid Oxygen (LOX)",
+                "density_kg_m3": 1141.0,
+                "boil_temp_k": 90.19,
+                "latent_heat_kj_kg": 213.0,
+                "safety_factor": 1.25,
+                "allowable_stress_mpa": 188.0,
+                "requires_evi": false,
+                "forbidden_fittings": [],
+                "lox_high_pressure_rule": true
+              },
+              "LAR": {
+                "label": "Liquid Argon (LAR)",
+                "density_kg_m3": 1395.0,
+                "boil_temp_k": 87.3,
+                "latent_heat_kj_kg": 161.0,
+                "safety_factor": 1.05,
+                "allowable_stress_mpa": 223.81,
+                "requires_evi": false,
+                "forbidden_fittings": [],
+                "lox_high_pressure_rule": false
+              },
+              "LCO2": {
+                "label": "Liquid Carbon Dioxide (LCO2)",
+                "density_kg_m3": 1030.0,
+                "boil_temp_k": 243.15,
+                "latent_heat_kj_kg": 302.0,
+                "safety_factor": 1.0,
+                "allowable_stress_mpa": 235.0,
+                "requires_evi": false,
+                "forbidden_fittings": [],
+                "lox_high_pressure_rule": false
+              },
+              "LNG": {
+                "label": "Liquefied Natural Gas (LNG)",
+                "density_kg_m3": 430.0,
+                "boil_temp_k": 111.65,
+                "latent_heat_kj_kg": 510.0,
+                "safety_factor": 1.15,
+                "allowable_stress_mpa": 204.35,
+                "requires_evi": false,
+                "forbidden_fittings": [],
+                "lox_high_pressure_rule": false
+              },
+              "LH2": {
+                "label": "Liquid Hydrogen (LH2)",
+                "density_kg_m3": 70.85,
+                "boil_temp_k": 20.28,
+                "latent_heat_kj_kg": 446.0,
+                "safety_factor": 1.25,
+                "allowable_stress_mpa": 188.0,
+                "requires_evi": true,
+                "forbidden_fittings": [
+                  "CN"
+                ],
+                "lox_high_pressure_rule": false
+              },
+              "LHe": {
+                "label": "Liquid Helium (LHe)",
+                "density_kg_m3": 124.9,
+                "boil_temp_k": 4.22,
+                "latent_heat_kj_kg": 20.7,
+                "safety_factor": 1.25,
+                "allowable_stress_mpa": 188.0,
+                "requires_evi": true,
+                "forbidden_fittings": [
+                  "CN"
+                ],
+                "lox_high_pressure_rule": false
+              }
+            },
+            "insulation_props": {
+              "EVI": {
+                "label": "Multi-Layer Screen-Vacuum (EVI / ЭВИ)",
+                "annulus_mm": 120.0,
+                "k_eff_w_mk": 0.00028,
+                "casing_mass_factor": 1.0,
+                "cost_multiplier": 1.18
+              },
+              "PVI": {
+                "label": "Perlite-Vacuum Powder (PVI / ПВИ)",
+                "annulus_mm": 200.0,
+                "k_eff_w_mk": 0.00185,
+                "casing_mass_factor": 1.14,
+                "cost_multiplier": 1.0
+              }
+            },
+            "fittings_props": {
+              "CN": {
+                "label": "Certified Standard (CN)",
+                "weld_efficiency": 0.85,
+                "valve_heat_leak_w": 18.0,
+                "base_lead_weeks": 2,
+                "cost_multiplier": 1.0,
+                "fixed_kit_eur": 2200.0
+              },
+              "EU_STD": {
+                "label": "European Cryo Standard (EU_STD)",
+                "weld_efficiency": 0.9,
+                "valve_heat_leak_w": 11.0,
+                "base_lead_weeks": 4,
+                "cost_multiplier": 1.12,
+                "fixed_kit_eur": 4800.0
+              },
+              "DE_PRECISION": {
+                "label": "German Precision Cryo (DE_PRECISION)",
+                "weld_efficiency": 0.96,
+                "valve_heat_leak_w": 5.5,
+                "base_lead_weeks": 6,
+                "cost_multiplier": 1.32,
+                "fixed_kit_eur": 8500.0
+              }
+            },
+            "hazard_compatibility_rules": [
+              "LH2 and LHe strictly require EVI multi-layer screen-vacuum insulation (requires_evi=True); PVI fails HAZARD_INSULATION.",
+              "LH2 and LHe strictly forbid CN fittings (forbidden_fittings=['CN']); only EU_STD or DE_PRECISION are allowed.",
+              "LOX with design_pressure_mpa > 2.0 MPa strictly forbids CN fittings (LOX_IGNITION_RISK); oxygen-clean EU_STD or DE_PRECISION fittings are mandatory."
+            ]
+          },
+          "transport_and_routes": {
+            "section": "transport_and_routes",
+            "title": "Heavy Cryogenic Transport Corridors, Bridge Caps & Escort Permits",
+            "rules": {
+              "designated_route_requirement": "Each booked order MUST be assigned via assign_transport (or revise_order) to its customer-designated route: assigned_route_id == order.route_id.",
+              "bridge_mass_cap": "unit_transport_mass_kg <= route.max_unit_transport_mass_kg. Bridge/axle mass caps apply PER UNIT and CANNOT be waived by an escort permit. Splitting an order into unit_count = 2 or 3 smaller shells reduces per-unit transport mass.",
+              "standard_clearance_no_permit": "When use_escort_permit == False: shipping_width_mm <= route.std_max_width_mm AND shipping_height_mm <= route.std_max_height_mm.",
+              "oversize_clearance_with_permit": "When use_escort_permit == True: route.escort_permit_allowed == True AND shipping_width_mm <= route.permit_max_width_mm AND shipping_height_mm <= route.permit_max_height_mm.",
+              "batch_permit_quota": "Total orders claiming use_escort_permit == True across the batch must be <= effective_escort_permits_total. If exceeded, permit_quota_exceeded becomes True and ALL orders claiming use_escort_permit == True fail PERMIT_QUOTA_EXCEEDED.",
+              "transport_cost_formula_eur": "unit_count * route.base_freight_eur_per_unit + (route.permit_fee_eur if use_escort_permit else 0.0)"
+            }
+          },
+          "manufacturing_and_bays": {
+            "section": "manufacturing_and_bays",
+            "title": "Bay Scheduling, Crane Limits, Manufacturing Cost & Delivery Timeline",
+            "constants": {
+              "bays": [
+                "BAY-A",
+                "BAY-B"
+              ],
+              "assembly_commission_weeks": 1,
+              "series_discount_factor_multi_unit": 0.94,
+              "transportable_cost_multiplier": 1.18
+            },
+            "compute_fab_and_cost": {
+              "base_fab": "2 + (1 if unit_volume_m3 >= 10.0 else 0) + (1 if unit_volume_m3 >= 20.0 else 0) + (1 if wall_thickness_mm >= 14.0 else 0) + (1 if execution == 'TRANSPORTABLE' else 0)",
+              "fab_weeks": "base_fab + (unit_count - 1)",
+              "fab_interval": "[bay_start_week, bay_start_week + fab_weeks) with bay_start_week >= 1",
+              "effective_fittings_lead_weeks": "max(1, base_lead_weeks + fittings_lead_delta)",
+              "unit_cost_eur": "(9500.0 + unit_volume_m3 * 2150.0 + unit_tare_mass_kg * 3.10) * insulation_cost_multiplier * fittings_cost_multiplier * (1.18 if execution == 'TRANSPORTABLE' else 1.00) + fixed_kit_eur",
+              "series_factor": "0.94 if unit_count > 1 else 1.00",
+              "manufacturing_cost_eur": "round(unit_count * unit_cost_eur * series_factor, 2)"
+            },
+            "bay_constraints": {
+              "non_overlap": "Two orders booked on the same bay cannot overlap half-open intervals [start_a, end_a) and [start_b, end_b): must have end_a <= start_b or end_b <= start_a.",
+              "blackout_windows": "A booking [bay_start_week, fab_end_week) cannot overlap any active BayBlackoutWindow [start_week, end_week) on the same bay.",
+              "crane_tare_cap": "If bay_max_unit_tare_kg is active on bay_id, unit_tare_mass_kg <= bay_max_unit_tare_kg[bay_id]."
+            },
+            "delivery_week_formula": {
+              "fittings_ready_week": "order_release_week + effective_fittings_lead_weeks",
+              "delivery_week": "max(bay_start_week + fab_weeks, order_release_week + effective_fittings_lead_weeks) + ASSEMBLY_COMMISSION_WEEKS + route.transit_weeks",
+              "sla_pass_condition": "delivery_week <= order.sla_week AND delivery_week <= episode.horizon_weeks"
+            }
+          },
+          "disruptions_and_revisions": {
+            "section": "disruptions_and_revisions",
+            "title": "Mid-Episode Supply/Infrastructure Shocks, Release Weeks & Revision Fees",
+            "constants": {
+              "disruption_trigger_bookings": 2,
+              "disruption_trigger_mutations": 4,
+              "pre_shock_order_release_week": 1,
+              "post_shock_order_release_week": 2,
+              "post_shock_first_revision_fee_eur": 1500.0,
+              "standard_revision_fee_eur": 4500.0
+            },
+            "rules": {
+              "trigger_condition": "Successful factory mutations (reserve_bay_and_order, assign_transport, revise_order) increment mutation_count. The scenario's DisruptionEvent fires automatically once len(booked_orders) >= 2 OR mutation_count >= 4, whichever comes first.",
+              "world_state_updates": "When triggered, the DisruptionEvent immediately updates active fittings_lead_deltas, pvi_k_multiplier, effective_budget_eur (+ budget_delta_eur), effective_escort_permits_total (+ escort_permits_delta), bay_blackouts, bay_max_unit_tare_kg, route mass/height/permit overrides, and customer order min_pressure_mpa / sla_week overrides.",
+              "order_release_week_rule": "Orders booked before the shock start with order_release_week = 1. Once disruption_triggered is True, any NEW reserve_bay_and_order gets order_release_week = 2, and any revise_order that changes fittings or unit_count updates order_release_week = 2 (revisions that keep both fittings and unit_count unchanged retain their prior order_release_week).",
+              "revision_retooling_fees": "First post-shock revision of a booked order (disruption_triggered == True and post_shock_revised == False) costs 1500.0 EUR and marks post_shock_revised = True. Pre-shock revisions or repeat revisions of the same order cost 4500.0 EUR. All revision fees accumulate in retooling_fees_eur and count toward total_spent_eur."
+            }
+          },
+          "scoring": {
+            "section": "scoring",
+            "title": "Zero-Trust Verification & Batch Commissioning Scoring Formula",
+            "finalization_gate": "If finalize_commissioning() was NOT called before the episode ends, final_score = 0.0.",
+            "order_hard_checks": [
+              "1. Order is booked AND assigned_route_id == order.route_id.",
+              "2. Post-shock evaluate_design_physics has all_engineering_pass == True (capacity, pressure, hoop stress, material hazard compatibility, boil-off, site height & bank footprint).",
+              "3. Zero bay overlap with other booked orders on the same bay, zero overlap with active bay_blackouts, and unit_tare_mass_kg <= bay_max_unit_tare_kg (if active).",
+              "4. Transport envelope satisfied: unit_transport_mass_kg <= route.max_unit_transport_mass_kg, shipping width/height within std or permit gauge, route.escort_permit_allowed if permit used, and total batch permits <= effective_escort_permits_total.",
+              "5. Schedule satisfied: delivery_week <= order.sla_week AND delivery_week <= horizon_weeks."
+            ],
+            "base_progress_credit": {
+              "max_credit": 0.85,
+              "formula": "raw_score = sum(0.85 * order.priority_weight for each order passing all 5 hard checks)",
+              "per_order_credit_for_equal_weights": 0.2125
+            },
+            "efficiency_and_margin_bonuses": {
+              "eligibility": "Awarded ONLY when valid_order_count == 4 and total_spent_eur <= effective_budget_eur",
+              "max_total_bonus": 0.15,
+              "budget_efficiency_bonus": "0.07 * min(1.0, max(0.0, (effective_budget_eur - total_spent_eur) / (0.03 * effective_budget_eur)))",
+              "schedule_margin_bonus": "0.04 * min(1.0, max(0.0, avg_slack_weeks / 2.0)), where avg_slack_weeks = mean(min(order.sla_week, horizon_weeks) - delivery_week)",
+              "sim_efficiency_bonus": "0.04 * max(0.0, (sim_budget_total - sim_calls_used) / sim_budget_total)"
+            },
+            "batch_completion_gate": {
+              "0_valid_orders": "0.0000",
+              "1_valid_order": "min(raw_score, 0.0800)  # anti-cherry-picking cap",
+              "2_valid_orders": "raw_score * 0.80       # ~0.3400",
+              "3_valid_orders": "raw_score * 0.92       # ~0.5865",
+              "4_valid_orders": "min(1.0, max(0.0, raw_score + bonuses))  # 0.8500 to 1.0000"
+            },
+            "budget_breach_penalty": {
+              "total_spent_eur": "sum(manufacturing_cost_eur + unit_count * base_freight_eur_per_unit + (permit_fee_eur if use_escort_permit else 0.0)) + retooling_fees_eur",
+              "penalty_if_exceeded": "If total_spent_eur > effective_budget_eur: bonuses = 0.0 and score = min(score * 0.20, 0.15)."
+            }
+          }
+        }
+      },
+      "disruption_triggered_this_step": false
+    },
+    {
+      "step_index": 3,
+      "timestamp_iso": "2026-11-14T14:05:48.589066+00:00",
+      "tool_name": "get_factory_state",
+      "arguments": {},
+      "observation": {
+        "ok": true,
+        "seed": "S06",
+        "current_factory_week": 1,
+        "horizon_weeks": 12,
+        "finalized": false,
+        "step_count": 3,
+        "max_steps": 42,
+        "mutation_count": 0,
+        "sim_calls_remaining": 3,
+        "sim_budget_total": 3,
+        "effective_budget_eur": 371000.0,
+        "total_spent_eur": 0.0,
+        "retooling_fees_eur": 0.0,
+        "budget_remaining_eur": 371000.0,
+        "escort_permits_total": 1,
+        "escort_permits_used": 0,
+        "bay_schedules": {
+          "BAY-A": [],
+          "BAY-B": []
+        },
+        "bay_blackouts": [],
+        "bay_max_unit_tare_kg": {},
+        "active_fittings_lead_deltas": {},
+        "active_pvi_k_multiplier": 1.0,
+        "booked_orders": {},
+        "unbooked_orders": [
+          "ORD-1",
+          "ORD-2",
+          "ORD-3",
+          "ORD-4"
+        ],
+        "disruption_triggered": false,
+        "disruption_alert": null
+      },
+      "disruption_triggered_this_step": false
+    },
+    {
+      "step_index": 4,
+      "timestamp_iso": "2026-11-14T14:05:51.452445+00:00",
+      "tool_name": "inspect_order",
+      "arguments": {
+        "order_id": "ORD-1"
+      },
+      "observation": {
+        "ok": true,
+        "order": {
+          "order_id": "ORD-1",
+          "client_name": "Nordic Synchrotron",
+          "medium": "LIN",
+          "execution": "STATIONARY",
+          "required_product_mass_kg": 7300.0,
+          "min_pressure_mpa": 1.4,
+          "max_boil_off_pct_day": 0.46,
+          "sla_week": 7,
+          "route_id": "R-CAMPUS",
+          "max_site_height_mm": 6200,
+          "max_site_footprint_mm": 3200,
+          "priority_weight": 0.25,
+          "notes": "Beamline thermal-shield liquid nitrogen supply tank."
+        },
+        "designated_route": {
+          "route_id": "R-CAMPUS",
+          "name": "Science Campus Ring",
+          "transit_weeks": 1,
+          "std_max_width_mm": 2500,
+          "std_max_height_mm": 3800,
+          "permit_max_width_mm": 3100,
+          "permit_max_height_mm": 4350,
+          "escort_permit_allowed": true,
+          "max_unit_transport_mass_kg": 16500.0,
+          "base_freight_eur_per_unit": 2400.0,
+          "permit_fee_eur": 3900.0,
+          "notes": "Direct ring road to quantum and fusion laboratories."
+        },
+        "current_booking": null,
+        "disruption_triggered": false
+      },
+      "disruption_triggered_this_step": false
+    },
+    {
+      "step_index": 5,
+      "timestamp_iso": "2026-11-14T14:05:51.454673+00:00",
+      "tool_name": "inspect_order",
+      "arguments": {
+        "order_id": "ORD-2"
+      },
+      "observation": {
+        "ok": true,
+        "order": {
+          "order_id": "ORD-2",
+          "client_name": "Fjord Neutrino Array",
+          "medium": "LAR",
+          "execution": "TRANSPORTABLE",
+          "required_product_mass_kg": 18000.0,
+          "min_pressure_mpa": 1.7,
+          "max_boil_off_pct_day": 0.2,
+          "sla_week": 12,
+          "route_id": "R-FJORD",
+          "max_site_height_mm": 3600,
+          "max_site_footprint_mm": 5000,
+          "priority_weight": 0.25,
+          "notes": "Mobile high-purity liquid argon detector fill skid."
+        },
+        "designated_route": {
+          "route_id": "R-FJORD",
+          "name": "Coastal Research Viaduct",
+          "transit_weeks": 2,
+          "std_max_width_mm": 2650,
+          "std_max_height_mm": 3800,
+          "permit_max_width_mm": 3100,
+          "permit_max_height_mm": 4350,
+          "escort_permit_allowed": true,
+          "max_unit_transport_mass_kg": 13000.0,
+          "base_freight_eur_per_unit": 3100.0,
+          "permit_fee_eur": 4400.0,
+          "notes": "Coastal highway viaduct serving marine research laboratories."
+        },
+        "current_booking": null,
+        "disruption_triggered": false
+      },
+      "disruption_triggered_this_step": false
+    },
+    {
+      "step_index": 6,
+      "timestamp_iso": "2026-11-14T14:05:51.456299+00:00",
+      "tool_name": "inspect_order",
+      "arguments": {
+        "order_id": "ORD-3"
+      },
+      "observation": {
+        "ok": true,
+        "order": {
+          "order_id": "ORD-3",
+          "client_name": "QubitLab Superconducting Hub",
+          "medium": "LHe",
+          "execution": "STATIONARY",
+          "required_product_mass_kg": 1100.0,
+          "min_pressure_mpa": 1.2,
+          "max_boil_off_pct_day": 9.0,
+          "sla_week": 11,
+          "route_id": "R-CAMPUS",
+          "max_site_height_mm": 5500,
+          "max_site_footprint_mm": 3200,
+          "priority_weight": 0.25,
+          "notes": "Dilution-refrigerator central liquid helium storage Dewar."
+        },
+        "designated_route": {
+          "route_id": "R-CAMPUS",
+          "name": "Science Campus Ring",
+          "transit_weeks": 1,
+          "std_max_width_mm": 2500,
+          "std_max_height_mm": 3800,
+          "permit_max_width_mm": 3100,
+          "permit_max_height_mm": 4350,
+          "escort_permit_allowed": true,
+          "max_unit_transport_mass_kg": 16500.0,
+          "base_freight_eur_per_unit": 2400.0,
+          "permit_fee_eur": 3900.0,
+          "notes": "Direct ring road to quantum and fusion laboratories."
+        },
+        "current_booking": null,
+        "disruption_triggered": false
+      },
+      "disruption_triggered_this_step": false
+    },
+    {
+      "step_index": 7,
+      "timestamp_iso": "2026-11-14T14:05:51.458491+00:00",
+      "tool_name": "inspect_order",
+      "arguments": {
+        "order_id": "ORD-4"
+      },
+      "observation": {
+        "ok": true,
+        "order": {
+          "order_id": "ORD-4",
+          "client_name": "Stellarator Fueling Testbed",
+          "medium": "LH2",
+          "execution": "STATIONARY",
+          "required_product_mass_kg": 1300.0,
+          "min_pressure_mpa": 2.0,
+          "max_boil_off_pct_day": 0.62,
+          "sla_week": 11,
+          "route_id": "R-CAMPUS",
+          "max_site_height_mm": 6000,
+          "max_site_footprint_mm": 3400,
+          "priority_weight": 0.25,
+          "notes": "Pellet-injector liquid hydrogen testbed storage tank."
+        },
+        "designated_route": {
+          "route_id": "R-CAMPUS",
+          "name": "Science Campus Ring",
+          "transit_weeks": 1,
+          "std_max_width_mm": 2500,
+          "std_max_height_mm": 3800,
+          "permit_max_width_mm": 3100,
+          "permit_max_height_mm": 4350,
+          "escort_permit_allowed": true,
+          "max_unit_transport_mass_kg": 16500.0,
+          "base_freight_eur_per_unit": 2400.0,
+          "permit_fee_eur": 3900.0,
+          "notes": "Direct ring road to quantum and fusion laboratories."
+        },
+        "current_booking": null,
+        "disruption_triggered": false
+      },
+      "disruption_triggered_this_step": false
+    },
+    {
+      "step_index": 8,
+      "timestamp_iso": "2026-11-14T14:05:54.079075+00:00",
+      "tool_name": "inspect_route",
+      "arguments": {
+        "route_id": "R-CAMPUS"
+      },
+      "observation": {
+        "ok": true,
+        "route": {
+          "route_id": "R-CAMPUS",
+          "name": "Science Campus Ring",
+          "transit_weeks": 1,
+          "std_max_width_mm": 2500,
+          "std_max_height_mm": 3800,
+          "permit_max_width_mm": 3100,
+          "permit_max_height_mm": 4350,
+          "escort_permit_allowed": true,
+          "max_unit_transport_mass_kg": 16500.0,
+          "base_freight_eur_per_unit": 2400.0,
+          "permit_fee_eur": 3900.0,
+          "notes": "Direct ring road to quantum and fusion laboratories."
+        },
+        "escort_permits_total": 1,
+        "escort_permits_used": 0,
+        "disruption_triggered": false
+      },
+      "disruption_triggered_this_step": false
+    },
+    {
+      "step_index": 9,
+      "timestamp_iso": "2026-11-14T14:05:54.081362+00:00",
+      "tool_name": "inspect_route",
+      "arguments": {
+        "route_id": "R-FJORD"
+      },
+      "observation": {
+        "ok": true,
+        "route": {
+          "route_id": "R-FJORD",
+          "name": "Coastal Research Viaduct",
+          "transit_weeks": 2,
+          "std_max_width_mm": 2650,
+          "std_max_height_mm": 3800,
+          "permit_max_width_mm": 3100,
+          "permit_max_height_mm": 4350,
+          "escort_permit_allowed": true,
+          "max_unit_transport_mass_kg": 13000.0,
+          "base_freight_eur_per_unit": 3100.0,
+          "permit_fee_eur": 4400.0,
+          "notes": "Coastal highway viaduct serving marine research laboratories."
+        },
+        "escort_permits_total": 1,
+        "escort_permits_used": 0,
+        "disruption_triggered": false
+      },
+      "disruption_triggered_this_step": false
+    },
+    {
+      "step_index": 10,
+      "timestamp_iso": "2026-11-14T14:05:57.581258+00:00",
+      "tool_name": "run_physics_sim",
+      "arguments": {
+        "order_id": "ORD-1",
+        "unit_count": 1,
+        "unit_volume_m3": 10.0,
+        "design_pressure_mpa": 1.4,
+        "wall_thickness_mm": 6.0,
+        "insulation": "EVI",
+        "fittings": "EU_STD"
+      },
+      "observation": {
+        "ok": true,
+        "order_id": "ORD-1",
+        "sim_calls_remaining": 2,
+        "disruption_triggered": false,
+        "physics": {
+          "usable_unit_mass_kg": 7676.0,
+          "usable_total_mass_kg": 7676.0,
+          "required_product_mass_kg": 7300.0,
+          "mass_pass": true,
+          "hoop_stress_mpa": 228.93,
+          "allowable_stress_mpa": 235.0,
+          "stress_pass": true,
+          "pressure_pass": true,
+          "boil_off_pct_day": 0.1451,
+          "max_boil_off_pct_day": 0.46,
+          "boil_off_pass": true,
+          "material_compat_pass": true,
+          "material_notes": [],
+          "unit_tare_mass_kg": 3221.8,
+          "unit_transport_mass_kg": 3701.8,
+          "dimensions": {
+            "outer_diameter_mm": 2000,
+            "inner_diameter_mm": 1760,
+            "shell_axis_mm": 4120,
+            "installed_height_mm": 5020,
+            "installed_width_mm": 2000,
+            "installed_length_mm": 2000,
+            "shipping_height_mm": 2350,
+            "shipping_width_mm": 2000,
+            "shipping_length_mm": 5020
+          },
+          "site_clearance_pass": true,
+          "fab_weeks": 3,
+          "fittings_lead_weeks": 4,
+          "manufacturing_cost_eur": 58969.19,
+          "all_engineering_pass": true,
+          "violations": []
+        }
+      },
+      "disruption_triggered_this_step": false
+    },
+    {
+      "step_index": 11,
+      "timestamp_iso": "2026-11-14T14:05:57.583277+00:00",
+      "tool_name": "run_physics_sim",
+      "arguments": {
+        "order_id": "ORD-2",
+        "unit_count": 2,
+        "unit_volume_m3": 10.0,
+        "design_pressure_mpa": 1.7,
+        "wall_thickness_mm": 7.0,
+        "insulation": "EVI",
+        "fittings": "EU_STD"
+      },
+      "observation": {
+        "ok": true,
+        "order_id": "ORD-2",
+        "sim_calls_remaining": 1,
+        "disruption_triggered": false,
+        "physics": {
+          "usable_unit_mass_kg": 13252.5,
+          "usable_total_mass_kg": 26505.0,
+          "required_product_mass_kg": 18000.0,
+          "mass_pass": true,
+          "hoop_stress_mpa": 238.4,
+          "allowable_stress_mpa": 223.81,
+          "stress_pass": false,
+          "pressure_pass": true,
+          "boil_off_pct_day": 0.1123,
+          "max_boil_off_pct_day": 0.2,
+          "boil_off_pass": true,
+          "material_compat_pass": true,
+          "material_notes": [],
+          "unit_tare_mass_kg": 3479.3,
+          "unit_transport_mass_kg": 4755.6,
+          "dimensions": {
+            "outer_diameter_mm": 2000,
+            "inner_diameter_mm": 1760,
+            "shell_axis_mm": 4120,
+            "installed_height_mm": 2600,
+            "installed_width_mm": 2200,
+            "installed_length_mm": 5320,
+            "shipping_height_mm": 2600,
+            "shipping_width_mm": 2200,
+            "shipping_length_mm": 5320
+          },
+          "site_clearance_pass": true,
+          "fab_weeks": 5,
+          "fittings_lead_weeks": 4,
+          "manufacturing_cost_eur": 131533.26,
+          "all_engineering_pass": false,
+          "violations": [
+            "HOOP_STRESS_EXCEEDED: 238.4 MPa > allowable 223.81 MPa"
+          ]
+        }
+      },
+      "disruption_triggered_this_step": false
+    },
+    {
+      "step_index": 12,
+      "timestamp_iso": "2026-11-14T14:05:57.585281+00:00",
+      "tool_name": "run_physics_sim",
+      "arguments": {
+        "order_id": "ORD-3",
+        "unit_count": 1,
+        "unit_volume_m3": 10.0,
+        "design_pressure_mpa": 1.2,
+        "wall_thickness_mm": 5.0,
+        "insulation": "EVI",
+        "fittings": "EU_STD"
+      },
+      "observation": {
+        "ok": true,
+        "order_id": "ORD-3",
+        "sim_calls_remaining": 0,
+        "disruption_triggered": false,
+        "physics": {
+          "usable_unit_mass_kg": 1186.55,
+          "usable_total_mass_kg": 1186.55,
+          "required_product_mass_kg": 1100.0,
+          "mass_pass": true,
+          "hoop_stress_mpa": 235.33,
+          "allowable_stress_mpa": 188.0,
+          "stress_pass": false,
+          "pressure_pass": true,
+          "boil_off_pct_day": 10.7719,
+          "max_boil_off_pct_day": 9.0,
+          "boil_off_pass": false,
+          "material_compat_pass": true,
+          "material_notes": [],
+          "unit_tare_mass_kg": 2964.3,
+          "unit_transport_mass_kg": 3444.3,
+          "dimensions": {
+            "outer_diameter_mm": 2000,
+            "inner_diameter_mm": 1760,
+            "shell_axis_mm": 4120,
+            "installed_height_mm": 5020,
+            "installed_width_mm": 2000,
+            "installed_length_mm": 2000,
+            "shipping_height_mm": 2350,
+            "shipping_width_mm": 2000,
+            "shipping_length_mm": 5020
+          },
+          "site_clearance_pass": true,
+          "fab_weeks": 3,
+          "fittings_lead_weeks": 4,
+          "manufacturing_cost_eur": 57914.22,
+          "all_engineering_pass": false,
+          "violations": [
+            "HOOP_STRESS_EXCEEDED: 235.33 MPa > allowable 188.0 MPa",
+            "BOIL_OFF_EXCEEDED: 10.7719%/day > max 9.0%/day"
+          ]
+        }
+      },
+      "disruption_triggered_this_step": false
+    },
+    {
+      "step_index": 13,
+      "timestamp_iso": "2026-11-14T14:05:57.586262+00:00",
+      "tool_name": "run_physics_sim",
+      "arguments": {
+        "order_id": "ORD-4",
+        "unit_count": 1,
+        "unit_volume_m3": 20.0,
+        "design_pressure_mpa": 2.0,
+        "wall_thickness_mm": 8.0,
+        "insulation": "EVI",
+        "fittings": "EU_STD"
+      },
+      "observation": {
+        "ok": false,
+        "error": "SIM_BUDGET_EXHAUSTED",
+        "message": "Physics simulation budget exhausted (0 remaining). Compute equations from handbook.",
+        "sim_calls_remaining": 0
+      },
+      "disruption_triggered_this_step": false
+    },
+    {
+      "step_index": 14,
+      "timestamp_iso": "2026-11-14T14:06:00.229674+00:00",
+      "tool_name": "reserve_bay_and_order",
+      "arguments": {
+        "order_id": "ORD-1",
+        "bay_id": "BAY-A",
+        "bay_start_week": 1,
+        "unit_count": 1,
+        "unit_volume_m3": 10.0,
+        "design_pressure_mpa": 1.4,
+        "wall_thickness_mm": 6.0,
+        "insulation": "EVI",
+        "fittings": "EU_STD"
+      },
+      "observation": {
+        "ok": true,
+        "booking": {
+          "order_id": "ORD-1",
+          "bay_id": "BAY-A",
+          "bay_start_week": 1,
+          "fab_weeks": 3,
+          "fab_end_week": 4,
+          "booked_at_step": 14,
+          "order_release_week": 1,
+          "spec": {
+            "unit_count": 1,
+            "unit_volume_m3": 10.0,
+            "design_pressure_mpa": 1.4,
+            "wall_thickness_mm": 6.0,
+            "insulation": "EVI",
+            "fittings": "EU_STD"
+          },
+          "manufacturing_cost_eur": 58969.19,
+          "assigned_route_id": null,
+          "use_escort_permit": false,
+          "revision_count": 0,
+          "post_shock_revised": false
+        },
+        "unit_tare_mass_kg": 3221.8,
+        "unit_transport_mass_kg": 3701.8,
+        "dimensions": {
+          "outer_diameter_mm": 2000,
+          "inner_diameter_mm": 1760,
+          "shell_axis_mm": 4120,
+          "installed_height_mm": 5020,
+          "installed_width_mm": 2000,
+          "installed_length_mm": 2000,
+          "shipping_height_mm": 2350,
+          "shipping_width_mm": 2000,
+          "shipping_length_mm": 5020
+        },
+        "fittings_lead_weeks": 4,
+        "budget_remaining_eur": 312030.81,
+        "disruption_triggered": false,
+        "disruption_alert": null
+      },
+      "disruption_triggered_this_step": false
+    },
+    {
+      "step_index": 15,
+      "timestamp_iso": "2026-11-14T14:06:00.232041+00:00",
+      "tool_name": "reserve_bay_and_order",
+      "arguments": {
+        "order_id": "ORD-2",
+        "bay_id": "BAY-B",
+        "bay_start_week": 1,
+        "unit_count": 2,
+        "unit_volume_m3": 10.0,
+        "design_pressure_mpa": 1.8,
+        "wall_thickness_mm": 8.0,
+        "insulation": "EVI",
+        "fittings": "EU_STD"
+      },
+      "observation": {
+        "ok": true,
+        "booking": {
+          "order_id": "ORD-2",
+          "bay_id": "BAY-B",
+          "bay_start_week": 1,
+          "fab_weeks": 5,
+          "fab_end_week": 6,
+          "booked_at_step": 15,
+          "order_release_week": 1,
+          "spec": {
+            "unit_count": 2,
+            "unit_volume_m3": 10.0,
+            "design_pressure_mpa": 1.8,
+            "wall_thickness_mm": 8.0,
+            "insulation": "EVI",
+            "fittings": "EU_STD"
+          },
+          "manufacturing_cost_eur": 133874.51,
+          "assigned_route_id": null,
+          "use_escort_permit": false,
+          "revision_count": 0,
+          "post_shock_revised": false
+        },
+        "unit_tare_mass_kg": 3736.9,
+        "unit_transport_mass_kg": 5059.5,
+        "dimensions": {
+          "outer_diameter_mm": 2000,
+          "inner_diameter_mm": 1760,
+          "shell_axis_mm": 4120,
+          "installed_height_mm": 2600,
+          "installed_width_mm": 2200,
+          "installed_length_mm": 5320,
+          "shipping_height_mm": 2600,
+          "shipping_width_mm": 2200,
+          "shipping_length_mm": 5320
+        },
+        "fittings_lead_weeks": 4,
+        "budget_remaining_eur": 168156.3,
+        "disruption_triggered": true,
+        "disruption_alert": {
+          "disruption_id": "DIS-S06",
+          "title": "DE_PRECISION +2w Delay, R-FJORD 5,600 kg Cap & -10,000 EUR Grant Holdback",
+          "headline": "DE_PRECISION cryo-valves delayed +2 weeks; R-FJORD viaduct capped at 5,600 kg per unit; -10,000 EUR budget cut.",
+          "details": "DE_PRECISION lead rises from 6 to 8 weeks. R-FJORD max_unit_transport_mass_kg drops to 5,600 kg. Effective plant budget drops by 10,000 EUR.",
+          "fittings_lead_deltas": {
+            "DE_PRECISION": 2
+          },
+          "pvi_k_multiplier": 1.0,
+          "budget_delta_eur": -10000.0,
+          "escort_permits_delta": 0,
+          "bay_blackouts": [],
+          "bay_max_unit_tare_kg": {},
+          "route_mass_cap_overrides": {
+            "R-FJORD": 5600.0
+          },
+          "route_std_height_overrides": {},
+          "route_permit_allowed_overrides": {},
+          "order_min_pressure_overrides": {},
+          "order_sla_overrides": {}
+        }
+      },
+      "disruption_triggered_this_step": true
+    },
+    {
+      "step_index": 16,
+      "timestamp_iso": "2026-11-14T14:06:03.007610+00:00",
+      "tool_name": "get_factory_state",
+      "arguments": {},
+      "observation": {
+        "ok": true,
+        "seed": "S06",
+        "current_factory_week": 2,
+        "horizon_weeks": 12,
+        "finalized": false,
+        "step_count": 16,
+        "max_steps": 42,
+        "mutation_count": 2,
+        "sim_calls_remaining": 0,
+        "sim_budget_total": 3,
+        "effective_budget_eur": 361000.0,
+        "total_spent_eur": 192843.7,
+        "retooling_fees_eur": 0.0,
+        "budget_remaining_eur": 168156.3,
+        "escort_permits_total": 1,
+        "escort_permits_used": 0,
+        "bay_schedules": {
+          "BAY-A": [
+            {
+              "order_id": "ORD-1",
+              "bay_start_week": 1,
+              "fab_end_week": 4,
+              "fab_weeks": 3,
+              "order_release_week": 1,
+              "assigned_route_id": null,
+              "use_escort_permit": false
+            }
+          ],
+          "BAY-B": [
+            {
+              "order_id": "ORD-2",
+              "bay_start_week": 1,
+              "fab_end_week": 6,
+              "fab_weeks": 5,
+              "order_release_week": 1,
+              "assigned_route_id": null,
+              "use_escort_permit": false
+            }
+          ]
+        },
+        "bay_blackouts": [],
+        "bay_max_unit_tare_kg": {},
+        "active_fittings_lead_deltas": {
+          "DE_PRECISION": 2
+        },
+        "active_pvi_k_multiplier": 1.0,
+        "booked_orders": {
+          "ORD-1": {
+            "order_id": "ORD-1",
+            "bay_id": "BAY-A",
+            "bay_start_week": 1,
+            "fab_weeks": 3,
+            "fab_end_week": 4,
+            "booked_at_step": 14,
+            "order_release_week": 1,
+            "spec": {
+              "unit_count": 1,
+              "unit_volume_m3": 10.0,
+              "design_pressure_mpa": 1.4,
+              "wall_thickness_mm": 6.0,
+              "insulation": "EVI",
+              "fittings": "EU_STD"
+            },
+            "manufacturing_cost_eur": 58969.19,
+            "assigned_route_id": null,
+            "use_escort_permit": false,
+            "revision_count": 0,
+            "post_shock_revised": false
+          },
+          "ORD-2": {
+            "order_id": "ORD-2",
+            "bay_id": "BAY-B",
+            "bay_start_week": 1,
+            "fab_weeks": 5,
+            "fab_end_week": 6,
+            "booked_at_step": 15,
+            "order_release_week": 1,
+            "spec": {
+              "unit_count": 2,
+              "unit_volume_m3": 10.0,
+              "design_pressure_mpa": 1.8,
+              "wall_thickness_mm": 8.0,
+              "insulation": "EVI",
+              "fittings": "EU_STD"
+            },
+            "manufacturing_cost_eur": 133874.51,
+            "assigned_route_id": null,
+            "use_escort_permit": false,
+            "revision_count": 0,
+            "post_shock_revised": false
+          }
+        },
+        "unbooked_orders": [
+          "ORD-3",
+          "ORD-4"
+        ],
+        "disruption_triggered": true,
+        "disruption_alert": {
+          "disruption_id": "DIS-S06",
+          "title": "DE_PRECISION +2w Delay, R-FJORD 5,600 kg Cap & -10,000 EUR Grant Holdback",
+          "headline": "DE_PRECISION cryo-valves delayed +2 weeks; R-FJORD viaduct capped at 5,600 kg per unit; -10,000 EUR budget cut.",
+          "details": "DE_PRECISION lead rises from 6 to 8 weeks. R-FJORD max_unit_transport_mass_kg drops to 5,600 kg. Effective plant budget drops by 10,000 EUR.",
+          "fittings_lead_deltas": {
+            "DE_PRECISION": 2
+          },
+          "pvi_k_multiplier": 1.0,
+          "budget_delta_eur": -10000.0,
+          "escort_permits_delta": 0,
+          "bay_blackouts": [],
+          "bay_max_unit_tare_kg": {},
+          "route_mass_cap_overrides": {
+            "R-FJORD": 5600.0
+          },
+          "route_std_height_overrides": {},
+          "route_permit_allowed_overrides": {},
+          "order_min_pressure_overrides": {},
+          "order_sla_overrides": {}
+        }
+      },
+      "disruption_triggered_this_step": false
+    },
+    {
+      "step_index": 17,
+      "timestamp_iso": "2026-11-14T14:06:06.384683+00:00",
+      "tool_name": "reserve_bay_and_order",
+      "arguments": {
+        "order_id": "ORD-3",
+        "bay_id": "BAY-A",
+        "bay_start_week": 4,
+        "unit_count": 1,
+        "unit_volume_m3": 10.0,
+        "design_pressure_mpa": 1.6,
+        "wall_thickness_mm": 6.0,
+        "insulation": "EVI",
+        "fittings": "EU_STD"
+      },
+      "observation": {
+        "ok": true,
+        "booking": {
+          "order_id": "ORD-3",
+          "bay_id": "BAY-A",
+          "bay_start_week": 4,
+          "fab_weeks": 3,
+          "fab_end_week": 7,
+          "booked_at_step": 17,
+          "order_release_week": 2,
+          "spec": {
+            "unit_count": 1,
+            "unit_volume_m3": 10.0,
+            "design_pressure_mpa": 1.6,
+            "wall_thickness_mm": 6.0,
+            "insulation": "EVI",
+            "fittings": "EU_STD"
+          },
+          "manufacturing_cost_eur": 58969.19,
+          "assigned_route_id": null,
+          "use_escort_permit": false,
+          "revision_count": 0,
+          "post_shock_revised": false
+        },
+        "unit_tare_mass_kg": 3221.8,
+        "unit_transport_mass_kg": 3701.8,
+        "dimensions": {
+          "outer_diameter_mm": 2000,
+          "inner_diameter_mm": 1760,
+          "shell_axis_mm": 4120,
+          "installed_height_mm": 5020,
+          "installed_width_mm": 2000,
+          "installed_length_mm": 2000,
+          "shipping_height_mm": 2350,
+          "shipping_width_mm": 2000,
+          "shipping_length_mm": 5020
+        },
+        "fittings_lead_weeks": 4,
+        "budget_remaining_eur": 109187.11,
+        "disruption_triggered": true,
+        "disruption_alert": null
+      },
+      "disruption_triggered_this_step": false
+    },
+    {
+      "step_index": 18,
+      "timestamp_iso": "2026-11-14T14:06:06.387693+00:00",
+      "tool_name": "reserve_bay_and_order",
+      "arguments": {
+        "order_id": "ORD-4",
+        "bay_id": "BAY-B",
+        "bay_start_week": 6,
+        "unit_count": 1,
+        "unit_volume_m3": 20.0,
+        "design_pressure_mpa": 2.5,
+        "wall_thickness_mm": 9.0,
+        "insulation": "EVI",
+        "fittings": "EU_STD"
+      },
+      "observation": {
+        "ok": true,
+        "booking": {
+          "order_id": "ORD-4",
+          "bay_id": "BAY-B",
+          "bay_start_week": 6,
+          "fab_weeks": 4,
+          "fab_end_week": 10,
+          "booked_at_step": 18,
+          "order_release_week": 2,
+          "spec": {
+            "unit_count": 1,
+            "unit_volume_m3": 20.0,
+            "design_pressure_mpa": 2.5,
+            "wall_thickness_mm": 9.0,
+            "insulation": "EVI",
+            "fittings": "EU_STD"
+          },
+          "manufacturing_cost_eur": 98712.09,
+          "assigned_route_id": null,
+          "use_escort_permit": false,
+          "revision_count": 0,
+          "post_shock_revised": false
+        },
+        "unit_tare_mass_kg": 5986.9,
+        "unit_transport_mass_kg": 6466.9,
+        "dimensions": {
+          "outer_diameter_mm": 2600,
+          "inner_diameter_mm": 2360,
+          "shell_axis_mm": 4580,
+          "installed_height_mm": 5480,
+          "installed_width_mm": 2600,
+          "installed_length_mm": 2600,
+          "shipping_height_mm": 2950,
+          "shipping_width_mm": 2600,
+          "shipping_length_mm": 5480
+        },
+        "fittings_lead_weeks": 4,
+        "budget_remaining_eur": 10475.02,
+        "disruption_triggered": true,
+        "disruption_alert": null
+      },
+      "disruption_triggered_this_step": false
+    },
+    {
+      "step_index": 19,
+      "timestamp_iso": "2026-11-14T14:06:09.381173+00:00",
+      "tool_name": "assign_transport",
+      "arguments": {
+        "order_id": "ORD-1",
+        "route_id": "R-CAMPUS",
+        "use_escort_permit": false
+      },
+      "observation": {
+        "ok": true,
+        "order_id": "ORD-1",
+        "booking": {
+          "order_id": "ORD-1",
+          "bay_id": "BAY-A",
+          "bay_start_week": 1,
+          "fab_weeks": 3,
+          "fab_end_week": 4,
+          "booked_at_step": 14,
+          "order_release_week": 1,
+          "spec": {
+            "unit_count": 1,
+            "unit_volume_m3": 10.0,
+            "design_pressure_mpa": 1.4,
+            "wall_thickness_mm": 6.0,
+            "insulation": "EVI",
+            "fittings": "EU_STD"
+          },
+          "manufacturing_cost_eur": 58969.19,
+          "assigned_route_id": "R-CAMPUS",
+          "use_escort_permit": false,
+          "revision_count": 0,
+          "post_shock_revised": false
+        },
+        "transport_cost_eur": 2400.0,
+        "estimated_delivery_week": 7,
+        "escort_permits_used": 0,
+        "escort_permits_total": 1,
+        "budget_remaining_eur": 8075.02,
+        "disruption_triggered": true,
+        "disruption_alert": null
+      },
+      "disruption_triggered_this_step": false
+    },
+    {
+      "step_index": 20,
+      "timestamp_iso": "2026-11-14T14:06:09.386175+00:00",
+      "tool_name": "assign_transport",
+      "arguments": {
+        "order_id": "ORD-2",
+        "route_id": "R-FJORD",
+        "use_escort_permit": false
+      },
+      "observation": {
+        "ok": true,
+        "order_id": "ORD-2",
+        "booking": {
+          "order_id": "ORD-2",
+          "bay_id": "BAY-B",
+          "bay_start_week": 1,
+          "fab_weeks": 5,
+          "fab_end_week": 6,
+          "booked_at_step": 15,
+          "order_release_week": 1,
+          "spec": {
+            "unit_count": 2,
+            "unit_volume_m3": 10.0,
+            "design_pressure_mpa": 1.8,
+            "wall_thickness_mm": 8.0,
+            "insulation": "EVI",
+            "fittings": "EU_STD"
+          },
+          "manufacturing_cost_eur": 133874.51,
+          "assigned_route_id": "R-FJORD",
+          "use_escort_permit": false,
+          "revision_count": 0,
+          "post_shock_revised": false
+        },
+        "transport_cost_eur": 6200.0,
+        "estimated_delivery_week": 9,
+        "escort_permits_used": 0,
+        "escort_permits_total": 1,
+        "budget_remaining_eur": 1875.02,
+        "disruption_triggered": true,
+        "disruption_alert": null
+      },
+      "disruption_triggered_this_step": false
+    },
+    {
+      "step_index": 21,
+      "timestamp_iso": "2026-11-14T14:06:09.388173+00:00",
+      "tool_name": "assign_transport",
+      "arguments": {
+        "order_id": "ORD-3",
+        "route_id": "R-CAMPUS",
+        "use_escort_permit": false
+      },
+      "observation": {
+        "ok": true,
+        "order_id": "ORD-3",
+        "booking": {
+          "order_id": "ORD-3",
+          "bay_id": "BAY-A",
+          "bay_start_week": 4,
+          "fab_weeks": 3,
+          "fab_end_week": 7,
+          "booked_at_step": 17,
+          "order_release_week": 2,
+          "spec": {
+            "unit_count": 1,
+            "unit_volume_m3": 10.0,
+            "design_pressure_mpa": 1.6,
+            "wall_thickness_mm": 6.0,
+            "insulation": "EVI",
+            "fittings": "EU_STD"
+          },
+          "manufacturing_cost_eur": 58969.19,
+          "assigned_route_id": "R-CAMPUS",
+          "use_escort_permit": false,
+          "revision_count": 0,
+          "post_shock_revised": false
+        },
+        "transport_cost_eur": 2400.0,
+        "estimated_delivery_week": 9,
+        "escort_permits_used": 0,
+        "escort_permits_total": 1,
+        "budget_remaining_eur": -524.98,
+        "disruption_triggered": true,
+        "disruption_alert": null
+      },
+      "disruption_triggered_this_step": false
+    },
+    {
+      "step_index": 22,
+      "timestamp_iso": "2026-11-14T14:06:09.391177+00:00",
+      "tool_name": "assign_transport",
+      "arguments": {
+        "order_id": "ORD-4",
+        "route_id": "R-CAMPUS",
+        "use_escort_permit": false
+      },
+      "observation": {
+        "ok": true,
+        "order_id": "ORD-4",
+        "booking": {
+          "order_id": "ORD-4",
+          "bay_id": "BAY-B",
+          "bay_start_week": 6,
+          "fab_weeks": 4,
+          "fab_end_week": 10,
+          "booked_at_step": 18,
+          "order_release_week": 2,
+          "spec": {
+            "unit_count": 1,
+            "unit_volume_m3": 20.0,
+            "design_pressure_mpa": 2.5,
+            "wall_thickness_mm": 9.0,
+            "insulation": "EVI",
+            "fittings": "EU_STD"
+          },
+          "manufacturing_cost_eur": 98712.09,
+          "assigned_route_id": "R-CAMPUS",
+          "use_escort_permit": false,
+          "revision_count": 0,
+          "post_shock_revised": false
+        },
+        "transport_cost_eur": 2400.0,
+        "estimated_delivery_week": 12,
+        "escort_permits_used": 0,
+        "escort_permits_total": 1,
+        "budget_remaining_eur": -2924.98,
+        "disruption_triggered": true,
+        "disruption_alert": null
+      },
+      "disruption_triggered_this_step": false
+    },
+    {
+      "step_index": 23,
+      "timestamp_iso": "2026-11-14T14:06:12.108000+00:00",
+      "tool_name": "revise_order",
+      "arguments": {
+        "order_id": "ORD-3",
+        "bay_id": "BAY-A",
+        "bay_start_week": 3,
+        "unit_count": 1,
+        "unit_volume_m3": 10.0,
+        "design_pressure_mpa": 1.4,
+        "wall_thickness_mm": 6.0,
+        "insulation": "EVI",
+        "fittings": "CN",
+        "route_id": null,
+        "use_escort_permit": null
+      },
+      "observation": {
+        "ok": false,
+        "error": "BAY_OVERLAP",
+        "message": "BAY-A slot [3, 6) overlaps ORD-1 [1, 4)."
+      },
+      "disruption_triggered_this_step": false
+    },
+    {
+      "step_index": 24,
+      "timestamp_iso": "2026-11-14T14:06:14.769910+00:00",
+      "tool_name": "revise_order",
+      "arguments": {
+        "order_id": "ORD-3",
+        "bay_id": "BAY-A",
+        "bay_start_week": 4,
+        "unit_count": 1,
+        "unit_volume_m3": 10.0,
+        "design_pressure_mpa": 1.2,
+        "wall_thickness_mm": 5.0,
+        "insulation": "EVI",
+        "fittings": "CN",
+        "route_id": null,
+        "use_escort_permit": null
+      },
+      "observation": {
+        "ok": true,
+        "booking": {
+          "order_id": "ORD-3",
+          "bay_id": "BAY-A",
+          "bay_start_week": 4,
+          "fab_weeks": 3,
+          "fab_end_week": 7,
+          "booked_at_step": 17,
+          "order_release_week": 2,
+          "spec": {
+            "unit_count": 1,
+            "unit_volume_m3": 10.0,
+            "design_pressure_mpa": 1.2,
+            "wall_thickness_mm": 5.0,
+            "insulation": "EVI",
+            "fittings": "CN"
+          },
+          "manufacturing_cost_eur": 49623.41,
+          "assigned_route_id": "R-CAMPUS",
+          "use_escort_permit": false,
+          "revision_count": 1,
+          "post_shock_revised": true
+        },
+        "revision_fee_charged_eur": 1500.0,
+        "retooling_fees_total_eur": 1500.0,
+        "unit_tare_mass_kg": 2964.3,
+        "unit_transport_mass_kg": 3444.3,
+        "dimensions": {
+          "outer_diameter_mm": 2000,
+          "inner_diameter_mm": 1760,
+          "shell_axis_mm": 4120,
+          "installed_height_mm": 5020,
+          "installed_width_mm": 2000,
+          "installed_length_mm": 2000,
+          "shipping_height_mm": 2350,
+          "shipping_width_mm": 2000,
+          "shipping_length_mm": 5020
+        },
+        "fittings_lead_weeks": 2,
+        "budget_remaining_eur": 4920.8,
+        "disruption_triggered": true,
+        "disruption_alert": null
+      },
+      "disruption_triggered_this_step": false
+    },
+    {
+      "step_index": 25,
+      "timestamp_iso": "2026-11-14T14:06:17.281427+00:00",
+      "tool_name": "assign_transport",
+      "arguments": {
+        "order_id": "ORD-3",
+        "route_id": "R-CAMPUS",
+        "use_escort_permit": false
+      },
+      "observation": {
+        "ok": true,
+        "order_id": "ORD-3",
+        "booking": {
+          "order_id": "ORD-3",
+          "bay_id": "BAY-A",
+          "bay_start_week": 4,
+          "fab_weeks": 3,
+          "fab_end_week": 7,
+          "booked_at_step": 17,
+          "order_release_week": 2,
+          "spec": {
+            "unit_count": 1,
+            "unit_volume_m3": 10.0,
+            "design_pressure_mpa": 1.2,
+            "wall_thickness_mm": 5.0,
+            "insulation": "EVI",
+            "fittings": "CN"
+          },
+          "manufacturing_cost_eur": 49623.41,
+          "assigned_route_id": "R-CAMPUS",
+          "use_escort_permit": false,
+          "revision_count": 1,
+          "post_shock_revised": true
+        },
+        "transport_cost_eur": 2400.0,
+        "estimated_delivery_week": 9,
+        "escort_permits_used": 0,
+        "escort_permits_total": 1,
+        "budget_remaining_eur": 4920.8,
+        "disruption_triggered": true,
+        "disruption_alert": null
+      },
+      "disruption_triggered_this_step": false
+    },
+    {
+      "step_index": 26,
+      "timestamp_iso": "2026-11-14T14:06:21.104776+00:00",
+      "tool_name": "get_factory_state",
+      "arguments": {},
+      "observation": {
+        "ok": true,
+        "seed": "S06",
+        "current_factory_week": 2,
+        "horizon_weeks": 12,
+        "finalized": false,
+        "step_count": 26,
+        "max_steps": 42,
+        "mutation_count": 10,
+        "sim_calls_remaining": 0,
+        "sim_budget_total": 3,
+        "effective_budget_eur": 361000.0,
+        "total_spent_eur": 356079.2,
+        "retooling_fees_eur": 1500.0,
+        "budget_remaining_eur": 4920.8,
+        "escort_permits_total": 1,
+        "escort_permits_used": 0,
+        "bay_schedules": {
+          "BAY-A": [
+            {
+              "order_id": "ORD-1",
+              "bay_start_week": 1,
+              "fab_end_week": 4,
+              "fab_weeks": 3,
+              "order_release_week": 1,
+              "assigned_route_id": "R-CAMPUS",
+              "use_escort_permit": false
+            },
+            {
+              "order_id": "ORD-3",
+              "bay_start_week": 4,
+              "fab_end_week": 7,
+              "fab_weeks": 3,
+              "order_release_week": 2,
+              "assigned_route_id": "R-CAMPUS",
+              "use_escort_permit": false
+            }
+          ],
+          "BAY-B": [
+            {
+              "order_id": "ORD-2",
+              "bay_start_week": 1,
+              "fab_end_week": 6,
+              "fab_weeks": 5,
+              "order_release_week": 1,
+              "assigned_route_id": "R-FJORD",
+              "use_escort_permit": false
+            },
+            {
+              "order_id": "ORD-4",
+              "bay_start_week": 6,
+              "fab_end_week": 10,
+              "fab_weeks": 4,
+              "order_release_week": 2,
+              "assigned_route_id": "R-CAMPUS",
+              "use_escort_permit": false
+            }
+          ]
+        },
+        "bay_blackouts": [],
+        "bay_max_unit_tare_kg": {},
+        "active_fittings_lead_deltas": {
+          "DE_PRECISION": 2
+        },
+        "active_pvi_k_multiplier": 1.0,
+        "booked_orders": {
+          "ORD-1": {
+            "order_id": "ORD-1",
+            "bay_id": "BAY-A",
+            "bay_start_week": 1,
+            "fab_weeks": 3,
+            "fab_end_week": 4,
+            "booked_at_step": 14,
+            "order_release_week": 1,
+            "spec": {
+              "unit_count": 1,
+              "unit_volume_m3": 10.0,
+              "design_pressure_mpa": 1.4,
+              "wall_thickness_mm": 6.0,
+              "insulation": "EVI",
+              "fittings": "EU_STD"
+            },
+            "manufacturing_cost_eur": 58969.19,
+            "assigned_route_id": "R-CAMPUS",
+            "use_escort_permit": false,
+            "revision_count": 0,
+            "post_shock_revised": false
+          },
+          "ORD-2": {
+            "order_id": "ORD-2",
+            "bay_id": "BAY-B",
+            "bay_start_week": 1,
+            "fab_weeks": 5,
+            "fab_end_week": 6,
+            "booked_at_step": 15,
+            "order_release_week": 1,
+            "spec": {
+              "unit_count": 2,
+              "unit_volume_m3": 10.0,
+              "design_pressure_mpa": 1.8,
+              "wall_thickness_mm": 8.0,
+              "insulation": "EVI",
+              "fittings": "EU_STD"
+            },
+            "manufacturing_cost_eur": 133874.51,
+            "assigned_route_id": "R-FJORD",
+            "use_escort_permit": false,
+            "revision_count": 0,
+            "post_shock_revised": false
+          },
+          "ORD-3": {
+            "order_id": "ORD-3",
+            "bay_id": "BAY-A",
+            "bay_start_week": 4,
+            "fab_weeks": 3,
+            "fab_end_week": 7,
+            "booked_at_step": 17,
+            "order_release_week": 2,
+            "spec": {
+              "unit_count": 1,
+              "unit_volume_m3": 10.0,
+              "design_pressure_mpa": 1.2,
+              "wall_thickness_mm": 5.0,
+              "insulation": "EVI",
+              "fittings": "CN"
+            },
+            "manufacturing_cost_eur": 49623.41,
+            "assigned_route_id": "R-CAMPUS",
+            "use_escort_permit": false,
+            "revision_count": 1,
+            "post_shock_revised": true
+          },
+          "ORD-4": {
+            "order_id": "ORD-4",
+            "bay_id": "BAY-B",
+            "bay_start_week": 6,
+            "fab_weeks": 4,
+            "fab_end_week": 10,
+            "booked_at_step": 18,
+            "order_release_week": 2,
+            "spec": {
+              "unit_count": 1,
+              "unit_volume_m3": 20.0,
+              "design_pressure_mpa": 2.5,
+              "wall_thickness_mm": 9.0,
+              "insulation": "EVI",
+              "fittings": "EU_STD"
+            },
+            "manufacturing_cost_eur": 98712.09,
+            "assigned_route_id": "R-CAMPUS",
+            "use_escort_permit": false,
+            "revision_count": 0,
+            "post_shock_revised": false
+          }
+        },
+        "unbooked_orders": [],
+        "disruption_triggered": true,
+        "disruption_alert": {
+          "disruption_id": "DIS-S06",
+          "title": "DE_PRECISION +2w Delay, R-FJORD 5,600 kg Cap & -10,000 EUR Grant Holdback",
+          "headline": "DE_PRECISION cryo-valves delayed +2 weeks; R-FJORD viaduct capped at 5,600 kg per unit; -10,000 EUR budget cut.",
+          "details": "DE_PRECISION lead rises from 6 to 8 weeks. R-FJORD max_unit_transport_mass_kg drops to 5,600 kg. Effective plant budget drops by 10,000 EUR.",
+          "fittings_lead_deltas": {
+            "DE_PRECISION": 2
+          },
+          "pvi_k_multiplier": 1.0,
+          "budget_delta_eur": -10000.0,
+          "escort_permits_delta": 0,
+          "bay_blackouts": [],
+          "bay_max_unit_tare_kg": {},
+          "route_mass_cap_overrides": {
+            "R-FJORD": 5600.0
+          },
+          "route_std_height_overrides": {},
+          "route_permit_allowed_overrides": {},
+          "order_min_pressure_overrides": {},
+          "order_sla_overrides": {}
+        }
+      },
+      "disruption_triggered_this_step": false
+    },
+    {
+      "step_index": 27,
+      "timestamp_iso": "2026-11-14T14:06:23.948765+00:00",
+      "tool_name": "finalize_commissioning",
+      "arguments": {},
+      "observation": {
+        "ok": true,
+        "finalized": true,
+        "final_score": 0.34,
+        "valid_order_count": 2,
+        "total_order_count": 4,
+        "verification": {
+          "seed": "S06",
+          "finalized": true,
+          "final_score": 0.34,
+          "valid_order_count": 2,
+          "total_order_count": 4,
+          "batch_gate_cap_applied": true,
+          "budget_exceeded": false,
+          "permit_quota_exceeded": false,
+          "total_budget_eur": 361000.0,
+          "total_spent_eur": 356079.2,
+          "budget_efficiency_bonus": 0.0,
+          "schedule_margin_bonus": 0.0,
+          "sim_efficiency_bonus": 0.0,
+          "sim_calls_used": 3,
+          "sim_budget_total": 3,
+          "step_count": 27,
+          "disruption_triggered": true,
+          "order_results": [
+            {
+              "order_id": "ORD-1",
+              "booked": true,
+              "route_assigned": true,
+              "passed_all_hard_checks": true,
+              "order_raw_score": 1.0,
+              "weighted_contribution": 0.2125,
+              "delivery_week": 7,
+              "sla_week": 7,
+              "total_order_cost_eur": 61369.19,
+              "physics": {
+                "usable_unit_mass_kg": 7676.0,
+                "usable_total_mass_kg": 7676.0,
+                "required_product_mass_kg": 7300.0,
+                "mass_pass": true,
+                "hoop_stress_mpa": 228.93,
+                "allowable_stress_mpa": 235.0,
+                "stress_pass": true,
+                "pressure_pass": true,
+                "boil_off_pct_day": 0.1451,
+                "max_boil_off_pct_day": 0.46,
+                "boil_off_pass": true,
+                "material_compat_pass": true,
+                "material_notes": [],
+                "unit_tare_mass_kg": 3221.8,
+                "unit_transport_mass_kg": 3701.8,
+                "dimensions": {
+                  "outer_diameter_mm": 2000,
+                  "inner_diameter_mm": 1760,
+                  "shell_axis_mm": 4120,
+                  "installed_height_mm": 5020,
+                  "installed_width_mm": 2000,
+                  "installed_length_mm": 2000,
+                  "shipping_height_mm": 2350,
+                  "shipping_width_mm": 2000,
+                  "shipping_length_mm": 5020
+                },
+                "site_clearance_pass": true,
+                "fab_weeks": 3,
+                "fittings_lead_weeks": 4,
+                "manufacturing_cost_eur": 58969.19,
+                "all_engineering_pass": true,
+                "violations": []
+              },
+              "violations": []
+            },
+            {
+              "order_id": "ORD-2",
+              "booked": true,
+              "route_assigned": true,
+              "passed_all_hard_checks": true,
+              "order_raw_score": 1.0,
+              "weighted_contribution": 0.2125,
+              "delivery_week": 9,
+              "sla_week": 12,
+              "total_order_cost_eur": 140074.51,
+              "physics": {
+                "usable_unit_mass_kg": 13252.5,
+                "usable_total_mass_kg": 26505.0,
+                "required_product_mass_kg": 18000.0,
+                "mass_pass": true,
+                "hoop_stress_mpa": 221.0,
+                "allowable_stress_mpa": 223.81,
+                "stress_pass": true,
+                "pressure_pass": true,
+                "boil_off_pct_day": 0.1123,
+                "max_boil_off_pct_day": 0.2,
+                "boil_off_pass": true,
+                "material_compat_pass": true,
+                "material_notes": [],
+                "unit_tare_mass_kg": 3736.9,
+                "unit_transport_mass_kg": 5059.5,
+                "dimensions": {
+                  "outer_diameter_mm": 2000,
+                  "inner_diameter_mm": 1760,
+                  "shell_axis_mm": 4120,
+                  "installed_height_mm": 2600,
+                  "installed_width_mm": 2200,
+                  "installed_length_mm": 5320,
+                  "shipping_height_mm": 2600,
+                  "shipping_width_mm": 2200,
+                  "shipping_length_mm": 5320
+                },
+                "site_clearance_pass": true,
+                "fab_weeks": 5,
+                "fittings_lead_weeks": 4,
+                "manufacturing_cost_eur": 133874.51,
+                "all_engineering_pass": true,
+                "violations": []
+              },
+              "violations": []
+            },
+            {
+              "order_id": "ORD-3",
+              "booked": true,
+              "route_assigned": true,
+              "passed_all_hard_checks": false,
+              "order_raw_score": 0.0,
+              "weighted_contribution": 0.0,
+              "delivery_week": 9,
+              "sla_week": 11,
+              "total_order_cost_eur": 52023.41,
+              "physics": {
+                "usable_unit_mass_kg": 1186.55,
+                "usable_total_mass_kg": 1186.55,
+                "required_product_mass_kg": 1100.0,
+                "mass_pass": true,
+                "hoop_stress_mpa": 249.18,
+                "allowable_stress_mpa": 188.0,
+                "stress_pass": false,
+                "pressure_pass": true,
+                "boil_off_pct_day": 13.2343,
+                "max_boil_off_pct_day": 9.0,
+                "boil_off_pass": false,
+                "material_compat_pass": false,
+                "material_notes": [
+                  "HAZARD_FITTINGS: LHe forbids CN fittings"
+                ],
+                "unit_tare_mass_kg": 2964.3,
+                "unit_transport_mass_kg": 3444.3,
+                "dimensions": {
+                  "outer_diameter_mm": 2000,
+                  "inner_diameter_mm": 1760,
+                  "shell_axis_mm": 4120,
+                  "installed_height_mm": 5020,
+                  "installed_width_mm": 2000,
+                  "installed_length_mm": 2000,
+                  "shipping_height_mm": 2350,
+                  "shipping_width_mm": 2000,
+                  "shipping_length_mm": 5020
+                },
+                "site_clearance_pass": true,
+                "fab_weeks": 3,
+                "fittings_lead_weeks": 2,
+                "manufacturing_cost_eur": 49623.41,
+                "all_engineering_pass": false,
+                "violations": [
+                  "HOOP_STRESS_EXCEEDED: 249.18 MPa > allowable 188.0 MPa",
+                  "HAZARD_FITTINGS: LHe forbids CN fittings",
+                  "BOIL_OFF_EXCEEDED: 13.2343%/day > max 9.0%/day"
+                ]
+              },
+              "violations": [
+                "HOOP_STRESS_EXCEEDED: 249.18 MPa > allowable 188.0 MPa",
+                "HAZARD_FITTINGS: LHe forbids CN fittings",
+                "BOIL_OFF_EXCEEDED: 13.2343%/day > max 9.0%/day"
+              ]
+            },
+            {
+              "order_id": "ORD-4",
+              "booked": true,
+              "route_assigned": true,
+              "passed_all_hard_checks": false,
+              "order_raw_score": 0.0,
+              "weighted_contribution": 0.0,
+              "delivery_week": 12,
+              "sla_week": 11,
+              "total_order_cost_eur": 101112.09,
+              "physics": {
+                "usable_unit_mass_kg": 1346.15,
+                "usable_total_mass_kg": 1346.15,
+                "required_product_mass_kg": 1300.0,
+                "mass_pass": true,
+                "hoop_stress_mpa": 365.59,
+                "allowable_stress_mpa": 188.0,
+                "stress_pass": false,
+                "pressure_pass": true,
+                "boil_off_pct_day": 0.5736,
+                "max_boil_off_pct_day": 0.62,
+                "boil_off_pass": true,
+                "material_compat_pass": true,
+                "material_notes": [],
+                "unit_tare_mass_kg": 5986.9,
+                "unit_transport_mass_kg": 6466.9,
+                "dimensions": {
+                  "outer_diameter_mm": 2600,
+                  "inner_diameter_mm": 2360,
+                  "shell_axis_mm": 4580,
+                  "installed_height_mm": 5480,
+                  "installed_width_mm": 2600,
+                  "installed_length_mm": 2600,
+                  "shipping_height_mm": 2950,
+                  "shipping_width_mm": 2600,
+                  "shipping_length_mm": 5480
+                },
+                "site_clearance_pass": true,
+                "fab_weeks": 4,
+                "fittings_lead_weeks": 4,
+                "manufacturing_cost_eur": 98712.09,
+                "all_engineering_pass": false,
+                "violations": [
+                  "HOOP_STRESS_EXCEEDED: 365.59 MPa > allowable 188.0 MPa"
+                ]
+              },
+              "violations": [
+                "HOOP_STRESS_EXCEEDED: 365.59 MPa > allowable 188.0 MPa",
+                "STD_GAUGE_EXCEEDED: shipping (2600x2950 mm) exceeds R-CAMPUS standard envelope (2500x3800 mm) without escort permit",
+                "SLA_MISSED: delivery_week=12 > customer sla_week=11"
+              ]
+            }
+          ],
+          "failure_modes": [
+            "ORD-3: HOOP_STRESS_EXCEEDED: 249.18 MPa > allowable 188.0 MPa",
+            "ORD-3: HAZARD_FITTINGS: LHe forbids CN fittings",
+            "ORD-3: BOIL_OFF_EXCEEDED: 13.2343%/day > max 9.0%/day",
+            "ORD-4: HOOP_STRESS_EXCEEDED: 365.59 MPa > allowable 188.0 MPa",
+            "ORD-4: STD_GAUGE_EXCEEDED: shipping (2600x2950 mm) exceeds R-CAMPUS standard envelope (2500x3800 mm) without escort permit",
+            "ORD-4: SLA_MISSED: delivery_week=12 > customer sla_week=11"
+          ],
+          "primary_failure_categories": [
+            "HOOP_STRESS",
+            "HAZARD_COMPATIBILITY",
+            "BOIL_OFF",
+            "TRANSPORT_CLEARANCE",
+            "SLA_MISSED",
+            "INCOMPLETE_BATCH"
+          ]
+        }
+      },
+      "disruption_triggered_this_step": false
+    }
+  ],
+  "verification": {
+    "seed": "S06",
+    "finalized": true,
+    "final_score": 0.34,
+    "valid_order_count": 2,
+    "total_order_count": 4,
+    "batch_gate_cap_applied": true,
+    "budget_exceeded": false,
+    "permit_quota_exceeded": false,
+    "total_budget_eur": 361000.0,
+    "total_spent_eur": 356079.2,
+    "budget_efficiency_bonus": 0.0,
+    "schedule_margin_bonus": 0.0,
+    "sim_efficiency_bonus": 0.0,
+    "sim_calls_used": 3,
+    "sim_budget_total": 3,
+    "step_count": 27,
+    "disruption_triggered": true,
+    "order_results": [
+      {
+        "order_id": "ORD-1",
+        "booked": true,
+        "route_assigned": true,
+        "passed_all_hard_checks": true,
+        "order_raw_score": 1.0,
+        "weighted_contribution": 0.2125,
+        "delivery_week": 7,
+        "sla_week": 7,
+        "total_order_cost_eur": 61369.19,
+        "physics": {
+          "usable_unit_mass_kg": 7676.0,
+          "usable_total_mass_kg": 7676.0,
+          "required_product_mass_kg": 7300.0,
+          "mass_pass": true,
+          "hoop_stress_mpa": 228.93,
+          "allowable_stress_mpa": 235.0,
+          "stress_pass": true,
+          "pressure_pass": true,
+          "boil_off_pct_day": 0.1451,
+          "max_boil_off_pct_day": 0.46,
+          "boil_off_pass": true,
+          "material_compat_pass": true,
+          "material_notes": [],
+          "unit_tare_mass_kg": 3221.8,
+          "unit_transport_mass_kg": 3701.8,
+          "dimensions": {
+            "outer_diameter_mm": 2000,
+            "inner_diameter_mm": 1760,
+            "shell_axis_mm": 4120,
+            "installed_height_mm": 5020,
+            "installed_width_mm": 2000,
+            "installed_length_mm": 2000,
+            "shipping_height_mm": 2350,
+            "shipping_width_mm": 2000,
+            "shipping_length_mm": 5020
+          },
+          "site_clearance_pass": true,
+          "fab_weeks": 3,
+          "fittings_lead_weeks": 4,
+          "manufacturing_cost_eur": 58969.19,
+          "all_engineering_pass": true,
+          "violations": []
+        },
+        "violations": []
+      },
+      {
+        "order_id": "ORD-2",
+        "booked": true,
+        "route_assigned": true,
+        "passed_all_hard_checks": true,
+        "order_raw_score": 1.0,
+        "weighted_contribution": 0.2125,
+        "delivery_week": 9,
+        "sla_week": 12,
+        "total_order_cost_eur": 140074.51,
+        "physics": {
+          "usable_unit_mass_kg": 13252.5,
+          "usable_total_mass_kg": 26505.0,
+          "required_product_mass_kg": 18000.0,
+          "mass_pass": true,
+          "hoop_stress_mpa": 221.0,
+          "allowable_stress_mpa": 223.81,
+          "stress_pass": true,
+          "pressure_pass": true,
+          "boil_off_pct_day": 0.1123,
+          "max_boil_off_pct_day": 0.2,
+          "boil_off_pass": true,
+          "material_compat_pass": true,
+          "material_notes": [],
+          "unit_tare_mass_kg": 3736.9,
+          "unit_transport_mass_kg": 5059.5,
+          "dimensions": {
+            "outer_diameter_mm": 2000,
+            "inner_diameter_mm": 1760,
+            "shell_axis_mm": 4120,
+            "installed_height_mm": 2600,
+            "installed_width_mm": 2200,
+            "installed_length_mm": 5320,
+            "shipping_height_mm": 2600,
+            "shipping_width_mm": 2200,
+            "shipping_length_mm": 5320
+          },
+          "site_clearance_pass": true,
+          "fab_weeks": 5,
+          "fittings_lead_weeks": 4,
+          "manufacturing_cost_eur": 133874.51,
+          "all_engineering_pass": true,
+          "violations": []
+        },
+        "violations": []
+      },
+      {
+        "order_id": "ORD-3",
+        "booked": true,
+        "route_assigned": true,
+        "passed_all_hard_checks": false,
+        "order_raw_score": 0.0,
+        "weighted_contribution": 0.0,
+        "delivery_week": 9,
+        "sla_week": 11,
+        "total_order_cost_eur": 52023.41,
+        "physics": {
+          "usable_unit_mass_kg": 1186.55,
+          "usable_total_mass_kg": 1186.55,
+          "required_product_mass_kg": 1100.0,
+          "mass_pass": true,
+          "hoop_stress_mpa": 249.18,
+          "allowable_stress_mpa": 188.0,
+          "stress_pass": false,
+          "pressure_pass": true,
+          "boil_off_pct_day": 13.2343,
+          "max_boil_off_pct_day": 9.0,
+          "boil_off_pass": false,
+          "material_compat_pass": false,
+          "material_notes": [
+            "HAZARD_FITTINGS: LHe forbids CN fittings"
+          ],
+          "unit_tare_mass_kg": 2964.3,
+          "unit_transport_mass_kg": 3444.3,
+          "dimensions": {
+            "outer_diameter_mm": 2000,
+            "inner_diameter_mm": 1760,
+            "shell_axis_mm": 4120,
+            "installed_height_mm": 5020,
+            "installed_width_mm": 2000,
+            "installed_length_mm": 2000,
+            "shipping_height_mm": 2350,
+            "shipping_width_mm": 2000,
+            "shipping_length_mm": 5020
+          },
+          "site_clearance_pass": true,
+          "fab_weeks": 3,
+          "fittings_lead_weeks": 2,
+          "manufacturing_cost_eur": 49623.41,
+          "all_engineering_pass": false,
+          "violations": [
+            "HOOP_STRESS_EXCEEDED: 249.18 MPa > allowable 188.0 MPa",
+            "HAZARD_FITTINGS: LHe forbids CN fittings",
+            "BOIL_OFF_EXCEEDED: 13.2343%/day > max 9.0%/day"
+          ]
+        },
+        "violations": [
+          "HOOP_STRESS_EXCEEDED: 249.18 MPa > allowable 188.0 MPa",
+          "HAZARD_FITTINGS: LHe forbids CN fittings",
+          "BOIL_OFF_EXCEEDED: 13.2343%/day > max 9.0%/day"
+        ]
+      },
+      {
+        "order_id": "ORD-4",
+        "booked": true,
+        "route_assigned": true,
+        "passed_all_hard_checks": false,
+        "order_raw_score": 0.0,
+        "weighted_contribution": 0.0,
+        "delivery_week": 12,
+        "sla_week": 11,
+        "total_order_cost_eur": 101112.09,
+        "physics": {
+          "usable_unit_mass_kg": 1346.15,
+          "usable_total_mass_kg": 1346.15,
+          "required_product_mass_kg": 1300.0,
+          "mass_pass": true,
+          "hoop_stress_mpa": 365.59,
+          "allowable_stress_mpa": 188.0,
+          "stress_pass": false,
+          "pressure_pass": true,
+          "boil_off_pct_day": 0.5736,
+          "max_boil_off_pct_day": 0.62,
+          "boil_off_pass": true,
+          "material_compat_pass": true,
+          "material_notes": [],
+          "unit_tare_mass_kg": 5986.9,
+          "unit_transport_mass_kg": 6466.9,
+          "dimensions": {
+            "outer_diameter_mm": 2600,
+            "inner_diameter_mm": 2360,
+            "shell_axis_mm": 4580,
+            "installed_height_mm": 5480,
+            "installed_width_mm": 2600,
+            "installed_length_mm": 2600,
+            "shipping_height_mm": 2950,
+            "shipping_width_mm": 2600,
+            "shipping_length_mm": 5480
+          },
+          "site_clearance_pass": true,
+          "fab_weeks": 4,
+          "fittings_lead_weeks": 4,
+          "manufacturing_cost_eur": 98712.09,
+          "all_engineering_pass": false,
+          "violations": [
+            "HOOP_STRESS_EXCEEDED: 365.59 MPa > allowable 188.0 MPa"
+          ]
+        },
+        "violations": [
+          "HOOP_STRESS_EXCEEDED: 365.59 MPa > allowable 188.0 MPa",
+          "STD_GAUGE_EXCEEDED: shipping (2600x2950 mm) exceeds R-CAMPUS standard envelope (2500x3800 mm) without escort permit",
+          "SLA_MISSED: delivery_week=12 > customer sla_week=11"
+        ]
+      }
+    ],
+    "failure_modes": [
+      "ORD-3: HOOP_STRESS_EXCEEDED: 249.18 MPa > allowable 188.0 MPa",
+      "ORD-3: HAZARD_FITTINGS: LHe forbids CN fittings",
+      "ORD-3: BOIL_OFF_EXCEEDED: 13.2343%/day > max 9.0%/day",
+      "ORD-4: HOOP_STRESS_EXCEEDED: 365.59 MPa > allowable 188.0 MPa",
+      "ORD-4: STD_GAUGE_EXCEEDED: shipping (2600x2950 mm) exceeds R-CAMPUS standard envelope (2500x3800 mm) without escort permit",
+      "ORD-4: SLA_MISSED: delivery_week=12 > customer sla_week=11"
+    ],
+    "primary_failure_categories": [
+      "HOOP_STRESS",
+      "HAZARD_COMPATIBILITY",
+      "BOIL_OFF",
+      "TRANSPORT_CLEARANCE",
+      "SLA_MISSED",
+      "INCOMPLETE_BATCH"
+    ]
+  },
+  "state_hmac": "a0c4a562e33d3b4178bec62e0ea777284446aa98eaa7fd03e934df968c83f95f"
+}

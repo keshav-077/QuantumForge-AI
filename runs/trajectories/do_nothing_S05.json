@@ -1,0 +1,243 @@
+{
+  "run_id": "do_nothing_S05",
+  "seed": "S05",
+  "agent_name": "Do-Nothing Baseline",
+  "agent_type": "do_nothing",
+  "model_id": "baseline-do-nothing",
+  "started_at": "2026-11-14T14:19:21.326696+00:00",
+  "completed_at": "2026-11-14T14:19:21.434768+00:00",
+  "steps": [
+    {
+      "step_index": 1,
+      "timestamp_iso": "2026-11-14T14:19:21.430753+00:00",
+      "tool_name": "get_episode_brief",
+      "arguments": {},
+      "observation": {
+        "ok": true,
+        "seed": "S05",
+        "title": "Heavy Cryo Industrial Hub",
+        "description": "Commission all 4 client cryogenic vessel orders across the active transport corridors within plant budget, fabrication bay capacity, and delivery SLAs.",
+        "horizon_weeks": 11,
+        "current_factory_week": 1,
+        "effective_budget_eur": 294500.0,
+        "total_spent_eur": 0.0,
+        "budget_remaining_eur": 294500.0,
+        "escort_permits_total": 1,
+        "escort_permits_used": 0,
+        "bays": [
+          "BAY-A",
+          "BAY-B"
+        ],
+        "sim_calls_remaining": 3,
+        "sim_budget_total": 3,
+        "steps_used": 1,
+        "max_steps": 42,
+        "standard_volumes_m3": [
+          1.0,
+          2.0,
+          3.0,
+          5.0,
+          8.0,
+          10.0,
+          15.0,
+          20.0,
+          25.0,
+          30.0
+        ],
+        "unit_counts_allowed": [
+          1,
+          2,
+          3
+        ],
+        "orders": [
+          {
+            "order_id": "ORD-1",
+            "client_name": "Hanseatic FoodFreeze",
+            "medium": "LIN",
+            "execution": "STATIONARY",
+            "required_product_mass_kg": 7100.0,
+            "min_pressure_mpa": 1.3,
+            "max_boil_off_pct_day": 0.48,
+            "sla_week": 7,
+            "route_id": "R-HARBOR",
+            "max_site_height_mm": 6200,
+            "max_site_footprint_mm": 3200,
+            "priority_weight": 0.25,
+            "notes": "Industrial food-freezing nitrogen receiver."
+          },
+          {
+            "order_id": "ORD-2",
+            "client_name": "RuhrStahl Oxygen Plant",
+            "medium": "LOX",
+            "execution": "STATIONARY",
+            "required_product_mass_kg": 20800.0,
+            "min_pressure_mpa": 2.2,
+            "max_boil_off_pct_day": 0.1,
+            "sla_week": 11,
+            "route_id": "R-HARBOR",
+            "max_site_height_mm": 6000,
+            "max_site_footprint_mm": 3400,
+            "priority_weight": 0.25,
+            "notes": "Blast-furnace oxygen enrichment storage receiver."
+          },
+          {
+            "order_id": "ORD-3",
+            "client_name": "Westfalen Precision Annealing",
+            "medium": "LIN",
+            "execution": "STATIONARY",
+            "required_product_mass_kg": 3600.0,
+            "min_pressure_mpa": 1.5,
+            "max_boil_off_pct_day": 0.25,
+            "sla_week": 7,
+            "route_id": "R-INLAND",
+            "max_site_height_mm": 5000,
+            "max_site_footprint_mm": 3000,
+            "priority_weight": 0.25,
+            "notes": "Bright-annealing furnace nitrogen storage vessel."
+          },
+          {
+            "order_id": "ORD-4",
+            "client_name": "Bremen LH2 Marine Bunkering",
+            "medium": "LH2",
+            "execution": "TRANSPORTABLE",
+            "required_product_mass_kg": 620.0,
+            "min_pressure_mpa": 1.8,
+            "max_boil_off_pct_day": 1.1,
+            "sla_week": 11,
+            "route_id": "R-HARBOR",
+            "max_site_height_mm": 3200,
+            "max_site_footprint_mm": 5000,
+            "priority_weight": 0.25,
+            "notes": "Mobile liquid hydrogen marine bunkering skid."
+          }
+        ],
+        "routes": [
+          {
+            "route_id": "R-HARBOR",
+            "name": "North Sea Harbor Spine",
+            "transit_weeks": 1,
+            "std_max_width_mm": 2500,
+            "std_max_height_mm": 3800,
+            "permit_max_width_mm": 3100,
+            "permit_max_height_mm": 4350,
+            "escort_permit_allowed": true,
+            "max_unit_transport_mass_kg": 17000.0,
+            "base_freight_eur_per_unit": 2600.0,
+            "permit_fee_eur": 4100.0,
+            "notes": "Harbor industrial haul road serving maritime accounts."
+          },
+          {
+            "route_id": "R-INLAND",
+            "name": "Ruhr Heavy Logistics Corridor",
+            "transit_weeks": 2,
+            "std_max_width_mm": 2500,
+            "std_max_height_mm": 3800,
+            "permit_max_width_mm": 3100,
+            "permit_max_height_mm": 4350,
+            "escort_permit_allowed": true,
+            "max_unit_transport_mass_kg": 16000.0,
+            "base_freight_eur_per_unit": 2900.0,
+            "permit_fee_eur": 4200.0,
+            "notes": "Inland highway corridor serving metallurgical plants."
+          }
+        ],
+        "disruption_triggered": false,
+        "disruption_alert": null
+      },
+      "disruption_triggered_this_step": false
+    }
+  ],
+  "verification": {
+    "seed": "S05",
+    "finalized": false,
+    "final_score": 0.0,
+    "valid_order_count": 0,
+    "total_order_count": 4,
+    "batch_gate_cap_applied": false,
+    "budget_exceeded": false,
+    "permit_quota_exceeded": false,
+    "total_budget_eur": 294500.0,
+    "total_spent_eur": 0.0,
+    "budget_efficiency_bonus": 0.0,
+    "schedule_margin_bonus": 0.0,
+    "sim_efficiency_bonus": 0.0,
+    "sim_calls_used": 0,
+    "sim_budget_total": 3,
+    "step_count": 1,
+    "disruption_triggered": false,
+    "order_results": [
+      {
+        "order_id": "ORD-1",
+        "booked": false,
+        "route_assigned": false,
+        "passed_all_hard_checks": false,
+        "order_raw_score": 0.0,
+        "weighted_contribution": 0.0,
+        "delivery_week": null,
+        "sla_week": 7,
+        "total_order_cost_eur": 0.0,
+        "physics": null,
+        "violations": [
+          "ORD-1: ORDER_UNBOOKED — order was never reserved on a fabrication bay."
+        ]
+      },
+      {
+        "order_id": "ORD-2",
+        "booked": false,
+        "route_assigned": false,
+        "passed_all_hard_checks": false,
+        "order_raw_score": 0.0,
+        "weighted_contribution": 0.0,
+        "delivery_week": null,
+        "sla_week": 11,
+        "total_order_cost_eur": 0.0,
+        "physics": null,
+        "violations": [
+          "ORD-2: ORDER_UNBOOKED — order was never reserved on a fabrication bay."
+        ]
+      },
+      {
+        "order_id": "ORD-3",
+        "booked": false,
+        "route_assigned": false,
+        "passed_all_hard_checks": false,
+        "order_raw_score": 0.0,
+        "weighted_contribution": 0.0,
+        "delivery_week": null,
+        "sla_week": 7,
+        "total_order_cost_eur": 0.0,
+        "physics": null,
+        "violations": [
+          "ORD-3: ORDER_UNBOOKED — order was never reserved on a fabrication bay."
+        ]
+      },
+      {
+        "order_id": "ORD-4",
+        "booked": false,
+        "route_assigned": false,
+        "passed_all_hard_checks": false,
+        "order_raw_score": 0.0,
+        "weighted_contribution": 0.0,
+        "delivery_week": null,
+        "sla_week": 11,
+        "total_order_cost_eur": 0.0,
+        "physics": null,
+        "violations": [
+          "ORD-4: ORDER_UNBOOKED — order was never reserved on a fabrication bay."
+        ]
+      }
+    ],
+    "failure_modes": [
+      "UNFINALIZED_EPISODE: finalize_commissioning() was never called; final_score forced to 0.0.",
+      "ORD-1: ORDER_UNBOOKED — order was never reserved on a fabrication bay.",
+      "ORD-2: ORDER_UNBOOKED — order was never reserved on a fabrication bay.",
+      "ORD-3: ORDER_UNBOOKED — order was never reserved on a fabrication bay.",
+      "ORD-4: ORDER_UNBOOKED — order was never reserved on a fabrication bay."
+    ],
+    "primary_failure_categories": [
+      "UNFINALIZED",
+      "INCOMPLETE_BATCH"
+    ]
+  },
+  "state_hmac": "b5321c8e96e337702c622bf5fb7a010ebdfef8dd4d97ec60efe5ccb88e0a6c1a"
+}

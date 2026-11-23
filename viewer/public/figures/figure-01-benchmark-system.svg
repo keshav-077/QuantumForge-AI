@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">AgentBreak benchmark system</title>
+  <desc id="desc">An overview of the benchmark from initial constraints through disruption, agent recovery, and deterministic verification.</desc>
+  <rect width="1600" height="900" fill="#f7f7f8"/>
+  <g font-family="Inter,Arial,sans-serif">
+    <text x="100" y="105" fill="#4f46e5" font-size="18" font-weight="700" letter-spacing="3">FIGURE 01 · BENCHMARK SYSTEM</text>
+    <text x="100" y="165" fill="#18181b" font-size="44" font-weight="700" letter-spacing="-1.5">How AgentBreak turns planning into a recovery test</text>
+    <text x="100" y="205" fill="#71717a" font-size="20">The score comes from the final verified state—not the agent’s explanation.</text>
+    <path d="M225 449H1375" fill="none" stroke="#d4d4d8" stroke-width="4" stroke-dasharray="5 12"/>
+    <g transform="translate(100 310)">
+      <rect width="300" height="330" rx="28" fill="#fff" stroke="#e4e4e7" stroke-width="2"/>
+      <rect x="28" y="28" width="56" height="34" rx="17" fill="#eef2ff"/>
+      <text x="45" y="51" fill="#4f46e5" font-size="15" font-weight="700">01</text>
+      <text x="28" y="116" fill="#18181b" font-size="26" font-weight="700">Constraint setup</text>
+      <text x="28" y="153" fill="#71717a" font-size="16">Four jobs compete across</text>
+      <text x="28" y="178" fill="#71717a" font-size="16">two execution lanes.</text>
+      <g transform="translate(28 220)">
+        <rect width="244" height="18" rx="9" fill="#eef2ff"/>
+        <rect y="40" width="244" height="18" rx="9" fill="#ecfdf5"/>
+        <rect x="18" y="-4" width="72" height="26" rx="8" fill="#4f46e5"/>
+        <rect x="112" y="-4" width="104" height="26" rx="8" fill="#818cf8"/>
+        <rect x="48" y="36" width="86" height="26" rx="8" fill="#059669"/>
+        <rect x="158" y="36" width="64" height="26" rx="8" fill="#34d399"/>
+      </g>
+    </g>
+    <g transform="translate(450 310)">
+      <rect width="300" height="330" rx="28" fill="#18181b"/>
+      <rect x="28" y="28" width="56" height="34" rx="17" fill="#3f3f46"/>
+      <text x="45" y="51" fill="#c7d2fe" font-size="15" font-weight="700">02</text>
+      <text x="28" y="116" fill="#fff" font-size="26" font-weight="700">Initial plan</text>
+      <text x="28" y="153" fill="#a1a1aa" font-size="16">The agent inspects, simulates,</text>
+      <text x="28" y="178" fill="#a1a1aa" font-size="16">and commits a valid schedule.</text>
+      <g transform="translate(28 216)" fill="none" stroke-linecap="round">
+        <path d="M0 18H92c23 0 30 18 30 38s9 37 34 37h88" stroke="#818cf8" stroke-width="10"/>
+        <circle cx="0" cy="18" r="11" fill="#18181b" stroke="#818cf8" stroke-width="4"/>
+        <circle cx="244" cy="93" r="11" fill="#18181b" stroke="#34d399" stroke-width="4"/>
+      </g>
+    </g>
+    <g transform="translate(800 310)">
+      <rect width="300" height="330" rx="28" fill="#fff" stroke="#fb7185" stroke-width="2"/>
+      <rect x="28" y="28" width="56" height="34" rx="17" fill="#fff1f2"/>
+      <text x="45" y="51" fill="#e11d48" font-size="15" font-weight="700">03</text>
+      <text x="28" y="116" fill="#18181b" font-size="26" font-weight="700">Live disruption</text>
+      <text x="28" y="153" fill="#71717a" font-size="16">At Step 4, the environment</text>
+      <text x="28" y="178" fill="#71717a" font-size="16">invalidates the original plan.</text>
+      <g transform="translate(28 220)">
+        <rect width="244" height="18" rx="9" fill="#f4f4f5"/>
+        <rect x="125" width="76" height="18" fill="#fecdd3"/>
+        <path d="m150-15 12 13 12-13" fill="none" stroke="#e11d48" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect y="50" width="197" height="42" rx="21" fill="#4c0519"/>
+        <circle cx="24" cy="71" r="6" fill="#fb7185"/>
+        <text x="40" y="77" fill="#fecdd3" font-size="13" font-weight="700">LANE B OUTAGE</text>
+      </g>
+    </g>
+    <g transform="translate(1150 310)">
+      <rect width="350" height="330" rx="28" fill="#fff" stroke="#e4e4e7" stroke-width="2"/>
+      <rect x="28" y="28" width="56" height="34" rx="17" fill="#ecfdf5"/>
+      <text x="45" y="51" fill="#059669" font-size="15" font-weight="700">04</text>
+      <text x="28" y="116" fill="#18181b" font-size="26" font-weight="700">Hard verification</text>
+      <text x="28" y="153" fill="#71717a" font-size="16">The server recomputes every</text>
+      <text x="28" y="178" fill="#71717a" font-size="16">capacity, safety, and SLA rule.</text>
+      <g transform="translate(28 216)">
+        <circle cx="47" cy="47" r="47" fill="#ecfdf5"/>
+        <path d="m24 48 16 16 31-36" fill="none" stroke="#059669" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="116" y="42" fill="#18181b" font-size="28" font-weight="700">0.95</text>
+        <text x="116" y="69" fill="#71717a" font-size="14">verified reward</text>
+      </g>
+    </g>
+    <g transform="translate(100 705)">
+      <rect width="1400" height="100" rx="22" fill="#eef2ff"/>
+      <text x="36" y="44" fill="#4f46e5" font-size="13" font-weight="700" letter-spacing="2">CORE PRINCIPLE</text>
+      <text x="36" y="75" fill="#312e81" font-size="20" font-weight="600">A plausible answer earns nothing unless the resulting plan survives the updated world state.</text>
+    </g>
+  </g>
+</svg>

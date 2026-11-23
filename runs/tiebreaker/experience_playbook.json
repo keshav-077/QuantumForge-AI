@@ -1,0 +1,569 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-11-14T14:05:36.306095+00:00",
+  "train_seeds_included": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05"
+  ],
+  "augmented_rollout_count": 0,
+  "expert_trajectory_count": 15,
+  "contrast_rejected_count": 44,
+  "zero_leakage_verified": true,
+  "empirical_summary": {
+    "expert_mean_score_s01_s05": 0.9496,
+    "rejected_mean_score_s01_s05": 0.1039,
+    "mean_contrast_reward_gain": 0.8457,
+    "expert_mean_steps": 24.13,
+    "expert_mean_sim_calls": 1.67,
+    "top_tool_transitions": [
+      [
+        "inspect_order -> inspect_order",
+        60
+      ],
+      [
+        "assign_transport -> assign_transport",
+        30
+      ],
+      [
+        "reserve_bay_and_order -> assign_transport",
+        25
+      ],
+      [
+        "inspect_route -> inspect_route",
+        24
+      ],
+      [
+        "inspect_order -> inspect_route",
+        22
+      ],
+      [
+        "run_physics_sim -> reserve_bay_and_order",
+        20
+      ],
+      [
+        "get_episode_brief -> query_handbook",
+        15
+      ],
+      [
+        "assign_transport -> finalize_commissioning",
+        15
+      ],
+      [
+        "reserve_bay_and_order -> reserve_bay_and_order",
+        15
+      ],
+      [
+        "assign_transport -> reserve_bay_and_order",
+        12
+      ],
+      [
+        "get_factory_state -> inspect_order",
+        12
+      ],
+      [
+        "revise_order -> reserve_bay_and_order",
+        11
+      ]
+    ],
+    "post_shock_immediate_actions": [
+      [
+        "get_factory_state",
+        10
+      ],
+      [
+        "inspect_order",
+        5
+      ]
+    ]
+  },
+  "failure_mode_reward_deltas": [
+    {
+      "failure_category": "BRIDGE_MASS_CAP",
+      "occurrences_in_s01_s05_contrasts": 1,
+      "mean_reward_loss": 0.9579,
+      "mitigation_rule": "Keep unit_transport_mass_kg <= post-shock route max_unit_transport_mass_kg; splitting into unit_count=2 or 3 smaller shells cuts per-unit tare and transport mass in half."
+    },
+    {
+      "failure_category": "HAZARD_COMPATIBILITY",
+      "occurrences_in_s01_s05_contrasts": 10,
+      "mean_reward_loss": 0.9554,
+      "mitigation_rule": "LH2 and LHe strictly REQUIRE EVI insulation and FORBID CN fittings; LOX with design_pressure_mpa > 2.0 MPa strictly FORBIDS CN fittings (use EU_STD or DE_PRECISION)."
+    },
+    {
+      "failure_category": "UNFINALIZED_ZERO_SCORE",
+      "occurrences_in_s01_s05_contrasts": 5,
+      "mean_reward_loss": 0.9554,
+      "mitigation_rule": "Always call finalize_commissioning() before step 40; unfinalized episodes receive 0.0000."
+    },
+    {
+      "failure_category": "UNFINALIZED",
+      "occurrences_in_s01_s05_contrasts": 5,
+      "mean_reward_loss": 0.9554,
+      "mitigation_rule": "Always call finalize_commissioning() before step 40; unfinalized episodes receive 0.0000."
+    },
+    {
+      "failure_category": "PERMIT_QUOTA_EXCEEDED",
+      "occurrences_in_s01_s05_contrasts": 5,
+      "mean_reward_loss": 0.9554,
+      "mitigation_rule": "Count total orders with use_escort_permit=True across all 4 orders and ensure total <= post-shock effective_escort_permits_total; exceeding quota fails ALL permit orders."
+    },
+    {
+      "failure_category": "PERMIT_QUOTA",
+      "occurrences_in_s01_s05_contrasts": 5,
+      "mean_reward_loss": 0.9554,
+      "mitigation_rule": "Count total orders with use_escort_permit=True across all 4 orders and ensure total <= post-shock effective_escort_permits_total; exceeding quota fails ALL permit orders."
+    },
+    {
+      "failure_category": "CAPACITY_SHORTFALL",
+      "occurrences_in_s01_s05_contrasts": 7,
+      "mean_reward_loss": 0.9544,
+      "mitigation_rule": "Never confuse m3 with kg! Deliverable mass is unit_count * round(unit_volume_m3 * density_kg_m3 * 0.95, 2) >= required_product_mass_kg. Low-density cryogens LH2 (70.85 kg/m3) and LHe (124.9 kg/m3) require large volumes (e.g. 15-30 m3 or 2-3 units) to deliver 1,000+ kg."
+    },
+    {
+      "failure_category": "BUDGET_OVERRUN",
+      "occurrences_in_s01_s05_contrasts": 3,
+      "mean_reward_loss": 0.9063,
+      "mitigation_rule": "Keep sum(manufacturing_cost + unit_count*base_freight + permit_fee) + retooling_fees <= effective_budget_eur (breaching budget multiplies score by 0.20 and caps at 0.15)."
+    },
+    {
+      "failure_category": "BUDGET_EXCEEDED",
+      "occurrences_in_s01_s05_contrasts": 3,
+      "mean_reward_loss": 0.9063,
+      "mitigation_rule": "Keep sum(manufacturing_cost + unit_count*base_freight + permit_fee) + retooling_fees <= effective_budget_eur (breaching budget multiplies score by 0.20 and caps at 0.15). First post-shock revision per order costs 1,500 EUR; extra revisions cost 4,500 EUR."
+    },
+    {
+      "failure_category": "HOOP_STRESS",
+      "occurrences_in_s01_s05_contrasts": 14,
+      "mean_reward_loss": 0.9013,
+      "mitigation_rule": "Compute exact minimum wall t_min = P * inner_d_mm / (2 * weld_eff * sigma_allow - P) where sigma_allow = round(235.0 / safety_factor, 2) and weld_eff = {CN:0.85, EU_STD:0.90, DE_PRECISION:0.96}, then add +1.0 mm safety margin (keep < 14.0 mm when valid to avoid +1 fab_week). Re-check after order_min_pressure_overrides."
+    },
+    {
+      "failure_category": "SLA_MISSED",
+      "occurrences_in_s01_s05_contrasts": 8,
+      "mean_reward_loss": 0.8794,
+      "mitigation_rule": "Verify delivery_week = max(bay_start_week + fab_weeks, order_release_week + effective_fittings_lead_weeks) + 1 + route.transit_weeks <= min(sla_week, horizon_weeks). Post-shock new bookings or revisions changing fittings/unit_count set order_release_week = 2!"
+    },
+    {
+      "failure_category": "INCOMPLETE_BATCH",
+      "occurrences_in_s01_s05_contrasts": 44,
+      "mean_reward_loss": 0.8515,
+      "mitigation_rule": "Every one of ORD-1..ORD-4 must be booked on BAY-A/BAY-B AND assigned transport on its exact order.route_id before finalize_commissioning()."
+    },
+    {
+      "failure_category": "TRANSPORT_CLEARANCE",
+      "occurrences_in_s01_s05_contrasts": 7,
+      "mean_reward_loss": 0.8396,
+      "mitigation_rule": "Any shell with shipping_width_mm > route.std_max_width_mm (e.g. outer_d >= 2400 on TRANSPORTABLE -> 2600mm > 2500mm, or outer_d >= 2600 on STATIONARY -> 2600mm > 2500mm) MUST either set use_escort_permit=True (within permit quota) OR split into unit_count=2 or 3 smaller standard volumes (<=8 m3 TRANSPORTABLE, <=10 m3 STATIONARY) that fit standard gauge without a permit."
+    },
+    {
+      "failure_category": "SHOCK_UNADAPTED",
+      "occurrences_in_s01_s05_contrasts": 4,
+      "mean_reward_loss": 0.8361,
+      "mitigation_rule": "Immediately after disruption_alert triggers, call get_factory_state() + inspect_order/inspect_route on affected IDs and call revise_order() + assign_transport() to restore post-shock compliance."
+    },
+    {
+      "failure_category": "BOIL_OFF",
+      "occurrences_in_s01_s05_contrasts": 24,
+      "mean_reward_loss": 0.809,
+      "mitigation_rule": "For tight boil-off limits or after PVI multiplier shocks, compute Q_cond = k_eff * A_inner * (293.15 - T_boil) / (annulus_mm/1000) and Q_total = Q_cond + valve_leak_w * (1.25 if TRANSPORTABLE else 1.0); switch insulation to EVI (k=0.0022 vs PVI 0.024 W/mK) or upgrade fittings (EU_STD=11W, DE_PRECISION=5.5W vs CN=18W) so boil_off_pct_day <= max_boil_off_pct_day."
+    },
+    {
+      "failure_category": "SITE_CLEARANCE",
+      "occurrences_in_s01_s05_contrasts": 13,
+      "mean_reward_loss": 0.7737,
+      "mitigation_rule": "Check STATIONARY installed_height = shell_axis_mm + 900 <= max_site_height_mm AND bank footprint = unit_count * installed_width_mm + (unit_count - 1) * 400 <= max_site_footprint_mm (note: 2x2000mm bank = 4400mm; if max_site_footprint_mm < 4400mm, use 1 unit or <=5m3 1600mm shells where 2x1600+400 = 3600mm)."
+    },
+    {
+      "failure_category": "BATCH_COMPLETION_GATE_CAP",
+      "occurrences_in_s01_s05_contrasts": 23,
+      "mean_reward_loss": 0.7565,
+      "mitigation_rule": "All 4 orders must pass hard checks to unlock full score + 0.15 efficiency bonuses (1 valid order is capped at <= 0.0800; 2 orders x0.80; 3 orders x0.92)."
+    },
+    {
+      "failure_category": "SIM_BUDGET_EXHAUSTED",
+      "occurrences_in_s01_s05_contrasts": 19,
+      "mean_reward_loss": 0.7526,
+      "mitigation_rule": "Total run_physics_sim quota is strictly 3 calls per episode! Pre-compute specs analytically from query_handbook('all'), use <= 1 sim call pre-shock on the tightest boil-off order, and save >= 2 sim calls for post-shock verification."
+    }
+  ],
+  "few_shot_s01_s05_traces": [
+    {
+      "train_seed": "S01",
+      "final_score": 0.9445,
+      "valid_orders": "4/4",
+      "sim_calls_used": 2,
+      "step_count": 30,
+      "key_tool_sequence": [
+        {
+          "step": 1,
+          "tool": "get_episode_brief",
+          "args": {},
+          "disruption_triggered": false
+        },
+        {
+          "step": 2,
+          "tool": "query_handbook",
+          "args": {
+            "section": "all"
+          },
+          "disruption_triggered": false
+        },
+        {
+          "step": 10,
+          "tool": "get_factory_state",
+          "args": {},
+          "disruption_triggered": false
+        },
+        {
+          "step": 11,
+          "tool": "run_physics_sim",
+          "args": {
+            "order_id": "ORD-4",
+            "unit_count": 1,
+            "unit_volume_m3": 20.0,
+            "design_pressure_mpa": 2.4,
+            "wall_thickness_mm": 17.0,
+            "insulation": "EVI",
+            "fittings": "EU_STD"
+          },
+          "disruption_triggered": false
+        },
+        {
+          "step": 12,
+          "tool": "reserve_bay_and_order",
+          "args": {
+            "order_id": "ORD-1",
+            "bay_id": "BAY-A",
+            "bay_start_week": 1,
+            "unit_count": 1,
+            "unit_volume_m3": 10.0,
+            "design_pressure_mpa": 1.4,
+            "wall_thickness_mm": 6.0,
+            "insulation": "PVI",
+            "fittings": "CN"
+          },
+          "disruption_triggered": false
+        },
+        {
+          "step": 13,
+          "tool": "assign_transport",
+          "args": {
+            "order_id": "ORD-1",
+            "route_id": "R-CENTRAL",
+            "use_escort_permit": false
+          },
+          "disruption_triggered": false
+        },
+        {
+          "step": 14,
+          "tool": "reserve_bay_and_order",
+          "args": {
+            "order_id": "ORD-3",
+            "bay_id": "BAY-B",
+            "bay_start_week": 5,
+            "unit_count": 1,
+            "unit_volume_m3": 10.0,
+            "design_pressure_mpa": 1.6,
+            "wall_thickness_mm": 8.0,
+            "insulation": "EVI",
+            "fittings": "DE_PRECISION"
+          },
+          "disruption_triggered": true
+        },
+        {
+          "step": 22,
+          "tool": "get_factory_state",
+          "args": {},
+          "disruption_triggered": false
+        },
+        {
+          "step": 23,
+          "tool": "run_physics_sim",
+          "args": {
+            "order_id": "ORD-4",
+            "unit_count": 1,
+            "unit_volume_m3": 20.0,
+            "design_pressure_mpa": 2.4,
+            "wall_thickness_mm": 17.0,
+            "insulation": "EVI",
+            "fittings": "EU_STD"
+          },
+          "disruption_triggered": false
+        },
+        {
+          "step": 24,
+          "tool": "revise_order",
+          "args": {
+            "order_id": "ORD-1",
+            "bay_id": "BAY-A",
+            "bay_start_week": 1,
+            "unit_count": 1,
+            "unit_volume_m3": 10.0,
+            "design_pressure_mpa": 1.4,
+            "wall_thickness_mm": 6.5,
+            "insulation": "EVI",
+            "fittings": "CN",
+            "route_id": "R-CENTRAL",
+            "use_escort_permit": false
+          },
+          "disruption_triggered": false
+        },
+        {
+          "step": 25,
+          "tool": "revise_order",
+          "args": {
+            "order_id": "ORD-3",
+            "bay_id": "BAY-B",
+            "bay_start_week": 5,
+            "unit_count": 1,
+            "unit_volume_m3": 15.0,
+            "design_pressure_mpa": 1.6,
+            "wall_thickness_mm": 10.5,
+            "insulation": "EVI",
+            "fittings": "EU_STD",
+            "route_id": "R-CENTRAL",
+            "use_escort_permit": false
+          },
+          "disruption_triggered": false
+        },
+        {
+          "step": 26,
+          "tool": "reserve_bay_and_order",
+          "args": {
+            "order_id": "ORD-2",
+            "bay_id": "BAY-B",
+            "bay_start_week": 1,
+            "unit_count": 2,
+            "unit_volume_m3": 8.0,
+            "design_pressure_mpa": 1.8,
+            "wall_thickness_mm": 8.5,
+            "insulation": "EVI",
+            "fittings": "CN"
+          },
+          "disruption_triggered": false
+        },
+        {
+          "step": 27,
+          "tool": "assign_transport",
+          "args": {
+            "order_id": "ORD-2",
+            "route_id": "R-NORTH",
+            "use_escort_permit": false
+          },
+          "disruption_triggered": false
+        },
+        {
+          "step": 28,
+          "tool": "reserve_bay_and_order",
+          "args": {
+            "order_id": "ORD-4",
+            "bay_id": "BAY-A",
+            "bay_start_week": 4,
+            "unit_count": 1,
+            "unit_volume_m3": 20.0,
+            "design_pressure_mpa": 2.4,
+            "wall_thickness_mm": 17.0,
+            "insulation": "EVI",
+            "fittings": "EU_STD"
+          },
+          "disruption_triggered": false
+        },
+        {
+          "step": 29,
+          "tool": "assign_transport",
+          "args": {
+            "order_id": "ORD-4",
+            "route_id": "R-PORT",
+            "use_escort_permit": true
+          },
+          "disruption_triggered": false
+        },
+        {
+          "step": 30,
+          "tool": "finalize_commissioning",
+          "args": {},
+          "disruption_triggered": false
+        }
+      ]
+    },
+    {
+      "train_seed": "S02",
+      "final_score": 0.9483,
+      "valid_orders": "4/4",
+      "sim_calls_used": 2,
+      "step_count": 27,
+      "key_tool_sequence": [
+        {
+          "step": 1,
+          "tool": "get_episode_brief",
+          "args": {},
+          "disruption_triggered": false
+        },
+        {
+          "step": 2,
+          "tool": "query_handbook",
+          "args": {
+            "section": "all"
+          },
+          "disruption_triggered": false
+        },
+        {
+          "step": 9,
+          "tool": "get_factory_state",
+          "args": {},
+          "disruption_triggered": false
+        },
+        {
+          "step": 10,
+          "tool": "run_physics_sim",
+          "args": {
+            "order_id": "ORD-3",
+            "unit_count": 1,
+            "unit_volume_m3": 15.0,
+            "design_pressure_mpa": 2.3,
+            "wall_thickness_mm": 15.0,
+            "insulation": "EVI",
+            "fittings": "EU_STD"
+          },
+          "disruption_triggered": false
+        },
+        {
+          "step": 11,
+          "tool": "reserve_bay_and_order",
+          "args": {
+            "order_id": "ORD-1",
+            "bay_id": "BAY-A",
+            "bay_start_week": 1,
+            "unit_count": 1,
+            "unit_volume_m3": 10.0,
+            "design_pressure_mpa": 2.0,
+            "wall_thickness_mm": 8.5,
+            "insulation": "PVI",
+            "fittings": "CN"
+          },
+          "disruption_triggered": false
+        },
+        {
+          "step": 12,
+          "tool": "assign_transport",
+          "args": {
+            "order_id": "ORD-1",
+            "route_id": "R-WEST",
+            "use_escort_permit": false
+          },
+          "disruption_triggered": false
+        },
+        {
+          "step": 13,
+          "tool": "reserve_bay_and_order",
+          "args": {
+            "order_id": "ORD-3",
+            "bay_id": "BAY-B",
+            "bay_start_week": 1,
+            "unit_count": 1,
+            "unit_volume_m3": 15.0,
+            "design_pressure_mpa": 2.3,
+            "wall_thickness_mm": 15.0,
+            "insulation": "EVI",
+            "fittings": "EU_STD"
+          },
+          "disruption_triggered": true
+        },
+        {
+          "step": 20,
+          "tool": "get_factory_state",
+          "args": {},
+          "disruption_triggered": false
+        },
+        {
+          "step": 21,
+          "tool": "run_physics_sim",
+          "args": {
+            "order_id": "ORD-3",
+            "unit_count": 1,
+            "unit_volume_m3": 15.0,
+            "design_pressure_mpa": 2.3,
+            "wall_thickness_mm": 15.0,
+            "insulation": "EVI",
+            "fittings": "EU_STD"
+          },
+          "disruption_triggered": false
+        },
+        {
+          "step": 22,
+          "tool": "assign_transport",
+          "args": {
+            "order_id": "ORD-3",
+            "route_id": "R-WEST",
+            "use_escort_permit": false
+          },
+          "disruption_triggered": false
+        },
+        {
+          "step": 23,
+          "tool": "reserve_bay_and_order",
+          "args": {
+            "order_id": "ORD-2",
+            "bay_id": "BAY-A",
+            "bay_start_week": 4,
+            "unit_count": 1,
+            "unit_volume_m3": 15.0,
+            "design_pressure_mpa": 2.8,
+            "wall_thickness_mm": 18.0,
+            "insulation": "EVI",
+            "fittings": "CN"
+          },
+          "disruption_triggered": false
+        },
+        {
+          "step": 24,
+          "tool": "assign_transport",
+          "args": {
+            "order_id": "ORD-2",
+            "route_id": "R-SOUTH",
+            "use_escort_permit": true
+          },
+          "disruption_triggered": false
+        },
+        {
+          "step": 25,
+          "tool": "reserve_bay_and_order",
+          "args": {
+            "order_id": "ORD-4",
+            "bay_id": "BAY-B",
+            "bay_start_week": 8,
+            "unit_count": 2,
+            "unit_volume_m3": 8.0,
+            "design_pressure_mpa": 1.5,
+            "wall_thickness_mm": 7.0,
+            "insulation": "EVI",
+            "fittings": "CN"
+          },
+          "disruption_triggered": false
+        },
+        {
+          "step": 26,
+          "tool": "assign_transport",
+          "args": {
+            "order_id": "ORD-4",
+            "route_id": "R-WEST",
+            "use_escort_permit": false
+          },
+          "disruption_triggered": false
+        },
+        {
+          "step": 27,
+          "tool": "finalize_commissioning",
+          "args": {},
+          "disruption_triggered": false
+        }
+      ]
+    }
+  ],
+  "compiled_policy_prompt": "### EXPERIENCE-DISTILLED COMMISSIONING POLICY (LEARNED FROM S01-S05 ENVIRONMENT ROLLOUTS)\nEmpirical S01-S05 benchmark stats: winning trajectories achieved mean score 0.9496 in 24.1 steps using 1.7/3 FEA sims (vs 0.1039 on unadapted/sim-exhausted rollouts).\n\n#### 1. Mandatory 4-Phase Execution Protocol (Max 42 Steps, Max 3 Sims)\n- **Phase A — Compact Discovery First (Steps 1–5, 0 sims):**\n  1. Call `get_episode_brief()` (which already lists all 4 orders and routes!), `query_handbook(section=\"all\")`, and `get_factory_state()`.\n- **Phase B — Closed-Form Analytical Sizing + First 2 Bookings (Conserve Sims: Use <= 1 Sim Pre-Shock!):**\n  1. Solve every order in closed form BEFORE booking or calling `run_physics_sim`:\n     - Standard volumes `V` in `[1, 2, 3, 5, 8, 10, 15, 20, 25, 30]` m3, `unit_count` `N` in `[1, 2, 3]`.\n     - **Deliverable mass (DO NOT confuse m3 with kg!):** `usable_unit_mass_kg = round(V * density * 0.95, 2)` and `N * usable_unit_mass_kg >= required_product_mass_kg`, where `density` (`kg/m3`) = `LIN:808, LOX:1141, LAR:1395, LCO2:1030, LNG:430, LH2:70.85, LHe:124.9`. Note `LH2` & `LHe` have ultra-low density: e.g. `1x20m3 LHe` delivers `20*124.9*0.95 = 2373 kg` (whereas `1x1m3` is only `118.6 kg`!), and `1x20m3 LH2` delivers `20*70.85*0.95 = 1346 kg`!\n     - **Outer & Inner Diameter:** Exact `outer_d_mm`: `1-2m3:1400, 3-5m3:1600, 8-10m3:2000, 15m3:2400, 20-25m3:2600, 30m3:3000`. Then `inner_d_mm = outer_d_mm - 2*annulus_mm` (`EVI: -240mm`, `PVI: -400mm`).\n     - **Closed-Form Wall Thickness (NEVER under-size hoop stress!):**\n       * Set `P = max(min_pressure_mpa, 0.4)`.\n       * `sigma_allow = round(235.0 / safety_factor, 2)` (`LIN/LCO2: 235.0`, `LAR: 223.81`, `LNG: 204.35`, `LOX/LH2/LHe: 188.0` MPa).\n       * `weld_eff`: `CN=0.85`, `EU_STD=0.90`, `DE_PRECISION=0.96`.\n       * Exact formula: `t_min_mm = P * inner_d_mm / (2.0 * weld_eff * sigma_allow - P)`. Round UP to the next integer `mm` and add `+1.0 mm` margin so `round(P * (inner_d_mm + t) / (2 * weld_eff * t), 2) <= sigma_allow` is guaranteed! Keep `t < 14.0 mm` when valid (since `t >= 14.0 mm` adds `+1` `fab_weeks`).\n     - **Material Hazard Rules:** `LH2` & `LHe` strictly REQUIRE `EVI` and FORBID `CN`. `LOX` with `design_pressure_mpa > 2.0` FORBIDS `CN`.\n     - **Boil-Off & Budget Discipline (DO NOT overspend on `DE_PRECISION`!):**\n       * `EU_STD` (`4w` lead, `1.22x` cost, `11W` leak) + `EVI` (`k=0.0022`) is the workhorse for cryogenic orders; use `PVI` + `CN` (`2w` lead, `1.00x` cost) only on warm/lenient orders (`LCO2` or `max_boil_off >= 0.40%/day`) when PVI boil-off & height fit.\n       * Percentage boil-off `%/day` drops sharply with larger `unit_volume_m3`: if `1x10m3 EVI+EU_STD` slightly exceeds `max_boil_off_pct_day` (especially on `LHe` or `LH2`), upsize to `1x15m3` or `1x20m3` `EVI+EU_STD` FIRST! Reserve expensive/slow `DE_PRECISION` (`7w` lead, `1.68x` cost, `5.5W` leak) ONLY when `EVI+EU_STD` still misses boil-off AND `sla_week >= 10` AND total batch spend stays `<= effective_budget_eur`!\n     - **Exact Catalogue Heights & Route Envelope (Avoid `SITE_HEIGHT`, `SITE_FOOTPRINT`, `STD_GAUGE`!):**\n       * Exact `STATIONARY` `installed_height_mm` (`PVI` is 700-900mm taller than `EVI`!): `5m3: EVI=4350/PVI=5330`, `8m3: EVI=4190/PVI=4880`, `10m3: EVI=5020/PVI=5880`, `15m3: EVI=5000/PVI=5680`, `20m3: EVI=5480/PVI=6170`, `25m3: EVI=6620/PVI=7480`. Always check `installed_height_mm <= max_site_height_mm`!\n       * Multi-unit bank width: `N * installed_width + (N - 1) * 400 <= max_site_footprint_mm` (`2x10m3 STATIONARY` = `4400mm`, so if `max_site_footprint_mm < 4400`, use `1x20m3 EVI` (`width=2600mm, height=5480mm`) instead of `2x10m3`!).\n       * Shipping width: `STATIONARY` = `outer_d_mm` (`20-25m3` -> `2600mm`); `TRANSPORTABLE` = `outer_d_mm + 200` (`15m3` -> `2600mm`, `10m3` -> `2200mm`). Any order with `shipping_width > route.std_max_width_mm` (typically `2500mm`) or `shipping_height > route.std_max_height_mm` MUST either set `use_escort_permit=True` (within batch permit quota!) OR use `<=10m3` (`outer_d <= 2000`).\n  2. Spend **at most 1 `run_physics_sim` call** pre-shock (on your tightest `LHe`/`LH2`/`LOX` boil-off order), keeping **2 `run_physics_sim` calls in reserve** for post-shock verification! Book the first 2 orders via `reserve_bay_and_order`.\n- **Phase C — Mid-Episode Supply/Site Disruption Audit & Adaptation (CRITICAL):**\n  - Booking the 2nd order (or 4th mutating step) triggers `disruption_alert`!\n  - IMMEDIATELY call `get_factory_state()`, plus `inspect_order` and `inspect_route` on EVERY overridden order/route ID.\n  - Audit BOTH already-booked orders AND the 2 unbooked orders against ALL post-shock changes:\n    1. `pvi_k_multiplier > 1.0`: any tight `PVI` order must be revised (`revise_order`) to `EVI`!\n    2. `order_min_pressure_overrides` / `order_sla_overrides`: raise `design_pressure_mpa`, recompute `t_min_mm` for hoop stress, and verify SLA!\n    3. `bay_blackouts` / `bay_max_unit_tare_kg`: ensure `[bay_start_week, bay_start_week + fab_weeks)` has ZERO overlap with blackouts and `unit_tare_mass_kg <= crane_cap`.\n    4. `fittings_lead_deltas`: if `EU_STD` (`4w`) or `DE_PRECISION` (`7w`) receives a `+2w` or `+3w` customs delay so `order_release_week + effective_fittings_lead_weeks + 1 + transit_weeks > sla_week`, IMMEDIATELY revise that order to faster permitted fittings (`CN` `2w` lead for `LIN/LAR/LCO2/LNG` or `LOX <= 2.0 MPa`; `EU_STD` `4w` lead if `DE_PRECISION` was delayed)! Note: post-shock new bookings or revisions changing `fittings`/`unit_count` set `order_release_week = 2`.\n    5. `route_*_overrides` / `escort_permits_delta` / `budget_delta_eur`: check `unit_transport_mass_kg <= max_unit_transport_mass_kg`, shipping WxH vs std/permit limits, total permits across all 4 orders `<= effective_escort_permits_total`, and total batch spend (mfg + freight + permits + revision fees) `<= effective_budget_eur`!\n  - Use your 2 reserved `run_physics_sim` calls to confirm your tightest post-shock / low-temperature (`LH2`/`LHe`/`LOX`) specs pass `all_engineering_pass == true`, call `revise_order(...)` once per invalidated pre-shock order, and book the remaining 2 orders via `reserve_bay_and_order`.\n- **Phase D — Complete Transport Assignment & Mandatory Commissioning:**\n  - Call `assign_transport(order_id, route_id=order.route_id, use_escort_permit=...)` on ALL 4 orders (`ORD-1`..`ORD-4`), double-checking whether each order's `shipping_width_mm` or `shipping_height_mm` requires `use_escort_permit=True` and that total permits used `<= effective_escort_permits_total`.\n  - Confirm `total_spent_eur <= effective_budget_eur` in `get_factory_state()`, then ALWAYS call `finalize_commissioning()` before step 40!\n\n#### 2. Empirical Failure-Mode Priorities from S01-S05 Contrast Rollouts\n- BRIDGE_MASS_CAP (empirical S01-S05 reward loss -0.958): Keep unit_transport_mass_kg <= post-shock route max_unit_transport_mass_kg; splitting into unit_count=2 or 3 smaller shells cuts per-unit tare and transport mass in half.\n- HAZARD_COMPATIBILITY (empirical S01-S05 reward loss -0.955): LH2 and LHe strictly REQUIRE EVI insulation and FORBID CN fittings; LOX with design_pressure_mpa > 2.0 MPa strictly FORBIDS CN fittings (use EU_STD or DE_PRECISION).\n- UNFINALIZED_ZERO_SCORE (empirical S01-S05 reward loss -0.955): Always call finalize_commissioning() before step 40; unfinalized episodes receive 0.0000.\n- UNFINALIZED (empirical S01-S05 reward loss -0.955): Always call finalize_commissioning() before step 40; unfinalized episodes receive 0.0000.\n- PERMIT_QUOTA_EXCEEDED (empirical S01-S05 reward loss -0.955): Count total orders with use_escort_permit=True across all 4 orders and ensure total <= post-shock effective_escort_permits_total; exceeding quota fails ALL permit orders.\n- PERMIT_QUOTA (empirical S01-S05 reward loss -0.955): Count total orders with use_escort_permit=True across all 4 orders and ensure total <= post-shock effective_escort_permits_total; exceeding quota fails ALL permit orders.\n- CAPACITY_SHORTFALL (empirical S01-S05 reward loss -0.954): Never confuse m3 with kg! Deliverable mass is unit_count * round(unit_volume_m3 * density_kg_m3 * 0.95, 2) >= required_product_mass_kg. Low-density cryogens LH2 (70.85 kg/m3) and LHe (124.9 kg/m3) require large volumes (e.g. 15-30 m3 or 2-3 units) to deliver 1,000+ kg.\n- BUDGET_OVERRUN (empirical S01-S05 reward loss -0.906): Keep sum(manufacturing_cost + unit_count*base_freight + permit_fee) + retooling_fees <= effective_budget_eur (breaching budget multiplies score by 0.20 and caps at 0.15).\n- BUDGET_EXCEEDED (empirical S01-S05 reward loss -0.906): Keep sum(manufacturing_cost + unit_count*base_freight + permit_fee) + retooling_fees <= effective_budget_eur (breaching budget multiplies score by 0.20 and caps at 0.15). First post-shock revision per order costs 1,500 EUR; extra revisions cost 4,500 EUR.\n- HOOP_STRESS (empirical S01-S05 reward loss -0.901): Compute exact minimum wall t_min = P * inner_d_mm / (2 * weld_eff * sigma_allow - P) where sigma_allow = round(235.0 / safety_factor, 2) and weld_eff = {CN:0.85, EU_STD:0.90, DE_PRECISION:0.96}, then add +1.0 mm safety margin (keep < 14.0 mm when valid to avoid +1 fab_week). Re-check after order_min_pressure_overrides.\n",
+  "quarantined_holdout_trajectory_files": 3,
+  "sft_dataset_sha256": "2fc02dfb04dbac9889f5674beb1ed400a15a11dc3ab31bcfd9b5e442a5407f07"
+}

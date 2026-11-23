@@ -1,0 +1,202 @@
+{
+  "ok": true,
+  "seed": "S01",
+  "run_id": "harbor-opencode-run",
+  "finalized": false,
+  "final_score": 0.0,
+  "verification": {
+    "seed": "S01",
+    "finalized": false,
+    "final_score": 0.0,
+    "valid_order_count": 0,
+    "total_order_count": 4,
+    "batch_gate_cap_applied": false,
+    "budget_exceeded": false,
+    "permit_quota_exceeded": false,
+    "total_budget_eur": 377500.0,
+    "total_spent_eur": 0.0,
+    "budget_efficiency_bonus": 0.0,
+    "schedule_margin_bonus": 0.0,
+    "sim_efficiency_bonus": 0.0,
+    "sim_calls_used": 0,
+    "sim_budget_total": 3,
+    "step_count": 0,
+    "disruption_triggered": false,
+    "order_results": [
+      {
+        "order_id": "ORD-1",
+        "booked": false,
+        "route_assigned": false,
+        "passed_all_hard_checks": false,
+        "order_raw_score": 0.0,
+        "weighted_contribution": 0.0,
+        "delivery_week": null,
+        "sla_week": 7,
+        "total_order_cost_eur": 0.0,
+        "physics": null,
+        "violations": [
+          "ORD-1: ORDER_UNBOOKED \u2014 order was never reserved on a fabrication bay."
+        ]
+      },
+      {
+        "order_id": "ORD-2",
+        "booked": false,
+        "route_assigned": false,
+        "passed_all_hard_checks": false,
+        "order_raw_score": 0.0,
+        "weighted_contribution": 0.0,
+        "delivery_week": null,
+        "sla_week": 11,
+        "total_order_cost_eur": 0.0,
+        "physics": null,
+        "violations": [
+          "ORD-2: ORDER_UNBOOKED \u2014 order was never reserved on a fabrication bay."
+        ]
+      },
+      {
+        "order_id": "ORD-3",
+        "booked": false,
+        "route_assigned": false,
+        "passed_all_hard_checks": false,
+        "order_raw_score": 0.0,
+        "weighted_contribution": 0.0,
+        "delivery_week": null,
+        "sla_week": 10,
+        "total_order_cost_eur": 0.0,
+        "physics": null,
+        "violations": [
+          "ORD-3: ORDER_UNBOOKED \u2014 order was never reserved on a fabrication bay."
+        ]
+      },
+      {
+        "order_id": "ORD-4",
+        "booked": false,
+        "route_assigned": false,
+        "passed_all_hard_checks": false,
+        "order_raw_score": 0.0,
+        "weighted_contribution": 0.0,
+        "delivery_week": null,
+        "sla_week": 12,
+        "total_order_cost_eur": 0.0,
+        "physics": null,
+        "violations": [
+          "ORD-4: ORDER_UNBOOKED \u2014 order was never reserved on a fabrication bay."
+        ]
+      }
+    ],
+    "failure_modes": [
+      "UNFINALIZED_EPISODE: finalize_commissioning() was never called; final_score forced to 0.0.",
+      "ORD-1: ORDER_UNBOOKED \u2014 order was never reserved on a fabrication bay.",
+      "ORD-2: ORDER_UNBOOKED \u2014 order was never reserved on a fabrication bay.",
+      "ORD-3: ORDER_UNBOOKED \u2014 order was never reserved on a fabrication bay.",
+      "ORD-4: ORDER_UNBOOKED \u2014 order was never reserved on a fabrication bay."
+    ],
+    "primary_failure_categories": [
+      "UNFINALIZED",
+      "INCOMPLETE_BATCH"
+    ]
+  },
+  "trajectory": {
+    "run_id": "harbor-opencode-run",
+    "seed": "S01",
+    "agent_name": "opencode",
+    "agent_type": "frontier",
+    "model_id": "unknown",
+    "started_at": "2026-11-14T16:21:15.467010+00:00",
+    "completed_at": "2026-11-14T16:21:33.719275+00:00",
+    "steps": [],
+    "verification": {
+      "seed": "S01",
+      "finalized": false,
+      "final_score": 0.0,
+      "valid_order_count": 0,
+      "total_order_count": 4,
+      "batch_gate_cap_applied": false,
+      "budget_exceeded": false,
+      "permit_quota_exceeded": false,
+      "total_budget_eur": 377500.0,
+      "total_spent_eur": 0.0,
+      "budget_efficiency_bonus": 0.0,
+      "schedule_margin_bonus": 0.0,
+      "sim_efficiency_bonus": 0.0,
+      "sim_calls_used": 0,
+      "sim_budget_total": 3,
+      "step_count": 0,
+      "disruption_triggered": false,
+      "order_results": [
+        {
+          "order_id": "ORD-1",
+          "booked": false,
+          "route_assigned": false,
+          "passed_all_hard_checks": false,
+          "order_raw_score": 0.0,
+          "weighted_contribution": 0.0,
+          "delivery_week": null,
+          "sla_week": 7,
+          "total_order_cost_eur": 0.0,
+          "physics": null,
+          "violations": [
+            "ORD-1: ORDER_UNBOOKED \u2014 order was never reserved on a fabrication bay."
+          ]
+        },
+        {
+          "order_id": "ORD-2",
+          "booked": false,
+          "route_assigned": false,
+          "passed_all_hard_checks": false,
+          "order_raw_score": 0.0,
+          "weighted_contribution": 0.0,
+          "delivery_week": null,
+          "sla_week": 11,
+          "total_order_cost_eur": 0.0,
+          "physics": null,
+          "violations": [
+            "ORD-2: ORDER_UNBOOKED \u2014 order was never reserved on a fabrication bay."
+          ]
+        },
+        {
+          "order_id": "ORD-3",
+          "booked": false,
+          "route_assigned": false,
+          "passed_all_hard_checks": false,
+          "order_raw_score": 0.0,
+          "weighted_contribution": 0.0,
+          "delivery_week": null,
+          "sla_week": 10,
+          "total_order_cost_eur": 0.0,
+          "physics": null,
+          "violations": [
+            "ORD-3: ORDER_UNBOOKED \u2014 order was never reserved on a fabrication bay."
+          ]
+        },
+        {
+          "order_id": "ORD-4",
+          "booked": false,
+          "route_assigned": false,
+          "passed_all_hard_checks": false,
+          "order_raw_score": 0.0,
+          "weighted_contribution": 0.0,
+          "delivery_week": null,
+          "sla_week": 12,
+          "total_order_cost_eur": 0.0,
+          "physics": null,
+          "violations": [
+            "ORD-4: ORDER_UNBOOKED \u2014 order was never reserved on a fabrication bay."
+          ]
+        }
+      ],
+      "failure_modes": [
+        "UNFINALIZED_EPISODE: finalize_commissioning() was never called; final_score forced to 0.0.",
+        "ORD-1: ORDER_UNBOOKED \u2014 order was never reserved on a fabrication bay.",
+        "ORD-2: ORDER_UNBOOKED \u2014 order was never reserved on a fabrication bay.",
+        "ORD-3: ORDER_UNBOOKED \u2014 order was never reserved on a fabrication bay.",
+        "ORD-4: ORDER_UNBOOKED \u2014 order was never reserved on a fabrication bay."
+      ],
+      "primary_failure_categories": [
+        "UNFINALIZED",
+        "INCOMPLETE_BATCH"
+      ]
+    },
+    "state_hmac": "c0d3603cbd3eba0f8197ad7ee17bebfcd95f99b08e4b8b5948a0e5fb09d062bb"
+  }
+}

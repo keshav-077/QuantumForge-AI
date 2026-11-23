@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">How the AgentBreak benchmark works</title>
+  <desc id="desc">Three stages show an agent planning jobs, adapting to a disruption, and receiving deterministic verification.</desc>
+  <rect width="1200" height="360" rx="28" fill="#f7f7f8"/>
+  <g font-family="Inter,Arial,sans-serif">
+    <text x="54" y="58" fill="#4f46e5" font-size="12" font-weight="700" letter-spacing="2">BENCHMARK LOOP</text>
+    <text x="54" y="91" fill="#18181b" font-size="25" font-weight="700">One plan. One surprise. Hard verification.</text>
+    <g transform="translate(54 128)">
+      <rect width="324" height="178" rx="18" fill="#fff" stroke="#e4e4e7"/>
+      <circle cx="42" cy="42" r="21" fill="#eef2ff"/>
+      <text x="34" y="48" fill="#4f46e5" font-size="16" font-weight="700">01</text>
+      <text x="28" y="94" fill="#18181b" font-size="18" font-weight="700">Plan four jobs</text>
+      <text x="28" y="119" fill="#71717a" font-size="12">Schedule across two constrained lanes</text>
+      <g transform="translate(28 141)" font-size="10" font-weight="700">
+        <rect width="62" height="23" rx="11.5" fill="#f4f4f5"/><text x="15" y="15" fill="#52525b">4 JOBS</text>
+        <rect x="70" width="66" height="23" rx="11.5" fill="#f4f4f5"/><text x="85" y="15" fill="#52525b">2 LANES</text>
+        <rect x="144" width="68" height="23" rx="11.5" fill="#f4f4f5"/><text x="158" y="15" fill="#52525b">3 CALLS</text>
+      </g>
+    </g>
+    <g transform="translate(438 128)">
+      <rect width="324" height="178" rx="18" fill="#18181b"/>
+      <circle cx="42" cy="42" r="21" fill="#3f3f46"/>
+      <text x="34" y="48" fill="#c7d2fe" font-size="16" font-weight="700">02</text>
+      <text x="28" y="94" fill="#fff" font-size="18" font-weight="700">Adapt at Step 4</text>
+      <text x="28" y="119" fill="#a1a1aa" font-size="12">A live event invalidates the original plan</text>
+      <rect x="28" y="141" width="194" height="23" rx="11.5" fill="#4c0519" stroke="#9f1239"/>
+      <circle cx="42" cy="152.5" r="4" fill="#fb7185"/>
+      <text x="53" y="156" fill="#fecdd3" font-size="10" font-weight="700">MID-EPISODE DISRUPTION</text>
+    </g>
+    <g transform="translate(822 128)">
+      <rect width="324" height="178" rx="18" fill="#fff" stroke="#e4e4e7"/>
+      <circle cx="42" cy="42" r="21" fill="#ecfdf5"/>
+      <text x="34" y="48" fill="#059669" font-size="16" font-weight="700">03</text>
+      <text x="28" y="94" fill="#18181b" font-size="18" font-weight="700">Verify every constraint</text>
+      <text x="28" y="119" fill="#71717a" font-size="12">Recompute the score from server state</text>
+      <path d="m30 153 6 6 11-14" fill="none" stroke="#059669" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="58" y="157" fill="#047857" font-size="10" font-weight="700">DETERMINISTIC SCORING</text>
+    </g>
+    <path d="m392 217 20 0m-7-7 7 7-7 7M776 217h20m-7-7 7 7-7 7" fill="none" stroke="#a1a1aa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

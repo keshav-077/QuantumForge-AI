@@ -1,0 +1,206 @@
+{
+  "run_id": "do_nothing_finalize_S02",
+  "seed": "S02",
+  "agent_name": "Do-Nothing Immediate Finalize Baseline",
+  "agent_type": "do_nothing",
+  "model_id": "baseline-immediate-finalize",
+  "started_at": "2026-11-14T14:19:09.665471+00:00",
+  "completed_at": "2026-11-14T14:19:09.770597+00:00",
+  "steps": [
+    {
+      "step_index": 1,
+      "timestamp_iso": "2026-11-14T14:19:09.770597+00:00",
+      "tool_name": "finalize_commissioning",
+      "arguments": {},
+      "observation": {
+        "ok": true,
+        "finalized": true,
+        "final_score": 0.0,
+        "valid_order_count": 0,
+        "total_order_count": 4,
+        "verification": {
+          "seed": "S02",
+          "finalized": true,
+          "final_score": 0.0,
+          "valid_order_count": 0,
+          "total_order_count": 4,
+          "batch_gate_cap_applied": false,
+          "budget_exceeded": false,
+          "permit_quota_exceeded": false,
+          "total_budget_eur": 342500.0,
+          "total_spent_eur": 0.0,
+          "budget_efficiency_bonus": 0.0,
+          "schedule_margin_bonus": 0.0,
+          "sim_efficiency_bonus": 0.0,
+          "sim_calls_used": 0,
+          "sim_budget_total": 3,
+          "step_count": 1,
+          "disruption_triggered": false,
+          "order_results": [
+            {
+              "order_id": "ORD-1",
+              "booked": false,
+              "route_assigned": false,
+              "passed_all_hard_checks": false,
+              "order_raw_score": 0.0,
+              "weighted_contribution": 0.0,
+              "delivery_week": null,
+              "sla_week": 7,
+              "total_order_cost_eur": 0.0,
+              "physics": null,
+              "violations": [
+                "ORD-1: ORDER_UNBOOKED — order was never reserved on a fabrication bay."
+              ]
+            },
+            {
+              "order_id": "ORD-2",
+              "booked": false,
+              "route_assigned": false,
+              "passed_all_hard_checks": false,
+              "order_raw_score": 0.0,
+              "weighted_contribution": 0.0,
+              "delivery_week": null,
+              "sla_week": 12,
+              "total_order_cost_eur": 0.0,
+              "physics": null,
+              "violations": [
+                "ORD-2: ORDER_UNBOOKED — order was never reserved on a fabrication bay."
+              ]
+            },
+            {
+              "order_id": "ORD-3",
+              "booked": false,
+              "route_assigned": false,
+              "passed_all_hard_checks": false,
+              "order_raw_score": 0.0,
+              "weighted_contribution": 0.0,
+              "delivery_week": null,
+              "sla_week": 9,
+              "total_order_cost_eur": 0.0,
+              "physics": null,
+              "violations": [
+                "ORD-3: ORDER_UNBOOKED — order was never reserved on a fabrication bay."
+              ]
+            },
+            {
+              "order_id": "ORD-4",
+              "booked": false,
+              "route_assigned": false,
+              "passed_all_hard_checks": false,
+              "order_raw_score": 0.0,
+              "weighted_contribution": 0.0,
+              "delivery_week": null,
+              "sla_week": 13,
+              "total_order_cost_eur": 0.0,
+              "physics": null,
+              "violations": [
+                "ORD-4: ORDER_UNBOOKED — order was never reserved on a fabrication bay."
+              ]
+            }
+          ],
+          "failure_modes": [
+            "ORD-1: ORDER_UNBOOKED — order was never reserved on a fabrication bay.",
+            "ORD-2: ORDER_UNBOOKED — order was never reserved on a fabrication bay.",
+            "ORD-3: ORDER_UNBOOKED — order was never reserved on a fabrication bay.",
+            "ORD-4: ORDER_UNBOOKED — order was never reserved on a fabrication bay."
+          ],
+          "primary_failure_categories": [
+            "INCOMPLETE_BATCH"
+          ]
+        }
+      },
+      "disruption_triggered_this_step": false
+    }
+  ],
+  "verification": {
+    "seed": "S02",
+    "finalized": true,
+    "final_score": 0.0,
+    "valid_order_count": 0,
+    "total_order_count": 4,
+    "batch_gate_cap_applied": false,
+    "budget_exceeded": false,
+    "permit_quota_exceeded": false,
+    "total_budget_eur": 342500.0,
+    "total_spent_eur": 0.0,
+    "budget_efficiency_bonus": 0.0,
+    "schedule_margin_bonus": 0.0,
+    "sim_efficiency_bonus": 0.0,
+    "sim_calls_used": 0,
+    "sim_budget_total": 3,
+    "step_count": 1,
+    "disruption_triggered": false,
+    "order_results": [
+      {
+        "order_id": "ORD-1",
+        "booked": false,
+        "route_assigned": false,
+        "passed_all_hard_checks": false,
+        "order_raw_score": 0.0,
+        "weighted_contribution": 0.0,
+        "delivery_week": null,
+        "sla_week": 7,
+        "total_order_cost_eur": 0.0,
+        "physics": null,
+        "violations": [
+          "ORD-1: ORDER_UNBOOKED — order was never reserved on a fabrication bay."
+        ]
+      },
+      {
+        "order_id": "ORD-2",
+        "booked": false,
+        "route_assigned": false,
+        "passed_all_hard_checks": false,
+        "order_raw_score": 0.0,
+        "weighted_contribution": 0.0,
+        "delivery_week": null,
+        "sla_week": 12,
+        "total_order_cost_eur": 0.0,
+        "physics": null,
+        "violations": [
+          "ORD-2: ORDER_UNBOOKED — order was never reserved on a fabrication bay."
+        ]
+      },
+      {
+        "order_id": "ORD-3",
+        "booked": false,
+        "route_assigned": false,
+        "passed_all_hard_checks": false,
+        "order_raw_score": 0.0,
+        "weighted_contribution": 0.0,
+        "delivery_week": null,
+        "sla_week": 9,
+        "total_order_cost_eur": 0.0,
+        "physics": null,
+        "violations": [
+          "ORD-3: ORDER_UNBOOKED — order was never reserved on a fabrication bay."
+        ]
+      },
+      {
+        "order_id": "ORD-4",
+        "booked": false,
+        "route_assigned": false,
+        "passed_all_hard_checks": false,
+        "order_raw_score": 0.0,
+        "weighted_contribution": 0.0,
+        "delivery_week": null,
+        "sla_week": 13,
+        "total_order_cost_eur": 0.0,
+        "physics": null,
+        "violations": [
+          "ORD-4: ORDER_UNBOOKED — order was never reserved on a fabrication bay."
+        ]
+      }
+    ],
+    "failure_modes": [
+      "ORD-1: ORDER_UNBOOKED — order was never reserved on a fabrication bay.",
+      "ORD-2: ORDER_UNBOOKED — order was never reserved on a fabrication bay.",
+      "ORD-3: ORDER_UNBOOKED — order was never reserved on a fabrication bay.",
+      "ORD-4: ORDER_UNBOOKED — order was never reserved on a fabrication bay."
+    ],
+    "primary_failure_categories": [
+      "INCOMPLETE_BATCH"
+    ]
+  },
+  "state_hmac": "ff6bc9bf6eb4d2c087b287e044e42e231b00302da3483c1e430f8ed6f974e86b"
+}

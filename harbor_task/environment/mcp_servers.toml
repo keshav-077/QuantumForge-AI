@@ -1,0 +1,16 @@
+# Harbor / OpenCode MCP Server Registry for CryoForge RL
+# The `cryoforge-mcp` service runs in an isolated sidecar container so the
+# agent container (`/workspace`) has zero filesystem access to engine internals,
+# scenario disruption definitions, or verifier credentials.
+
+[[mcp_servers]]
+name = "cryoforge"
+transport = "sse"
+url = "http://cryoforge-mcp:8090/sse"
+description = "CryoForge RL cryogenic vessel engineering, bay scheduling, transport routing, and commissioning server."
+
+[servers.cryoforge]
+type = "remote"
+transport = "sse"
+url = "http://cryoforge-mcp:8090/sse"
+enabled = true

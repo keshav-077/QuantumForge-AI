@@ -1,0 +1,24 @@
+{
+  "mode": "compile_experience_cpu",
+  "train_seeds_used": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05"
+  ],
+  "holdout_seeds_touched": [],
+  "zero_leakage_verified": true,
+  "sft_examples_count": 15,
+  "preference_pairs_count": 44,
+  "total_dialogue_messages": 769,
+  "total_assistant_tool_calls": 362,
+  "approx_sft_tokens": 261177,
+  "expert_mean_score_s01_s05": 0.9496,
+  "rejected_mean_score_s01_s05": 0.1039,
+  "experience_playbook_path": "F:\\Junction Spanki2026\\runs\\tiebreaker\\experience_playbook.json",
+  "experience_playbook_sha256": "4af7b3cce26e2e40bf52b6edb282512c8fe4a9389b0120d89d24554ef5b09083",
+  "sft_train_messages_path": "F:\\Junction Spanki2026\\runs\\tiebreaker\\sft_train_messages.jsonl",
+  "wall_clock_seconds": 1.63,
+  "completed_at": "2026-11-14T14:05:36.356136+00:00"
+}

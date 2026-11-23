@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+/dist/
+/build/
+
+# Environment & Secrets
+.env
+.env.*
+!.env.example
+
+# Node / Viewer (keep prebuilt viewer/dist/ tracked for zero-Node judge replay)
+viewer/node_modules/
+node_modules/
+
+# Checkpoints / Large Model Weights
+tiebreaker/checkpoints/
+*.safetensors
+*.bin
+*.pt
+
+# OS
+.DS_Store
+Thumbs.db
